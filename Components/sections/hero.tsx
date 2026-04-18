@@ -31,14 +31,14 @@ function Hero() {
               <div className="size-28 md:size-24">
                 <Image
                   draggable="false"
-                  className="object-cover rounded-2xl md:rounded-3xl from-zinc-200 via-zinc-100 to-zinc-300 bg-linear-to-br"
+                  className="object-cover saturate-50 brightness-90 rounded-2xl md:rounded-3xl from-zinc-200 via-zinc-100 to-zinc-300 bg-linear-to-br"
                   alt="Avatar Picture"
-                  src={"https://github.com/aminzare2005.png"}
+                  src={"/assets/pfp.jpg"}
                   fill
                   sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
                   loading="eager"
                   priority
-                  />
+                />
               </div>
             </div>
           </div>
@@ -47,11 +47,11 @@ function Hero() {
       <div className="h-28 w-28 hidden sm:block">
         <Image
           draggable="false"
-          className="object-cover h-full w-full rounded-2xl md:rounded-3xl from-zinc-200 via-zinc-100 to-zinc-300 bg-linear-to-br"
+          className="object-cover saturate-50 brightness-90 h-full w-full rounded-2xl md:rounded-3xl from-zinc-200 via-zinc-100 to-zinc-300 bg-linear-to-br"
           alt="Avatar Picture"
           height={96}
           width={96}
-          src={"https://github.com/aminzare2005.png"}
+          src={"/assets/pfp.jpg"}
           loading="eager"
           priority
         />

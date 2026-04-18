@@ -15,8 +15,8 @@ export default function Home() {
       <Work />
       <Status />
       <Education />
-      <Gallery />
       <Projects />
+      <Gallery />
       <Connect />
     </>
   );

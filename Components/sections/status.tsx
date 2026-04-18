@@ -10,18 +10,18 @@ function Status() {
             dir="ltr"
             className="md:text-7xl text-5xl font-extrabold tracking-tight drop-shadow-xl"
           >
-            3
+            +15
           </div>
-          <p>Live Projects</p>
+          <p>Github Repos</p>
         </div>
         <div className="flex justify-center items-center flex-col">
           <div
             dir="ltr"
             className="md:text-7xl text-5xl font-extrabold tracking-tight drop-shadow-xl"
           >
-            +220
+            +210
           </div>
-          <p>Github Follower</p>
+          <p>Github Followers</p>
         </div>
       </div>
     </Section>
