@@ -6,6 +6,7 @@ import Connect from "@/Components/sections/connect";
 import Projects from "@/Components/sections/projects";
 import Education from "@/Components/sections/education";
 import Gallery from "@/Components/sections/gallery";
+import Communities from "@/Components/sections/communities";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Status />
       <Education />
       <Projects />
+      <Communities />
       <Gallery />
       <Connect />
     </>

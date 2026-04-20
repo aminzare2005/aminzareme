@@ -157,6 +157,39 @@ export const PROJECTS_ITEMS = [
   // },
 ];
 
+export const COMMUNITY_ITEMS = [
+  {
+    name: "Finger Coder",
+    role: "Graphic Designer",
+    logo: "/images/finger-coder.png",
+    color: "02c39a",
+    link: {
+      title: "instagram",
+      href: "https://instagram.com/fingercoder",
+    },
+  },
+  {
+    name: "Asr Didani (Shiraz)",
+    role: "Video Editor",
+    logo: "/images/asrdidani.png",
+    color: "a12eac",
+    link: {
+      title: "instagram",
+      href: "https://instagram.com/asrdidani",
+    },
+  },
+  {
+    name: "Shiraz Linux",
+    role: "Graphic Designer",
+    logo: "/images/shiraz-linux.png",
+    color: "f1592d",
+    link: {
+      title: "instagram",
+      href: "https://instagram.com/shirazlinux",
+    },
+  },
+];
+
 export const soft_skills = ["Git", "Swagger", "Figma", "v0", "bolt.new"];
 
 export const hard_skills = [
