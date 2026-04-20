@@ -49,10 +49,10 @@ const menuItems = [
 
 function Footer() {
   return (
-    <div className="w-full px-2 md:px-0 right-0 left-0 py-4 z-50 flex justify-center fixed bottom-0 bg-gradient-to-b from-transparent via-white/30 to-white">
+    <div className="w-full px-2 md:px-0 right-0 left-0 py-4 z-50 flex justify-center fixed bottom-0 bg-linear-to-b from-transparent via-white/10 to-white/20">
       <div
         dir="ltr"
-        className="bg-white/40 px-6 border text-black max-w-xl text-xl border-black/10 backdrop-blur-xl rounded-full h-14 w-full flex justify-between items-center"
+        className="bg-white/30 px-6 border text-black max-w-xl text-xl border-black/5 backdrop-blur-xl rounded-full h-14 w-full flex justify-between items-center"
       >
         {menuItems.map((item, index) => (
           <Link
