@@ -47,20 +47,24 @@ export const DESIGNS_ITEMS = [
 
 export const GALLERY_ITEMS = [
   {
-    title: "Last shirazlinux gathering in 1404",
+    title: "ShirazLinux & ShirazTux Gathering",
+    url: "/gallery/1.jpg",
+  },
+  {
+    title: "Last ShirazLinux Gathering in 1404",
     url: "/gallery/5.jpg",
   },
   {
-    title: "Amin working on holydays",
-    url: "/gallery/6.jpg",
-  },
-  {
-    title: "Touring bootcamp (AIPM)",
+    title: "Touring bootcamp (AIPM) Day 1",
     url: "/gallery/2.jpg",
   },
   {
-    title: "Shiraztux gathering",
-    url: "/gallery/1.jpg",
+    title: "Long Meeting Sessions in War Holidays",
+    url: "/gallery/6.jpg",
+  },
+  {
+    title: "Mins Before vlonefarsi.ir Production Release",
+    url: "/gallery/3.jpg",
   },
 ];
 

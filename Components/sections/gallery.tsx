@@ -5,7 +5,7 @@ import { GALLERY_ITEMS } from "@/constants/items";
 
 function Gallery() {
   return (
-    <Section classNameWrapper="columns-1 md:columns-2 gap-2 space-y-2 pt-4">
+    <Section classNameWrapper="columns-1 md:columns-2 gap-2 space-y-2">
       {GALLERY_ITEMS.map((item) => (
         <div key={item.url} className="break-inside-avoid">
           <Image
