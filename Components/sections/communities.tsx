@@ -12,8 +12,7 @@ export default function Communities() {
           <div
             key={item.name}
             className={cn(
-              "relative flex flex-col w-full aspect-4/5 group justify-between items-center border overflow-hidden border-black/10 rounded-xl hover:translate-y-px duration-300",
-              i === 1 && "scale-101 -mt-0.5",
+              "relative flex flex-col w-full group justify-between items-center border overflow-hidden border-black/10 rounded-xl hover:translate-y-px duration-300",
             )}
           >
             <div
@@ -28,10 +27,7 @@ export default function Communities() {
                 height={150}
                 src={item.logo || ""}
                 alt={item.name}
-                className={cn(
-                  "w-1/2 h-auto",
-                  item.name.startsWith("Asr") && "scale-150",
-                )}
+                className={cn("w-full h-auto px-6 md:px-12 pt-4")}
               />
             </div>
             <div className="p-4 z-10 flex flex-col justify-center items-center">
