@@ -7,7 +7,7 @@ import { Link2Icon } from "lucide-react";
 function Education() {
   return (
     <Section className="grid grid-cols-1" title="Certificates">
-      <div className="flex flex-col w-full group justify-center items-center gap-2 bg-white p-6 border border-black/10 rounded-xl hover:translate-y-[1px] duration-300">
+      <div className="flex flex-col w-full group justify-center items-center gap-2 bg-white p-6 border border-black/10 rounded-xl hover:translate-y-px duration-300">
         <div className="flex w-full justify-between">
           <div className="flex items-center gap-2">
             <Image
@@ -31,7 +31,7 @@ function Education() {
             i learned pm and aipm basics with help of industry top mentors
           </p>
           <Link
-            className="self-start py-1 gap-1 flex justify-start text-blue-500 items-center text-sm"
+            className="flex py-1 gap-1 text-blue-500 text-sm w-fit"
             target="_blank"
             href={
               "https://be5t.ir/validation/cert?id=aa54c49a-86ea-4863-a500-98998cb23912"

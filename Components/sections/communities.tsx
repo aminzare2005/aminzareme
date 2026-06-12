@@ -30,7 +30,7 @@ export default function Communities() {
                 className={cn("w-full h-auto px-8 md:px-12 pt-4")}
               />
             </div>
-            <div className="p-4 z-10 text-center flex flex-col justify-center items-center gap-2">
+            <div className="p-4 z-10 text-center flex flex-col justify-center items-center">
               <b className="text-lg leading-tight">{item.name}</b>
               <p className="opacity-85 leading-tight">{item.role}</p>
             </div>

@@ -25,7 +25,7 @@ function Connect() {
           dir="ltr"
           className="w-full pt-6 text-sm flex gap-1 justify-center items-center"
         >
-          Amin Zare <span>✦</span>
+          Amin Zare <span>✶</span>
           <DisplayVersion />
         </div>
       </div>
