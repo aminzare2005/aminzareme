@@ -2,7 +2,6 @@ import React from "react";
 import Section from "../section";
 import Link from "next/link";
 import { Download } from "lucide-react";
-import InlineItemCard from "../ui/inline-item-card";
 
 function About() {
   return (
@@ -15,17 +14,17 @@ function About() {
         <Download size={18} />
         <h2>Download Resume File</h2>
       </Link>
-      <div className="opacity-90 text-center max-w-[420px]">
+      <div className="opacity-90 text-center max-w-105">
         i work as
-        <b> frontend developer </b>
-        and
         <b> product manager </b>
+        and
+        <b> frontend developer </b>
         with multiple startups.
         <br />
         alongside, as
-        <b> graphic designer </b>
+        <b> creativity manager </b>
         and
-        <b> creativity manager </b> i collaborate with brands and communities.
+        <b> graphic designer </b>i collaborate with brands and communities.
       </div>
     </Section>
   );
