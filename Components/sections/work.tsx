@@ -4,18 +4,17 @@ import React from "react";
 import Section from "../section";
 import { WORK_ITEMS } from "@/constants/items";
 import { Link2Icon } from "lucide-react";
-import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
 function Work() {
   return (
     <Section classNameWrapper="flex flex-col gap-4">
       {WORK_ITEMS.map((item, i) => (
-        <CardContainer
+        <div
           key={item.compony}
-          className="bg-white p-6 border border-black/10 rounded-xl"
+          className="bg-white p-6 border border-black/10 rounded-xl hover:translate-y-px duration-300"
         >
-          <CardBody className="w-full">
-            <CardItem className="w-full flex flex-col justify-center items-center gap-2">
+          <div className="w-full">
+            <div className="w-full flex flex-col justify-center items-center gap-2">
               <div className="flex w-full justify-between">
                 <div className="flex items-center gap-2">
                   <Image
@@ -36,19 +35,20 @@ function Work() {
               </div>
               <div className="w-full">
                 <p className="opacity-85">{item.description}</p>
-                <Link
-                  // replace hidden w flex
-                  className="self-start hidden py-1 gap-1 justify-start text-blue-500 items-center text-sm"
-                  target="_blank"
-                  href={item.link.href}
-                >
-                  <Link2Icon size={18} />
-                  {item.link.title}
-                </Link>
+                {item.link && (
+                  <Link
+                    className="flex py-1 gap-1 text-blue-500 text-sm w-fit"
+                    target="_blank"
+                    href={item.link.href}
+                  >
+                    <Link2Icon size={18} />
+                    {item.link.title}
+                  </Link>
+                )}
               </div>
-            </CardItem>
-          </CardBody>
-        </CardContainer>
+            </div>
+          </div>
+        </div>
       ))}
     </Section>
   );
