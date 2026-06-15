@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function DesignsPage() {
   return (
-    <div className="px-5 py-8 mx-auto">
-      <div className="columns-2 gap-4 space-y-4">
+    <div className="px-4 pb-10 pt-4">
+      <div className="md:columns-2 columns-1 gap-4 space-y-4">
         {[...DESIGNS_ITEMS].reverse().map((item) => (
           <div key={item.url} className="break-inside-avoid">
             <Image
