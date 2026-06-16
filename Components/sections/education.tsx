@@ -28,7 +28,8 @@ function Education() {
         </div>
         <div className="w-full">
           <p className="opacity-85">
-            i learned pm and aipm basics with help of industry top mentors
+            learned the basics of PM and AIPM with guidance from top industry
+            mentors
           </p>
           <Link
             className="flex py-1 gap-1 text-blue-500 text-sm w-fit"
