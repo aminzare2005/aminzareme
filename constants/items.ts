@@ -87,13 +87,20 @@ export const WORK_ITEMS = [
     link: { title: "visit vlonefarsi.ir", href: "https://vlonefarsi.ir" },
   },
   {
-    compony: "LearnPOV",
+    compony: "Webha",
     position: "Frontend Developer",
-    description:
-      "social learning network for sharing knowledge and growing together",
-    image: "/images/learnpov.jpg",
-    link: { title: "visit telegram", href: "https://t.me/learnpov" },
+    description: "creator-first next-generation persian blogging platform",
+    image: "/images/webha.jpg",
+    link: { title: "visit news.webha.blog", href: "https://news.webha.blog" },
   },
+  // {
+  //   compony: "LearnPOV",
+  //   position: "Frontend Developer",
+  //   description:
+  //     "social learning network for sharing knowledge and growing together",
+  //   image: "/images/learnpov.jpg",
+  //   link: { title: "visit telegram", href: "https://t.me/learnpov" },
+  // },
 ];
 
 export const PROJECTS_ITEMS = [
