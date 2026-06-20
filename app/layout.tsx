@@ -75,6 +75,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          async
+          src="https://bazeh.vercel.app/script"
+          data-site-id="15068e13-2aee-46d3-8788-499dc2ddd9ce"
+        ></script>
+      </head>
       <body className={`${font.className} antialiased w-full`}>
         <main className="px-2 pt-2 pb-12 md:pb-28 md:pt-14">
           <div className="w-full md:max-w-2xl md:mx-auto">{children}</div>
