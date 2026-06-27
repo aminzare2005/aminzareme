@@ -6,7 +6,7 @@ function Connect() {
   return (
     <Section>
       <div className="flex flex-col items-center gap-3 py-6">
-        <p className="text-3xl md:text-4xl font-bold">Collabrate with me</p>
+        <h2 className="text-3xl md:text-4xl font-bold">Collaborate with me</h2>
         <p className="text-center text-base md:text-xl leading-tight">
           contact me via
           <br />

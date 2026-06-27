@@ -10,9 +10,10 @@ function About() {
         className="px-4 hover:scale-101 transition-transform py-2 bg-linear-to-l from-zinc-700 via-zinc-900 to-zinc-950 text-white items-center inline-flex gap-2 rounded-lg"
         href={"/dl/aminzare-resume.pdf"}
         target="_blank"
+        rel="noopener noreferrer"
       >
         <Download size={18} />
-        <h2>Download Resume File</h2>
+        <span>Download Resume File</span>
       </Link>
       <div className="opacity-90 text-center max-w-105">
         i work as

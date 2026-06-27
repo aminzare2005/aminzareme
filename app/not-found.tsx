@@ -1,11 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
 
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 function NotFound() {
   return (
-    <div className=" min-h-[60vh] flex flex-col justify-center items-center gap-4">
-      <p className="text-9xl font-black">404</p>
-      <p>Page doesn't found</p>
+    <div
+      aria-labelledby="not-found-title"
+      className="min-h-[60vh] flex flex-col justify-center items-center gap-4"
+    >
+      <h1 id="not-found-title" className="text-9xl font-black">
+        404
+      </h1>
+      <p>Page not found</p>
       <div className="flex gap-2">
         <Link
           title="Visit home page"

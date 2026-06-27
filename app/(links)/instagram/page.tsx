@@ -1,4 +1,4 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 export default function page() {
-  redirect("https://instagram.com/cwpslxck");
+  permanentRedirect("https://instagram.com/cwpslxck");
 }

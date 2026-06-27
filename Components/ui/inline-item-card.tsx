@@ -5,6 +5,7 @@ type Props = {
   item: ReactNode;
   size?: "normal" | "sm";
 };
+
 function InlineItemCard({ item, size = "normal" }: Props) {
   return (
     <span

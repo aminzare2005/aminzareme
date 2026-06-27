@@ -24,6 +24,7 @@ function Projects() {
                 alt={item.title}
                 width={320}
                 height={160}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 draggable="false"
                 className="w-full group-hover:scale-103 duration-300 object-cover aspect-video rounded-t-xl"
               />
@@ -50,6 +51,7 @@ function Projects() {
             <Link
               className="self-start py-1 gap-1 flex justify-start text-blue-500 items-center text-sm hover:text-blue-700 transition-colors"
               target="_blank"
+              rel="noopener noreferrer"
               href={item.link.href}
             >
               <Link2Icon size={18} />

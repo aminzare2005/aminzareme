@@ -8,7 +8,7 @@ function Hero() {
     <Section classNameWrapper="flex items-center">
       <div className="w-auto sm:w-4/5">
         <h1 className="text-3xl mb-4 text-start md:text-4xl font-extrabold text-gray-900 dark:text-white">
-          Hey, i'm Amin👋🏻
+          Hey, I&apos;m Amin 👋🏻
         </h1>
         <div className="flex flex-row justify-between items-end md:items-start gap-4">
           <div className="flex flex-wrap sm:w-2/3 justify-start gap-2">
@@ -19,13 +19,12 @@ function Hero() {
           </div>
 
           <div className="relative">
-            {/*  */}
             <div className="relative block sm:hidden">
               <div className="size-28 md:size-24">
                 <Image
                   draggable="false"
                   className="object-cover brightness-90 rounded-2xl md:rounded-3xl from-zinc-200 via-zinc-100 to-zinc-300 bg-linear-to-br"
-                  alt="Avatar Picture"
+                  alt="Portrait of Amin Zare"
                   src={"https://github.com/aminzare2005.png"}
                   fill
                   sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
@@ -41,7 +40,7 @@ function Hero() {
         <Image
           draggable="false"
           className="object-cover brightness-90 h-full w-full rounded-2xl md:rounded-3xl from-zinc-200 via-zinc-100 to-zinc-300 bg-linear-to-br"
-          alt="Avatar Picture"
+          alt="Portrait of Amin Zare"
           height={96}
           width={96}
           src={"https://github.com/aminzare2005.png"}

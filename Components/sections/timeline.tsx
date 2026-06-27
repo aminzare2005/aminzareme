@@ -1,11 +1,8 @@
-'use client'
 import React from "react";
 import Section from "../section";
 import Image from "next/image";
-import { useIsDesktop } from "@/hooks/use-is-desktop";
 
 function Timeline() {
-  const isDesktop = useIsDesktop()
   return (
     <Section>
       <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
@@ -28,8 +25,8 @@ function Timeline() {
             <time className="font-mono italic">2021</time>
             <div className="text-lg font-bold">Coding path</div>
             <p className="leading-tight">
-              During COVID, I started learning code to build an online
-              game server.
+              During COVID, I started learning code to build an online game
+              server.
             </p>
           </div>
           <hr />
@@ -54,7 +51,8 @@ function Timeline() {
             <time className="font-mono italic">2024</time>
             <div className="text-lg font-bold">Time to earn</div>
             <p className="leading-tight">
-              I began learning modern frontend tech like nextjs & tailwind & expo
+              I began learning modern frontend tech like nextjs & tailwind &
+              expo
             </p>
           </div>
           <hr />
@@ -77,23 +75,27 @@ function Timeline() {
         </li>
         <li>
           <hr />
-          {
-            isDesktop && (
-            <div className="timeline-start">
-              <Image src={"/assets/new-year.gif"} alt="New Year Gif" draggable="false" height={40} width={40} className="h-24 w-auto hover:scale-110 duration-300" />
-            </div>
-          )
-        }
+          <div className="timeline-start hidden md:block">
+            <Image
+              src={"/assets/new-year.gif"}
+              alt="New Year Gif"
+              draggable="false"
+              height={40}
+              width={40}
+              loading="lazy"
+              className="h-24 w-auto hover:scale-110 duration-300"
+            />
+          </div>
           <div className="timeline-middle text-2xl">✶</div>
           <div className="timeline-end">
             <time className="font-mono italic">2026</time>
             <div className="text-lg font-bold">A defining year!</div>
-            <p>Launching products, building teams, going all-in on business,
+            <p>
+              Launching products, building teams, going all-in on business,
               <br />
               and maybe youtube videos!
             </p>
           </div>
-          {/* <hr /> */}
         </li>
       </ul>
     </Section>

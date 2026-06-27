@@ -23,7 +23,7 @@ function Section({
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       {title && (
-        <motion.p
+        <motion.h2
           className="font-bold text-2xl pb-1.5"
           initial={{ opacity: 0, x: -10 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -31,7 +31,7 @@ function Section({
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           {title}
-        </motion.p>
+        </motion.h2>
       )}
       <motion.div
         className={cn(classNameWrapper)}

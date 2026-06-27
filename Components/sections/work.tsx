@@ -39,6 +39,7 @@ function Work() {
                   <Link
                     className="flex py-1 gap-1 text-blue-500 text-sm w-fit"
                     target="_blank"
+                    rel="noopener noreferrer"
                     href={item.link.href}
                   >
                     <Link2Icon size={18} />

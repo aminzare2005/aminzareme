@@ -14,6 +14,7 @@ function Gallery() {
             alt={item.title}
             width={300}
             height={300}
+            sizes="(max-width: 768px) 100vw, 50vw"
             loading="lazy"
             className="w-full saturate-25"
           />

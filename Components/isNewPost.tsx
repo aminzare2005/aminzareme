@@ -14,9 +14,9 @@ export function IsNewPost({ pubDate }: PostTitleProps) {
         پست جدید
       </div>
     );
-  } else {
-    return;
   }
+
+  return null;
 }
 
 function checkIfNewPost(pubDate: string): boolean {

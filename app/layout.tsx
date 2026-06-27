@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 import Footer from "@/Components/footer";
 
@@ -22,11 +23,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-    other: {
-      rel: "apple-touch-icon-precomposed",
-      url: "/favicon.ico",
-    },
   },
   metadataBase: new URL("https://aminzare.me"),
   alternates: {
@@ -68,6 +64,32 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: "Amin Zare Portfolio",
+      url: "https://aminzare.me",
+      inLanguage: "en",
+    },
+    {
+      "@type": "Person",
+      name: "Amin Zare",
+      url: "https://aminzare.me",
+      image: "https://github.com/aminzare2005.png",
+      jobTitle: "Frontend Developer",
+      sameAs: [
+        "https://github.com/aminzare2005",
+        "https://linkedin.com/in/aminzare2005",
+        "https://x.com/cwpslxck",
+        "https://instagram.com/cwpslxck",
+        "https://youtube.com/@cwpslxck",
+      ],
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -77,12 +99,18 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <script
-          async
-          src="https://bazeh.vercel.app/script"
-          data-site-id="15068e13-2aee-46d3-8788-499dc2ddd9ce"
-        ></script>
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema),
+          }}
+        />
       </head>
       <body className={`${font.className} antialiased w-full`}>
+        <Script
+          src="https://bazeh.vercel.app/script"
+          data-site-id="15068e13-2aee-46d3-8788-499dc2ddd9ce"
+          strategy="afterInteractive"
+        />
         <main className="px-2 pt-2 pb-12 md:pb-28 md:pt-14">
           <div className="w-full md:max-w-2xl md:mx-auto">{children}</div>
         </main>

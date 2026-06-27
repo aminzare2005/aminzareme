@@ -1,5 +1,3 @@
-import Footer from "@/Components/footer";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -12,7 +10,6 @@ export default function RootLayout({
           {children}
         </div>
       </div>
-      <Footer />
     </>
   );
 }

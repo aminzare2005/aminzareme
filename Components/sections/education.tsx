@@ -12,7 +12,7 @@ function Education() {
           <div className="flex items-center gap-2">
             <Image
               src="/images/be5t.jpg"
-              alt={""}
+              alt="AIPM Touring Bootcamp certificate from be5t.ir"
               width={60}
               height={60}
               draggable="false"
@@ -34,6 +34,7 @@ function Education() {
           <Link
             className="flex py-1 gap-1 text-blue-500 text-sm w-fit"
             target="_blank"
+            rel="noopener noreferrer"
             href={
               "https://be5t.ir/validation/cert?id=aa54c49a-86ea-4863-a500-98998cb23912"
             }

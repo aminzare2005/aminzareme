@@ -12,9 +12,7 @@ function DesignsSection() {
             className="w-full h-full flex justify-center items-center font-black text-2xl md:text-4xl"
           >
             <div className="inline-flex items-center justify-center gap-1 p-4 group-hover:scale-102 duration-700">
-              <span className="group-hover:rotate-90 duration-700 ">
-                ✶
-              </span>{" "}
+              <span className="group-hover:rotate-90 duration-700 ">✶</span>{" "}
               check my designs
             </div>
           </Link>
@@ -25,6 +23,7 @@ function DesignsSection() {
             loading="lazy"
             width={500}
             height={500}
+            sizes="(max-width: 768px) 100vw, 50vw"
             draggable="false"
             src={"/assets/gallery.png"}
             className="w-full object-cover px-2 transition-all duration-700 group-hover:translate-y-[-20%] "
