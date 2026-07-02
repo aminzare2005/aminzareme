@@ -1,47 +1,58 @@
 export const DESIGNS_ITEMS = [
   {
-    title: "Phonecase design for @VLONEFARSI",
+    title: "Phonecase design",
     url: "/designs/1.png",
+    brand: "@VLONEFARSI",
   },
   {
-    title: "Banner design for github project",
+    title: "Banner esign for github project",
     url: "/designs/3.jpg",
+    brand: "Personal",
   },
   {
-    title: "Printable Ad Sticker Design for @VLONEFARSI",
+    title: "Printable Sticker Design",
     url: "/designs/4.png",
+    brand: "@VLONEFARSI",
   },
   {
-    title: "Character Design for Personal Brand",
+    title: "Character Design",
     url: "/designs/5.jpg",
+    brand: "Personal",
   },
   {
-    title: "Hiring Slide Banner for @YXNSTUDIO",
+    title: "Hiring Banner",
     url: "/designs/6.png",
+    brand: "@YXNSTUDIO",
   },
   {
-    title: "Story Banner for FINGER CODER: CODE NEST",
+    title: "Story Banner",
     url: "/designs/7.jpg",
+    brand: "@FingerCoder - CodeNest",
   },
   {
-    title: "Logo design for @YXNSTUDIO",
+    title: "Logo Design",
     url: "/designs/8.png",
+    brand: "@YXNSTUDIO",
   },
   {
-    title: "Avatar Design for @PERSIANGENZ",
+    title: "Logo Design",
     url: "/designs/9.png",
+    brand: "@PERSIANGENZ",
   },
   {
-    title: "Banner of FINGER CODER: PROMPT DESIGN",
+    title: "Prompt Engineering Banner",
     url: "/designs/10.png",
+    brand: "Finger Coder",
   },
   {
-    title: "Banner for ShirazLinux: #ILOVEFREESOFTWARE",
+    title: "#ILOVEFREESOFTWARE Banner",
     url: "/designs/11.png",
+    brand: "ShirazLinux",
   },
   {
-    title: "Logo Design for Personal Brand",
+    title: "Logo Design",
     url: "/designs/12.png",
+    brand: "Personal",
   },
 ];
 
@@ -70,7 +81,7 @@ export const GALLERY_ITEMS = [
 
 export const WORK_ITEMS = [
   {
-    compony: "YXN Studio",
+    company: "YXN Studio",
     position: "Co-Founder",
     description: "digital creative studio with focus on building cool web apps",
     image: "/images/yxn.png",
@@ -80,31 +91,24 @@ export const WORK_ITEMS = [
     },
   },
   {
-    compony: "@vlonefarsi",
+    company: "@vlonefarsi",
     position: "Frontend Developer",
     description: "e-commerce website of vlonefarsi instagram brand",
     image: "/images/vlonefarsi.jpg",
     link: { title: "visit vlonefarsi.ir", href: "https://vlonefarsi.ir" },
   },
   {
-    compony: "Webha",
+    company: "Webha",
     position: "Frontend Developer",
     description: "creator-first next-generation persian blogging platform",
     image: "/images/webha.jpg",
     link: { title: "visit news.webha.blog", href: "https://news.webha.blog" },
   },
-  // {
-  //   compony: "LearnPOV",
-  //   position: "Frontend Developer",
-  //   description:
-  //     "social learning network for sharing knowledge and growing together",
-  //   image: "/images/learnpov.jpg",
-  //   link: { title: "visit telegram", href: "https://t.me/learnpov" },
-  // },
 ];
 
 export const PROJECTS_ITEMS = [
   {
+    slug: "hand-detector",
     title: "hand detector",
     description:
       "self-hosted ai teachable machine that detects your hand in your webcam",
@@ -114,9 +118,11 @@ export const PROJECTS_ITEMS = [
       title: "view github source",
       href: "https://github.com/aminzare2005/hand-detector",
     },
-    items: ["ai", "vite"],
+    github: "https://github.com/aminzare2005/hand-detector",
+    stack: ["ai", "vite"],
   },
   {
+    slug: "to-farsi",
     title: "to-farsi",
     description:
       "simple npm package to convert english digits to farsi digits.",
@@ -126,7 +132,7 @@ export const PROJECTS_ITEMS = [
       title: "visit npmjs.com/to-farsi",
       href: "https://www.npmjs.com/package/to-farsi",
     },
-    items: ["npm", "open-source"],
+    stack: ["npm", "open-source"],
   },
 ];
 
@@ -160,17 +166,6 @@ export const COMMUNITY_ITEMS = [
       title: "instagram",
       href: "https://instagram.com/shirazlinux",
     },
-  },
-];
-
-export const STATUS_ITEMS = [
-  {
-    name: "Github Followers",
-    number: "+200",
-  },
-  {
-    name: "Github Projects",
-    number: "+14",
   },
 ];
 
