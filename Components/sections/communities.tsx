@@ -2,15 +2,19 @@ import React from "react";
 import Section from "../section";
 import { COMMUNITY_ITEMS } from "@/constants/items";
 import Image from "next/image";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 export default function Communities() {
   return (
-    <Section>
+    <Section id="communities">
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {COMMUNITY_ITEMS.map((item, i) => (
-          <div
+        {COMMUNITY_ITEMS.map((item) => (
+          <Link
             key={item.name}
+            href={item.link.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(
               "relative flex flex-col w-full group justify-between items-center border overflow-hidden border-black/10 rounded-xl hover:translate-y-px duration-300",
             )}
@@ -34,7 +38,7 @@ export default function Communities() {
               <b className="text-lg leading-tight">{item.name}</b>
               <p className="opacity-85 leading-tight">{item.role}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </Section>

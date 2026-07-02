@@ -6,7 +6,7 @@ import { Link2Icon } from "lucide-react";
 
 function Education() {
   return (
-    <Section className="grid grid-cols-1" title="Certificates">
+    <Section id="education" className="grid grid-cols-1" title="Certificates">
       <div className="flex flex-col w-full group justify-center items-center gap-2 bg-white p-6 border border-black/10 rounded-xl hover:translate-y-px duration-300">
         <div className="flex w-full justify-between">
           <div className="flex items-center gap-2">

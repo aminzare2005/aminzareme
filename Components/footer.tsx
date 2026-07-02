@@ -1,13 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import {
-  GithubIcon,
-  HouseIcon,
-  ImagesIcon,
-  LinkedinIcon,
-} from "lucide-react";
-import { BsTwitterX } from "react-icons/bs";
+import { GithubIcon, HouseIcon, ImagesIcon, LinkedinIcon } from "lucide-react";
+import { BsInstagram, BsTwitterX } from "react-icons/bs";
 import ReactLenis from "lenis/react";
 
 const menuItems = [
@@ -27,6 +22,12 @@ const menuItems = [
     href: "/github",
     icon: <GithubIcon />,
     label: "GitHub",
+    external: true,
+  },
+  {
+    href: "/instagram",
+    icon: <BsInstagram />,
+    label: "Instagram",
     external: true,
   },
   {
@@ -53,14 +54,14 @@ function Footer() {
           dir="ltr"
           className="bg-white/30 px-6 border text-black max-w-xl text-xl border-black/5 backdrop-blur-xl rounded-full h-14 w-full flex justify-between items-center"
         >
-          {menuItems.map((item, index) => (
+          {menuItems.map((item) => (
             <Link
-              key={index}
+              key={item.label}
               href={item.href}
               target={item.external ? "_blank" : "_self"}
               rel={item.external ? "noopener noreferrer" : undefined}
               aria-label={item.label}
-              className="w-full h-full flex items-center justify-center [&_svg]:size-6"
+              className="w-full h-full flex items-center justify-center [&_svg]:size-5"
             >
               {item.icon}
             </Link>

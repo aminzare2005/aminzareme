@@ -4,7 +4,7 @@ import { DisplayVersion } from "../displayVersion";
 
 function Connect() {
   return (
-    <Section>
+    <Section id="connect">
       <div className="flex flex-col items-center gap-3 py-6">
         <h2 className="text-3xl md:text-4xl font-bold">Collaborate with me</h2>
         <p className="text-center text-base md:text-xl leading-tight">
@@ -19,7 +19,7 @@ function Connect() {
           </a>{" "}
           or
           <br />
-          connect with me on linkedin and x
+          connect with me on x
         </p>
         <div
           dir="ltr"

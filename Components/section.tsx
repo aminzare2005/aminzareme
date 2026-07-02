@@ -6,16 +6,19 @@ import { motion } from "framer-motion";
 function Section({
   children,
   title,
+  id,
   className,
   classNameWrapper,
 }: {
   children: React.ReactNode;
   title?: string;
+  id?: string;
   className?: string;
   classNameWrapper?: string;
 }) {
   return (
     <motion.section
+      id={id}
       className={cn(className)}
       initial={{ opacity: 0, y: 0 }}
       whileInView={{ opacity: 1, y: 0 }}

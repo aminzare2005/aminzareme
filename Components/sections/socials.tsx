@@ -34,7 +34,7 @@ const socials = [
 
 function Socials() {
   return (
-    <Section>
+    <Section id="socials">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {socials.map((item) => (
                 <Link

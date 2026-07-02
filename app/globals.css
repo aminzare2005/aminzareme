@@ -7,12 +7,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 2px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #bfbfbf;
-  border-radius: 10px;
+  width: 0px;
 }
 
 @theme inline {
