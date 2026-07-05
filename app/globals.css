@@ -27,7 +27,7 @@ body {
 }
 
 section {
-  @apply p-5 border-b border-black/10;
+  @apply border-b border-black/10;
 }
 
 a.external-links {
