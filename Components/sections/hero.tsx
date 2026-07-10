@@ -12,14 +12,14 @@ async function Hero() {
     <Section id="hero" className="p-0">
       <div className="overflow-hidden">
         <div className="flex items-center justify-between gap-3 border-b border-black/10 px-4 py-2 text-xs font-mono">
-          <Link
-            href="/projects/payload-blog"
+          <div
+            // href="/projects/payload-blog"
             className="inline-flex animate-pulse min-w-0 items-center gap-2 text-emerald-700 transition-opacity hover:opacity-70"
           >
             <span className="size-1.5 shrink-0 rounded-full bg-emerald-500" />
             <span className="truncate">now building payload-blog</span>
-            <ArrowUpRight className="size-3 shrink-0" />
-          </Link>
+            {/* <ArrowUpRight className="size-3 shrink-0" /> */}
+          </div>
           {OPEN_TO_WORK && (
             <span className="shrink-0 rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-emerald-800">
               available
@@ -27,7 +27,7 @@ async function Hero() {
           )}
         </div>
 
-        <div className="flex flex-col gap-5 p-4 md:flex-row md:items-center md:gap-6 md:p-6">
+        <div className="flex flex-col gap-5 p-4 md:flex-row md:items-center md:gap-6 md:px-6">
           <div className="relative mx-auto size-28 shrink-0 md:mx-0 md:size-32">
             <Image
               draggable="false"
@@ -52,7 +52,7 @@ async function Hero() {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2 border-t border-black/10 px-4 py-3 md:justify-start md:px-6">
+        <div className="flex flex-wrap justify-center gap-2 px-4 pb-3 md:justify-start md:px-6">
           <span className="rounded-lg border border-black/10 bg-black/5 px-2.5 py-1 text-sm">
             <CalculateAge />
           </span>
