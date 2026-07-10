@@ -85,10 +85,6 @@ export const WORK_ITEMS = [
     position: "Co-Founder",
     description: "digital creative studio with focus on building cool web apps",
     image: "/images/yxn.png",
-    link: {
-      title: "visit yxn",
-      href: "https://yxn.aminzare.me",
-    },
   },
   {
     company: "@vlonefarsi",
@@ -139,7 +135,7 @@ export const PROJECTS_ITEMS = [
 export const COMMUNITY_ITEMS = [
   {
     name: "Finger Coder",
-    role: "graphic designer",
+    role: "Graphic Designer",
     logo: "/images/finger-coder.png",
     color: "02c39a",
     link: {
@@ -149,22 +145,12 @@ export const COMMUNITY_ITEMS = [
   },
   {
     name: "Asr Didani (Shiraz)",
-    role: "video editor",
+    role: "Video Editor",
     logo: "/images/asrdidani.png",
     color: "a12eac",
     link: {
       title: "instagram",
       href: "https://instagram.com/asrdidani",
-    },
-  },
-  {
-    name: "Shiraz Linux",
-    role: "graphic designer",
-    logo: "/images/shiraz-linux.png",
-    color: "f1592d",
-    link: {
-      title: "instagram",
-      href: "https://instagram.com/shirazlinux",
     },
   },
 ];
