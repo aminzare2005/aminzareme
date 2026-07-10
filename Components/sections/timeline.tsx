@@ -51,11 +51,9 @@ function Timeline() {
           <div className="timeline-middle text-2xl">✶</div>
           <div className="timeline-end">
             <time className="font-mono italic">2026</time>
-            <div className="text-lg font-bold">A defining year!</div>
+            <div className="text-lg font-bold">JUST BUILD IT</div>
             <p>
-              Launching products, building teams, going all-in on business,
-              <br />
-              and maybe youtube videos!
+              Launching products, building teams, going all-in on business!🦧
             </p>
           </div>
         </li>
