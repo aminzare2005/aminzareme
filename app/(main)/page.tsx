@@ -14,11 +14,11 @@ export default function Home() {
       <Hero />
       <Work />
       <Timeline />
+      <Communities />
       <Status />
       <Education />
       <Projects />
-      <Communities />
-      <Gallery />
+      {/* <Gallery /> */}
       <Connect />
     </>
   );
