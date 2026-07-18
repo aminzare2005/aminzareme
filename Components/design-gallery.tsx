@@ -15,13 +15,21 @@ export default function DesignGallery() {
 
   return (
     <>
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
-        <div>
-          <h1 className="text-2xl font-bold">Design Gallery</h1>
-          <Link href="/" className="text-sm text-blue-500 hover:underline">
-            ← Back to portfolio
-          </Link>
-        </div>
+      <div className="mb-8">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1 text-sm text-gray-500 transition-colors hover:text-gray-900"
+        >
+          ← Back to portfolio
+        </Link>
+        <h1 className="mt-3 text-2xl font-extrabold tracking-tight text-gray-900 md:text-3xl">
+          Design Gallery
+        </h1>
+        <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-600 md:text-base">
+          a collection of things I&apos;ve designed as a part-time graphic
+          designer. banners, logos, stickers & more, made for brands,
+          communities and personal projects.
+        </p>
       </div>
 
       <div className="md:columns-2 columns-1 gap-4 space-y-4">
