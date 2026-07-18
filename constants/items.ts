@@ -103,7 +103,7 @@ export const WORK_ITEMS = [
     position: "Frontend Developer",
     description: "creator-first next-generation persian blogging platform",
     image: "/images/webha.jpg",
-    link: { title: "visit news.webha.blog", href: "https://news.webha.blog" },
+    link: { title: "visit webha.blog", href: "https://webha.blog" },
   },
 ];
 
