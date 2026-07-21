@@ -1,6 +1,7 @@
 import React from "react";
 import Section from "../section";
 import { DisplayVersion } from "../displayVersion";
+import { ResumeDownload } from "../ui/resume-download";
 
 function Connect() {
   return (
@@ -21,6 +22,9 @@ function Connect() {
           <br />
           connect with me on x
         </p>
+
+        <ResumeDownload />
+
         <div
           dir="ltr"
           className="w-full pt-6 text-sm flex gap-1 justify-center items-center"
