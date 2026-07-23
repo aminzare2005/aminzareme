@@ -7,9 +7,9 @@ function Timeline() {
     <Section>
       <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
         <li>
-          <div className="timeline-middle text-2xl">✶</div>
+          <div className="timeline-middle text-lg ">✶</div>
           <div className="timeline-start md:text-end">
-            <time className="font-mono italic">2023</time>
+            <time className="font-mono italic -mt-0.5 block">2023</time>
             <div className="text-lg font-bold">Good but not for me!</div>
             <p className="leading-tight">
               My first income was from Instagram brands that
@@ -20,9 +20,9 @@ function Timeline() {
         </li>
         <li>
           <hr />
-          <div className="timeline-middle text-2xl">✶</div>
+          <div className="timeline-middle text-lg">✶</div>
           <div className="timeline-end">
-            <time className="font-mono italic">2024</time>
+            <time className="font-mono italic -mt-0.5 block">2024</time>
             <div className="text-lg font-bold">Time to earn</div>
             <p className="leading-tight">
               I started learning modern frontend tech like nextjs & tailwind &
@@ -33,9 +33,9 @@ function Timeline() {
         </li>
         <li>
           <hr />
-          <div className="timeline-middle text-2xl">✶</div>
+          <div className="timeline-middle text-lg">✶</div>
           <div className="timeline-start md:text-end">
-            <time className="font-mono italic">2025</time>
+            <time className="font-mono italic -mt-0.5 block">2025</time>
             <div className="text-lg font-bold">Real career starts</div>
             <p className="leading-tight">
               I joined different startups,
@@ -48,9 +48,9 @@ function Timeline() {
           <hr />
         </li>
         <li>
-          <div className="timeline-middle text-2xl">✶</div>
+          <div className="timeline-middle text-lg">✶</div>
           <div className="timeline-end">
-            <time className="font-mono italic">2026</time>
+            <time className="font-mono italic -mt-0.5 block">2026</time>
             <div className="text-lg font-bold">JUST BUILD IT</div>
             <p>
               Launching products, building teams, going all-in on business!🦧

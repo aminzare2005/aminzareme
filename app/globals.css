@@ -39,5 +39,37 @@ a.external-links {
 }
 
 .timeline-vertical li {
-  @apply py-0
+  @apply my-1 py-0;
+}
+
+/* Snap stars to the year line instead of sitting below it */
+.timeline-vertical.timeline-snap-icon > li {
+  --timeline-row-start: 0;
+}
+
+.timeline-vertical.timeline-snap-icon .timeline-start,
+.timeline-vertical.timeline-snap-icon .timeline-end {
+  margin-block: 0;
+  align-self: start;
+}
+
+/* Desktop alternating sides: start sits left of the line */
+@media (min-width: 768px) {
+  .timeline-vertical.timeline-snap-icon .timeline-start {
+    justify-self: flex-end;
+  }
+
+  .timeline-vertical.timeline-snap-icon .timeline-end {
+    justify-self: flex-start;
+  }
+}
+
+/* Mobile compact: everything sits to the right of the line */
+.timeline-vertical.timeline-snap-icon.timeline-compact .timeline-start,
+.timeline-vertical.timeline-snap-icon.timeline-compact .timeline-end {
+  justify-self: flex-start;
+}
+
+.timeline-vertical.timeline-snap-icon .timeline-middle {
+  @apply flex h-[1.25rem] items-center justify-center leading-none;
 }
