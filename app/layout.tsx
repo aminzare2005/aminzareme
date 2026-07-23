@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Footer from "@/Components/footer";
 
@@ -115,6 +116,7 @@ export default function RootLayout({
           <div className="w-full md:max-w-2xl md:mx-auto">{children}</div>
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
