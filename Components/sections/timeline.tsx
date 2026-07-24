@@ -22,19 +22,20 @@ const MILESTONES = [
   {
     year: "2026",
     title: "JUST BUILD IT",
-    description: "Launching products, building teams, going all-in on business.",
+    description:
+      "Launching products, building teams, going all-in on business.",
   },
 ] as const;
 
 function Timeline() {
   return (
     <Section id="path" index="02" label="Path">
-      <ol className="relative ms-2 space-y-7 border-s border-line ps-6">
+      <ol className="relative ms-2 space-y-2 border-s border-line ps-6">
         {MILESTONES.map((milestone, i) => (
           <li key={milestone.year} className="relative">
             <span
               aria-hidden
-              className={`absolute -start-6 top-0 flex size-4 -translate-x-1/2 select-none items-center justify-center bg-surface font-mono text-sm leading-none ${
+              className={`absolute flex -inset-s-6 top-1.25 size-4 -translate-x-1/2 select-none items-center justify-center bg-surface font-mono text-sm leading-none ${
                 i === MILESTONES.length - 1 ? "text-accent" : "text-ink-faint"
               }`}
             >
