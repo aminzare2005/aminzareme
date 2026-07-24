@@ -1,63 +1,57 @@
-import React from "react";
 import Section from "../section";
-import Image from "next/image";
+
+const MILESTONES = [
+  {
+    year: "2023",
+    title: "Good but not for me!",
+    description:
+      "My first income was from Instagram brands that got millions of views.",
+  },
+  {
+    year: "2024",
+    title: "Time to earn",
+    description:
+      "I started learning modern frontend tech like Next.js, Tailwind & Expo.",
+  },
+  {
+    year: "2025",
+    title: "Real career starts",
+    description:
+      "I joined different startups, made connections, bootcamps, and learned PM basics.",
+  },
+  {
+    year: "2026",
+    title: "JUST BUILD IT",
+    description: "Launching products, building teams, going all-in on business.",
+  },
+] as const;
 
 function Timeline() {
   return (
-    <Section>
-      <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-        <li>
-          <div className="timeline-middle text-lg ">✶</div>
-          <div className="timeline-start md:text-end">
-            <time className="font-mono italic -mt-0.5 block">2023</time>
-            <div className="text-lg font-bold">Good but not for me!</div>
-            <p className="leading-tight">
-              My first income was from Instagram brands that
-              got millions of views.
+    <Section id="path" index="02" label="Path">
+      <ol className="relative ms-2 space-y-7 border-s border-line ps-6">
+        {MILESTONES.map((milestone, i) => (
+          <li key={milestone.year} className="relative">
+            <span
+              aria-hidden
+              className={`absolute -start-6 top-0 flex size-4 -translate-x-1/2 select-none items-center justify-center bg-surface font-mono text-sm leading-none ${
+                i === MILESTONES.length - 1 ? "text-accent" : "text-ink-faint"
+              }`}
+            >
+              ✶
+            </span>
+            <time className="font-mono text-xs uppercase tracking-[0.14em] text-ink-faint">
+              {milestone.year}
+            </time>
+            <h3 className="mt-0.5 font-bold tracking-tight">
+              {milestone.title}
+            </h3>
+            <p className="mt-1 max-w-prose text-sm leading-relaxed text-ink-muted">
+              {milestone.description}
             </p>
-          </div>
-          <hr />
-        </li>
-        <li>
-          <hr />
-          <div className="timeline-middle text-lg">✶</div>
-          <div className="timeline-end">
-            <time className="font-mono italic -mt-0.5 block">2024</time>
-            <div className="text-lg font-bold">Time to earn</div>
-            <p className="leading-tight">
-              I started learning modern frontend tech like nextjs & tailwind &
-              expo
-            </p>
-          </div>
-          <hr />
-        </li>
-        <li>
-          <hr />
-          <div className="timeline-middle text-lg">✶</div>
-          <div className="timeline-start md:text-end">
-            <time className="font-mono italic -mt-0.5 block">2025</time>
-            <div className="text-lg font-bold">Real career starts</div>
-            <p className="leading-tight">
-              I joined different startups,
-              <br />
-              made connections, bootcamps,
-              <br />
-              and learned pm basics.
-            </p>
-          </div>
-          <hr />
-        </li>
-        <li>
-          <div className="timeline-middle text-lg">✶</div>
-          <div className="timeline-end">
-            <time className="font-mono italic -mt-0.5 block">2026</time>
-            <div className="text-lg font-bold">JUST BUILD IT</div>
-            <p>
-              Launching products, building teams, going all-in on business!🦧
-            </p>
-          </div>
-        </li>
-      </ul>
+          </li>
+        ))}
+      </ol>
     </Section>
   );
 }

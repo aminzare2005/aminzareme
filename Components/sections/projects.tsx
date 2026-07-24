@@ -1,58 +1,47 @@
-import { PROJECTS_ITEMS } from "@/constants/items";
+import { PROJECTS_ITEMS, type ProjectItem } from "@/constants/items";
 import Section from "../section";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRightIcon, Link2Icon } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-function ProjectCard({
-  item,
-  featured = false,
-}: {
-  item: (typeof PROJECTS_ITEMS)[number];
-  featured?: boolean;
-}) {
+function ProjectCard({ item }: { item: ProjectItem }) {
+  const isInternal = item.link.href.startsWith("/");
+  const Arrow = isInternal ? ArrowRight : ArrowUpRight;
+
   return (
-    <div
+    <Link
+      href={item.link.href}
+      target={isInternal ? undefined : "_blank"}
+      rel={isInternal ? undefined : "noopener noreferrer"}
       className={cn(
-        "flex flex-col w-full group justify-between items-center bg-white border overflow-hidden border-black/10 rounded-xl hover:translate-y-px duration-300 py-3",
-        featured && "md:col-span-1",
+        "group flex flex-col justify-between gap-5 rounded-xl border border-line bg-surface p-4 transition-[border-color,transform] duration-150 hover:border-ink/25 active:scale-[0.985] motion-reduce:active:scale-100",
+        item.featured && "md:col-span-2",
       )}
     >
-      <div className="flex flex-col w-full gap-2">
-        <div className="flex flex-col px-4">
-          <div className="inline-flex w-full justify-start rtl:justify-end mb-1 gap-2 flex-wrap">
-            {featured && (
-              <div className="px-1 font-mono bg-green-200 text-green-900 border-green-950/10 border text-sm rounded-sm">
-                featured
-              </div>
-            )}
-            {item.stack.map((tag) => (
-              <div
-                className="px-1 font-mono bg-black/5 border border-black/20 opacity-80 text-sm rounded-sm"
-                key={tag}
-              >
-                {tag}
-              </div>
-            ))}
-          </div>
-          <b className="text-lg">{item.title}</b>
-          <p className="opacity-85 leading-tight">{item.description}</p>
+      <div>
+        <div className="flex items-start justify-between gap-2">
+          <b className="text-[15px] tracking-tight">{item.title}</b>
+          <Arrow className="size-4 shrink-0 text-ink-faint transition-all duration-200 group-hover:text-accent group-hover:translate-x-0.5 motion-reduce:transition-none" />
         </div>
+        <p className="mt-1 text-sm leading-relaxed text-ink-muted">
+          {item.description}
+        </p>
       </div>
 
-      <div className="w-full flex flex-col gap-1 px-4">
-        <Link
-          className="flex py-1 gap-1 text-blue-500 text-sm w-fit"
-          target="_blank"
-          rel="noopener noreferrer"
-          href={item.link.href}
-        >
-          <Link2Icon size={18} />
-          {item.link.title}
-        </Link>
+      <div className="flex flex-wrap items-center gap-1.5 font-mono text-[11px] text-ink-faint">
+        {item.featured && (
+          <span className="rounded-sm border border-accent/30 px-1.5 py-0.5 text-accent">
+            featured
+          </span>
+        )}
+        {item.stack.map((tag) => (
+          <span key={tag} className="rounded-sm border border-line px-1.5 py-0.5">
+            {tag}
+          </span>
+        ))}
+        <span className="ms-auto hidden sm:block">{item.link.title}</span>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -60,8 +49,9 @@ function Projects() {
   return (
     <Section
       id="projects"
-      title="Projects"
-      classNameWrapper="grid grid-cols-1 md:grid-cols-2 gap-4"
+      index="06"
+      label="Projects"
+      classNameWrapper="grid grid-cols-1 md:grid-cols-2 gap-3"
     >
       {PROJECTS_ITEMS.map((item) => (
         <ProjectCard key={item.slug} item={item} />

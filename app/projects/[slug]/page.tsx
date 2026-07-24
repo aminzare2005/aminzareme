@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCaseStudy, getCaseStudySlugs } from "@/constants/case-studies";
-import { Link2Icon } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -25,22 +25,49 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function CaseSection({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="space-y-2">
+      <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-ink-faint">
+        {label}
+      </h2>
+      {children}
+    </div>
+  );
+}
+
 export default async function CaseStudyPage({ params }: Props) {
   const { slug } = await params;
   const study = getCaseStudy(slug);
   if (!study) notFound();
 
   return (
-    <article className="px-4 pb-16 pt-4 space-y-8">
+    <article className="space-y-8 px-5 pb-16 pt-5">
       <header className="space-y-3">
-        <Link href="/" className="text-sm text-blue-500 hover:underline">
-          ← Back to projects
+        <Link
+          href="/#projects"
+          className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint transition-colors hover:text-ink"
+        >
+          <ArrowLeft className="size-3.5" />
+          back to projects
         </Link>
-        <h1 className="text-3xl md:text-4xl font-extrabold">{study.title}</h1>
-        <p className="text-lg opacity-80">{study.subtitle}</p>
-        <div className="flex flex-wrap gap-3 text-sm opacity-70">
+        <h1 className="text-3xl font-extrabold tracking-tighter md:text-4xl">
+          {study.title}
+        </h1>
+        <p className="text-lg leading-relaxed text-ink-muted">
+          {study.subtitle}
+        </p>
+        <div className="flex flex-wrap items-center gap-2.5 font-mono text-xs text-ink-faint">
           <span>{study.role}</span>
-          <span>✶</span>
+          <span aria-hidden className="text-accent">
+            ✶
+          </span>
           <span>{study.timeline}</span>
         </div>
       </header>
@@ -48,7 +75,7 @@ export default async function CaseStudyPage({ params }: Props) {
       {study.images.map((image) => (
         <div
           key={image.src}
-          className="relative w-full aspect-video rounded-xl overflow-hidden border border-black/10"
+          className="relative aspect-video w-full overflow-hidden rounded-xl ring-1 ring-line"
         >
           <Image
             src={image.src}
@@ -61,50 +88,51 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
       ))}
 
-      <div className="space-y-2">
-        <h2 className="text-xl font-bold">Problem</h2>
-        <p className="opacity-85 leading-relaxed">{study.problem}</p>
-      </div>
+      <CaseSection label="Problem">
+        <p className="leading-relaxed text-ink-muted">{study.problem}</p>
+      </CaseSection>
 
-      <div className="space-y-2">
-        <h2 className="text-xl font-bold">Solution</h2>
-        <p className="opacity-85 leading-relaxed">{study.solution}</p>
-      </div>
+      <CaseSection label="Solution">
+        <p className="leading-relaxed text-ink-muted">{study.solution}</p>
+      </CaseSection>
 
-      <div className="space-y-2">
-        <h2 className="text-xl font-bold">Tech stack</h2>
-        <div className="flex flex-wrap gap-2">
+      <CaseSection label="Tech stack">
+        <div className="flex flex-wrap gap-1.5">
           {study.stack.map((tech) => (
             <span
               key={tech}
-              className="px-2 py-1 text-sm font-mono border border-black/15 rounded-md bg-black/5"
+              className="rounded-md border border-line px-2 py-1 font-mono text-xs text-ink-muted"
             >
               {tech}
             </span>
           ))}
         </div>
-      </div>
+      </CaseSection>
 
-      <div className="space-y-2">
-        <h2 className="text-xl font-bold">Outcomes</h2>
-        <ul className="list-disc pl-5 space-y-1 opacity-85">
+      <CaseSection label="Outcomes">
+        <ul className="space-y-1.5">
           {study.outcomes.map((outcome) => (
-            <li key={outcome}>{outcome}</li>
+            <li key={outcome} className="flex gap-2 leading-relaxed text-ink-muted">
+              <span aria-hidden className="mt-0.5 text-accent">
+                ✶
+              </span>
+              {outcome}
+            </li>
           ))}
         </ul>
-      </div>
+      </CaseSection>
 
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-4 border-t border-line pt-6">
         {study.links.map((link) => (
           <Link
             key={link.href}
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-blue-500 hover:underline"
+            className="inline-flex items-center gap-1 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-accent"
           >
-            <Link2Icon size={16} />
             {link.title}
+            <ArrowUpRight className="size-3.5 text-ink-faint" />
           </Link>
         ))}
       </div>

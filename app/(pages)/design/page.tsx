@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function DesignsPage() {
   return (
-    <div className="px-4 pb-10 pt-4">
+    <div className="px-5 pb-10 pt-5">
       <DesignGallery />
     </div>
   );

@@ -1,55 +1,47 @@
 import Image from "next/image";
-import Link from "next/link";
 import Section from "../section";
 import { WORK_ITEMS } from "@/constants/items";
-import { Link2Icon } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 function Work() {
   return (
-    <Section id="work" classNameWrapper="flex flex-col gap-4">
-      {WORK_ITEMS.map((item) => (
-        <div
-          key={item.company}
-          className="bg-white p-4 border border-black/10 rounded-xl hover:translate-y-px duration-300"
-        >
-          <div className="w-full">
-            <div className="w-full flex flex-col justify-center items-center gap-2">
-              <div className="flex w-full justify-between">
-                <div className="flex items-center gap-2">
-                  <Image
-                    src={item.image}
-                    alt={item.company}
-                    width={60}
-                    height={60}
-                    draggable="false"
-                    className="size-10 rounded-lg"
-                  />
-                  <div className="flex flex-col">
-                    <b>{item.position}</b>
-                    <span className="tracking-wider text-sm font-light opacity-85">
-                      {item.company}
-                    </span>
-                  </div>
-                </div>
+    <Section id="work" index="01" label="Work" className="p-0">
+      <ul className="divide-y divide-line">
+        {WORK_ITEMS.map((item) => (
+          <li key={item.company} className="flex gap-3.5 px-5 py-4">
+            <Image
+              src={item.image}
+              alt={item.company}
+              width={60}
+              height={60}
+              draggable="false"
+              className="mt-0.5 size-10 shrink-0 rounded-lg ring-1 ring-line"
+            />
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+                <b className="text-[15px] tracking-tight">{item.position}</b>
+                <span className="font-mono text-xs text-ink-faint">
+                  {item.company}
+                </span>
               </div>
-              <div className="w-full">
-                <p className="opacity-85">{item.description}</p>
-                {item.link && (
-                  <Link
-                    className="flex mt-1 gap-1 text-blue-500 text-sm w-fit"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={item.link.href}
-                  >
-                    <Link2Icon size={18} />
-                    {item.link.title}
-                  </Link>
-                )}
-              </div>
+              <p className="mt-1 text-sm leading-relaxed text-ink-muted">
+                {item.description}
+              </p>
+              {item.link && (
+                <a
+                  className="mt-1.5 inline-flex items-center gap-1 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-accent"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={item.link.href}
+                >
+                  {item.link.title}
+                  <ArrowUpRight className="size-3.5 text-ink-faint" />
+                </a>
+              )}
             </div>
-          </div>
-        </div>
-      ))}
+          </li>
+        ))}
+      </ul>
     </Section>
   );
 }

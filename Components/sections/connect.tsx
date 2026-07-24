@@ -1,36 +1,49 @@
-import React from "react";
 import Section from "../section";
 import { DisplayVersion } from "../displayVersion";
 import { ResumeDownload } from "../ui/resume-download";
 
 function Connect() {
   return (
-    <Section id="connect">
-      <div className="flex flex-col items-center gap-3 py-6">
-        <h2 className="text-3xl md:text-4xl font-bold">Collaborate with me</h2>
-        <p className="text-center text-base md:text-xl leading-tight">
-          contact me via
-          <br />
+    <Section id="connect" index="08" label="Connect">
+      <div className="flex flex-col items-center gap-4 py-6 text-center">
+        <h2 className="max-w-sm text-3xl font-extrabold tracking-tighter md:text-4xl">
+          Let&apos;s build something
+          <span aria-hidden className="ml-2 text-accent">
+            ✶
+          </span>
+        </h2>
+        <p className="text-sm leading-relaxed text-ink-muted md:text-base">
+          reach me at{" "}
           <a
             title="Email me for projects & connection"
-            className="text-blue-500 hover:underline"
+            className="font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-accent"
             href="mailto:hi@aminzare.me"
           >
             hi@aminzare.me
-          </a>{" "}
-          or
+          </a>
           <br />
-          connect with me on x
+          or connect with me on{" "}
+          <a
+            className="font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-accent"
+            href="https://x.com/cwpslxck"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            x
+          </a>
         </p>
 
         <ResumeDownload />
 
         <div
           dir="ltr"
-          className="w-full pt-6 text-sm flex gap-1 justify-center items-center"
+          className="flex w-full items-center justify-center gap-1.5 pt-6 font-mono text-[11px] text-ink-faint"
         >
-          Amin Zare <span>✶</span>
-          <DisplayVersion />
+          Amin Zare
+          <span aria-hidden className="text-accent">
+            ✶
+          </span>
+          v<DisplayVersion />
         </div>
       </div>
     </Section>

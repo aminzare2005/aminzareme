@@ -1,47 +1,39 @@
-import React from "react";
 import Section from "../section";
 import Image from "next/image";
-import Link from "next/link";
-import { Link2Icon } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 function Education() {
   return (
-    <Section id="education" className="grid grid-cols-1" title="Certificates">
-      <div className="flex flex-col w-full group justify-center items-center gap-2 bg-white p-6 border border-black/10 rounded-xl hover:translate-y-px duration-300">
-        <div className="flex w-full justify-between">
-          <div className="flex items-center gap-2">
-            <Image
-              src="/images/be5t.jpg"
-              alt="AIPM Touring Bootcamp certificate from be5t.ir"
-              width={60}
-              height={60}
-              draggable="false"
-              className="size-12 rounded-lg"
-            />
-            <div className="flex flex-col">
-              <b>AIPM</b>
-              <span className="tracking-wider text-sm font-light opacity-85">
-                Touring Bootcamp (be5t.ir)
-              </span>
-            </div>
+    <Section id="education" index="05" label="Certificates" className="p-0">
+      <div className="flex gap-3.5 px-5 py-4">
+        <Image
+          src="/images/be5t.jpg"
+          alt="AIPM Touring Bootcamp certificate from be5t.ir"
+          width={60}
+          height={60}
+          draggable="false"
+          className="mt-0.5 size-10 shrink-0 rounded-lg ring-1 ring-line"
+        />
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+            <b className="text-[15px] tracking-tight">AIPM</b>
+            <span className="font-mono text-xs text-ink-faint">
+              touring bootcamp — be5t.ir
+            </span>
           </div>
-        </div>
-        <div className="w-full">
-          <p className="opacity-85">
+          <p className="mt-1 text-sm leading-relaxed text-ink-muted">
             learned the basics of PM and AIPM with guidance from top industry
             mentors
           </p>
-          <Link
-            className="flex py-1 gap-1 text-blue-500 text-sm w-fit"
+          <a
+            className="mt-1.5 inline-flex items-center gap-1 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-accent"
             target="_blank"
             rel="noopener noreferrer"
-            href={
-              "https://be5t.ir/validation/cert?id=aa54c49a-86ea-4863-a500-98998cb23912"
-            }
+            href="https://be5t.ir/validation/cert?id=aa54c49a-86ea-4863-a500-98998cb23912"
           >
-            <Link2Icon size={18} />
             visit certificate
-          </Link>
+            <ArrowUpRight className="size-3.5 text-ink-faint" />
+          </a>
         </div>
       </div>
     </Section>

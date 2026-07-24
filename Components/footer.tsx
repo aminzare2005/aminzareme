@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { GithubIcon, HouseIcon, ImagesIcon, LinkedinIcon } from "lucide-react";
 import { BsInstagram, BsTwitterX } from "react-icons/bs";
 import ReactLenis from "lenis/react";
+import { cn } from "@/lib/utils";
 
 const menuItems = [
   {
@@ -45,27 +47,43 @@ const menuItems = [
 ];
 
 function Footer() {
+  const pathname = usePathname();
+
   return (
     <footer>
       <ReactLenis root />
-      <div className="w-full px-2 md:px-0 right-0 left-0 py-4 z-50 flex justify-center fixed bottom-0 bg-linear-to-b from-transparent via-white/10 to-white/20">
+      <div className="fixed bottom-0 left-0 right-0 z-50 flex w-full justify-center bg-linear-to-b from-transparent to-paper/60 px-2 py-4 md:px-0">
         <nav
           aria-label="Primary"
           dir="ltr"
-          className="bg-white/30 px-6 border text-black max-w-xl text-xl border-black/5 backdrop-blur-xl rounded-full h-14 w-full flex justify-between items-center"
+          className="flex h-14 w-full max-w-xl items-center justify-between rounded-full border border-line bg-surface/70 px-4 shadow-ink/5 backdrop-blur-xl backdrop-saturate-150"
         >
-          {menuItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              target={item.external ? "_blank" : "_self"}
-              rel={item.external ? "noopener noreferrer" : undefined}
-              aria-label={item.label}
-              className="w-full h-full flex items-center justify-center [&_svg]:size-5"
-            >
-              {item.icon}
-            </Link>
-          ))}
+          {menuItems.map((item) => {
+            const isActive = !item.external && pathname === item.href;
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                target={item.external ? "_blank" : "_self"}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                aria-label={item.label}
+                aria-current={isActive ? "page" : undefined}
+                title={item.label}
+                className={cn(
+                  "relative flex h-full w-full items-center justify-center transition-[color,transform] duration-150 active:scale-90 motion-reduce:active:scale-100 [&_svg]:size-5",
+                  isActive ? "text-ink" : "text-ink-faint hover:text-ink",
+                )}
+              >
+                {item.icon}
+                {isActive && (
+                  <span
+                    aria-hidden
+                    className="absolute bottom-2 size-1 rounded-full bg-accent"
+                  />
+                )}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </footer>
