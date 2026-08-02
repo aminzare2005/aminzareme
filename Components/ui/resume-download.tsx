@@ -13,7 +13,7 @@ export function ResumeDownload() {
       href={RESUME_URL}
       download="Amin-Zare-Resume.pdf"
       title="Download Amin Zare resume (PDF)"
-      className="mt-4 flex w-full max-w-sm items-center gap-3.5 rounded-xl border border-black/10 bg-zinc-50/90 px-4 py-3.5 text-left shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-xl transition-colors duration-150 hover:bg-zinc-100/90 active:bg-zinc-200/60 supports-backdrop-filter:bg-white/65 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 motion-reduce:transition-none"
+      className="mt-4 flex w-full max-w-[15.5rem] items-center gap-3.5 rounded-xl border border-black/10 bg-zinc-50/90 px-4 py-3.5 text-left shadow-[0_1px_2px_rgba(0,0,0,0.04)] backdrop-blur-xl transition-colors duration-150 hover:bg-zinc-100/90 active:bg-zinc-200/60 supports-backdrop-filter:bg-white/65 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 motion-reduce:transition-none"
       whileTap={reduceMotion ? undefined : { scale: 0.97 }}
       transition={
         reduceMotion
@@ -26,10 +26,10 @@ export function ResumeDownload() {
       </span>
       <span className="min-w-0 flex-1">
         <span className="block text-[15px] font-semibold leading-tight tracking-tight text-gray-900">
-          AminZare-Resume.PDF
+          aminzare-resume.pdf
         </span>
         <span className="mt-0.5 block text-xs leading-snug text-gray-500">
-          my cv resume file
+          frontend & product cv
         </span>
       </span>
     </motion.a>
