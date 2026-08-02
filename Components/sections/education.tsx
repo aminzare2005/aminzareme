@@ -4,10 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { Link2Icon } from "lucide-react";
 
+const CERT_URL =
+  "https://be5t.ir/validation/cert?id=aa54c49a-86ea-4863-a500-98998cb23912";
+
 function Education() {
   return (
     <Section id="education" className="grid grid-cols-1" title="Certificates">
-      <div className="flex flex-col w-full group justify-center items-center gap-2 bg-white p-6 border border-black/10 rounded-xl hover:translate-y-px duration-300">
+      <Link
+        href={CERT_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex flex-col w-full group justify-center items-center gap-2 bg-white p-6 border border-black/10 rounded-xl hover:translate-y-px duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+      >
         <div className="flex w-full justify-between">
           <div className="flex items-center gap-2">
             <Image
@@ -31,19 +39,12 @@ function Education() {
             learned the basics of PM and AIPM with guidance from top industry
             mentors
           </p>
-          <Link
-            className="flex py-1 gap-1 text-blue-500 text-sm w-fit"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={
-              "https://be5t.ir/validation/cert?id=aa54c49a-86ea-4863-a500-98998cb23912"
-            }
-          >
+          <span className="flex py-1 gap-1 text-blue-500 text-sm w-fit">
             <Link2Icon size={18} />
             visit certificate
-          </Link>
+          </span>
         </div>
-      </div>
+      </Link>
     </Section>
   );
 }
