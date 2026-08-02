@@ -15,12 +15,12 @@ function Work() {
               width={60}
               height={60}
               draggable="false"
-              className="mt-0.5 size-10 shrink-0 rounded-lg ring-1 ring-line"
+              className="size-10 shrink-0 rounded-lg ring-1 ring-line"
             />
             <div className="min-w-0 flex-1">
-              <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+              <div className="flex flex-col">
                 <b className="text-[15px] tracking-tight">{item.position}</b>
-                <span className="font-mono text-xs text-ink-faint">
+                <span className="font-mono text-sm text-ink-faint">
                   {item.company}
                 </span>
               </div>

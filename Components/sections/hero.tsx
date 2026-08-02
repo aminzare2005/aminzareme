@@ -6,7 +6,7 @@ import { BOOKING_URL, OPEN_TO_WORK } from "@/constants/site";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { LocalTime } from "../ui/local-time";
 
-const TAGS = ["frontend dev", "product manager", "creative"] as const;
+const TAGS = ["digital creator", "frontend developer", "product manager"] as const;
 
 async function Hero() {
   return (
