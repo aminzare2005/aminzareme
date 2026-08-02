@@ -33,8 +33,11 @@ export default async function CaseStudyPage({ params }: Props) {
   return (
     <article className="px-4 pb-16 pt-4 space-y-8">
       <header className="space-y-3">
-        <Link href="/" className="text-sm text-blue-500 hover:underline">
-          ← Back to projects
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1 text-sm text-gray-500 transition-colors hover:text-gray-900"
+        >
+          ← Back to portfolio
         </Link>
         <h1 className="text-3xl md:text-4xl font-extrabold">{study.title}</h1>
         <p className="text-lg opacity-80">{study.subtitle}</p>
@@ -48,13 +51,17 @@ export default async function CaseStudyPage({ params }: Props) {
       {study.images.map((image) => (
         <div
           key={image.src}
-          className="relative w-full aspect-video rounded-xl overflow-hidden border border-black/10"
+          className={`relative w-full aspect-video rounded-xl overflow-hidden border border-black/10 ${
+            image.fit === "contain" ? "bg-black" : ""
+          }`}
         >
           <Image
             src={image.src}
             alt={image.alt}
             fill
-            className="object-cover"
+            className={
+              image.fit === "contain" ? "object-contain" : "object-cover"
+            }
             sizes="(max-width: 768px) 100vw, 672px"
             priority
           />
@@ -75,12 +82,12 @@ export default async function CaseStudyPage({ params }: Props) {
         <h2 className="text-xl font-bold">Tech stack</h2>
         <div className="flex flex-wrap gap-2">
           {study.stack.map((tech) => (
-            <span
-              key={tech}
-              className="px-2 py-1 text-sm font-mono border border-black/15 rounded-md bg-black/5"
-            >
-              {tech}
-            </span>
+            <div
+            key={tech}
+            className="rounded-lg border border-black/10 bg-black/5 px-2.5 py-1 text-sm text-gray-800"
+          >
+            {tech}
+          </div>
           ))}
         </div>
       </div>
@@ -94,16 +101,16 @@ export default async function CaseStudyPage({ params }: Props) {
         </ul>
       </div>
 
-      <div className="flex flex-wrap gap-4">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
         {study.links.map((link) => (
           <Link
             key={link.href}
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-blue-500 hover:underline"
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-black/10 bg-black/5 px-4 py-3 text-sm font-bold text-gray-900 transition-colors duration-200 hover:bg-black/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
           >
-            <Link2Icon size={16} />
+            <Link2Icon size={16} className="opacity-50" />
             {link.title}
           </Link>
         ))}

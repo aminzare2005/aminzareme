@@ -13,14 +13,14 @@ async function Hero() {
       <div className="overflow-hidden">
         {/* Status — secondary context, not competing with identity */}
         <Link
-          href={"/projects/payload-blog"}
+          href={"/projects/selka"}
           className="flex items-center gap-2 border-b border-black/10 px-4 py-2.5 font-mono text-xs text-emerald-700 md:px-6"
         >
           <span
             className="size-1.5 shrink-0 animate-pulse rounded-full bg-emerald-500"
             aria-hidden
           />
-          <span className="truncate">now building payload-blog</span>
+          <span className="truncate">now building selka</span>
         </Link>
 
         {/* Identity — one composition: face, name, role */}
@@ -49,7 +49,7 @@ async function Hero() {
           </div>
 
           <ul
-            className="flex flex-wrap justify-center gap-2"
+            className="mx-auto flex max-w-[17rem] flex-wrap justify-center gap-2 sm:max-w-none"
             aria-label="Roles"
           >
             <li className="rounded-lg border border-black/10 bg-black/5 px-2.5 py-1 text-sm text-gray-800">
