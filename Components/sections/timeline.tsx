@@ -53,7 +53,7 @@ function Timeline() {
             <time className="font-mono italic -mt-0.5 block">2026</time>
             <div className="text-lg font-bold">JUST BUILD IT</div>
             <p>
-              Launching products, building teams, going all-in on business!🦧
+              Launching products, building teams, going all-in on business!
             </p>
           </div>
         </li>

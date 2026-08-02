@@ -48,11 +48,11 @@ function Footer() {
   return (
     <footer>
       <ReactLenis root />
-      <div className="w-full px-2 md:px-0 right-0 left-0 py-4 z-50 flex justify-center fixed bottom-0 bg-linear-to-b from-transparent via-white/10 to-white/20">
+      <div className="w-full px-2 md:px-0 right-0 left-0 py-4 z-50 flex justify-center fixed bottom-0 bg-linear-to-b from-transparent via-white/40 to-white/70">
         <nav
           aria-label="Primary"
           dir="ltr"
-          className="bg-white/30 px-6 border text-black max-w-xl text-xl border-black/5 backdrop-blur-xl rounded-full h-14 w-full flex justify-between items-center"
+          className="bg-white/55 px-6 border text-black max-w-xl text-xl border-black/10 backdrop-blur-xl rounded-full h-14 w-full flex justify-between items-center"
         >
           {menuItems.map((item) => (
             <Link

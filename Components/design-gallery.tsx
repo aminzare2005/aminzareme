@@ -26,9 +26,8 @@ export default function DesignGallery() {
           Design Gallery
         </h1>
         <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-600 md:text-base">
-          a collection of things I&apos;ve designed as a part-time graphic
-          designer. banners, logos, stickers & more, made for brands,
-          communities and personal projects.
+          banners, logos & designs i built for streetwear brands, tech
+          communities, and whatever I'm cooking next.
         </p>
       </div>
 
