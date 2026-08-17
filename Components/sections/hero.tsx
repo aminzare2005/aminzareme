@@ -5,7 +5,7 @@ import Link from "next/link";
 import { BOOKING_URL, OPEN_TO_WORK } from "@/constants/site";
 import { ArrowUpRight } from "lucide-react";
 
-const TAGS = ["frontend dev", "product manager", "creative"] as const;
+const TAGS = ["product manager", "creative", "frontend dev"] as const;
 
 async function Hero() {
   return (
@@ -13,14 +13,15 @@ async function Hero() {
       <div className="overflow-hidden">
         {/* Status — secondary context, not competing with identity */}
         <Link
-          href={"/projects/selka"}
+          href={"#connect"}
+          draggable="false"
           className="flex items-center gap-2 border-b border-black/10 px-4 py-2.5 font-mono text-xs text-emerald-700 md:px-6"
         >
           <span
             className="size-1.5 shrink-0 animate-pulse rounded-full bg-emerald-500"
             aria-hidden
           />
-          <span className="truncate">now building selka</span>
+          <span className="truncate">OPEN TO WORK & COLLABORATE</span>
         </Link>
 
         {/* Identity — one composition: face, name, role */}
@@ -43,8 +44,9 @@ async function Hero() {
               Hey, I&apos;m Amin 👋🏻
             </h1>
             <p className="mt-2 text-sm leading-relaxed text-gray-600 md:text-base">
-              digital creator & frontend developer building cool products with
-              ai
+              building cool products with ai
+              <br />
+              trying to connect tech industry to creative industry
             </p>
           </div>
 
@@ -69,11 +71,12 @@ async function Hero() {
         {/* Actions — clear primary vs secondary hierarchy */}
         <div className="flex flex-col gap-2 px-4 md:px-6 pb-5">
           {OPEN_TO_WORK && (
-            <a
+            <Link
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block min-h-11 cursor-pointer rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3.5 text-left transition-colors duration-200 hover:border-emerald-300 hover:bg-emerald-100/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+              draggable="false"
+              className="group block min-h-11 cursor-pointer rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3.5 text-left transition-all duration-200 hover:scale-[1.008] active:scale-[0.99] hover:border-emerald-300 hover:bg-emerald-100/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
             >
               <span className="block font-mono text-[10px] font-medium uppercase tracking-widest text-emerald-700">
                 available
@@ -83,13 +86,14 @@ async function Hero() {
               </span>
               <span className="mt-1 inline-flex items-center gap-1 text-sm font-medium text-emerald-800">
                 Book a Meeting
-                <ArrowUpRight className="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="size-3.5" />
               </span>
-            </a>
+            </Link>
           )}
           <Link
             href="#projects"
-            className="flex min-h-11 cursor-pointer items-center justify-between gap-2 rounded-xl px-4 py-3 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+            draggable="false"
+            className="flex min-h-11 cursor-pointer items-center justify-between gap-2 rounded-xl px-4 py-3 text-sm font-medium text-gray-800 transition-all duration-200 hover:bg-black/5 hover:scale-[1.008] active:scale-[0.99]"
           >
             See my projects
             <ArrowUpRight className="size-4 opacity-40" />

@@ -27,34 +27,36 @@ function Connect() {
             Collaborate
           </h2>
           <p className="text-sm md:text-base text-gray-600">
-            say hi — projects, ideas, collabs
+            feel free to say hi - projects, ideas, collabs
           </p>
         </div>
 
         <div className="flex w-full max-w-sm flex-col gap-2">
-          <a
+          <Link
+            draggable="false"
             href={`mailto:${EMAIL}`}
             title="Email me for projects & connection"
-            className="group flex min-h-12 items-center justify-between gap-2 rounded-xl border border-black bg-black px-4 py-3.5 text-left text-white transition-colors duration-150 hover:bg-neutral-900 active:bg-neutral-950 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            className="group flex min-h-12 items-center justify-between gap-2 rounded-xl border border-black bg-black px-4 py-3.5 text-left text-white transition-all duration-150 hover:bg-neutral-900 hover:scale-[1.008] active:bg-neutral-950 active:scale-[0.99]"
           >
             <span className="inline-flex items-center gap-2.5">
               <Mail className="size-4 opacity-70" aria-hidden />
               <span className="text-sm font-bold">{EMAIL}</span>
             </span>
-            <ArrowUpRight className="size-4 opacity-50 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
+            <ArrowUpRight className="size-4 opacity-50" />
+          </Link>
 
           <Link
             href="/x"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex min-h-12 items-center justify-between gap-2 rounded-xl border border-black/10 bg-white px-4 py-3.5 text-left text-gray-900 transition-colors duration-150 hover:bg-black/5 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+            draggable="false"
+            className="group flex min-h-12 items-center justify-between gap-2 rounded-xl border border-black/10 bg-white px-4 py-3.5 text-left text-gray-900 transition-all duration-150 hover:bg-black/5 hover:scale-[1.008] active:scale-[0.99]"
           >
             <span className="inline-flex items-center gap-2.5">
               <BsTwitterX className="size-3.5 opacity-70" aria-hidden />
               <span className="text-sm font-bold">connect on X</span>
             </span>
-            <ArrowUpRight className="size-4 opacity-40 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="size-4 opacity-40" />
           </Link>
 
           {SHOW_RESUME_DOWNLOAD && (

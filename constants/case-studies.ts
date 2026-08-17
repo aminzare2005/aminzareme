@@ -50,7 +50,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
     links: [
-      { title: "Telegram", href: "https://t.me/SelkaPro" },
+      // { title: "Telegram", href: "https://t.me/SelkaPro" },
     ],
   },
   {

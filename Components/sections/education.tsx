@@ -13,6 +13,7 @@ function Education() {
       <Link
         href={CERT_URL}
         target="_blank"
+        draggable="false"
         rel="noopener noreferrer"
         className="flex flex-col w-full group justify-center items-center gap-2 bg-white p-6 border border-black/10 rounded-xl hover:translate-y-px duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
       >

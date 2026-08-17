@@ -10,12 +10,13 @@ function CommunityCard({ item }: { item: (typeof COMMUNITY_ITEMS)[number] }) {
     <Link
       href={item.link.href}
       target="_blank"
+      draggable="false"
       rel="noopener noreferrer"
       style={{
-        background: `linear-gradient(160deg, #${item.color}10 0%, #ffffff 70%)`,
+        background: `linear-gradient(160deg, #${item.color}20 0%, #ffffff 70%)`,
       }}
       className={cn(
-        "flex flex-col gap-3 overflow-hidden rounded-xl border border-black/10 p-4 hover:translate-y-px duration-300 md:p-5",
+        "flex flex-col gap-3 overflow-hidden p-4 border-b sm:border-b-0 sm:border-r border-black/5 last:border-0 md:p-5",
       )}
     >
       <div className="flex w-full items-center gap-3">
@@ -43,7 +44,8 @@ export default function Communities() {
   return (
     <Section
       id="communities"
-      classNameWrapper="grid grid-cols-1 gap-4 sm:grid-cols-2"
+      className="p-0"
+      classNameWrapper="grid grid-cols-1 sm:grid-cols-2"
     >
       {COMMUNITY_ITEMS.map((item) => (
         <CommunityCard key={item.name} item={item} />

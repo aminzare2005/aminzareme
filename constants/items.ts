@@ -61,29 +61,6 @@ export const DESIGNS_ITEMS = [
   },
 ];
 
-export const GALLERY_ITEMS = [
-  {
-    title: "ShirazLinux & ShirazTux Gathering",
-    url: "/gallery/1.jpg",
-  },
-  {
-    title: "Last ShirazLinux Gathering in 1404",
-    url: "/gallery/5.jpg",
-  },
-  {
-    title: "Touring bootcamp (AIPM) Day 1",
-    url: "/gallery/2.jpg",
-  },
-  {
-    title: "Long Meeting Sessions in War Holidays",
-    url: "/gallery/6.jpg",
-  },
-  {
-    title: "Mins Before vlonefarsi.ir Production Release",
-    url: "/gallery/3.jpg",
-  },
-];
-
 export const WORK_ITEMS = [
   {
     company: "YXN Studio",
@@ -91,13 +68,13 @@ export const WORK_ITEMS = [
     description: "digital creative studio with focus on building cool web apps",
     image: "/images/yxn.png",
   },
-  {
-    company: "Webha",
-    position: "Frontend Developer",
-    description: "creator-first next-generation persian blogging platform",
-    image: "/images/webha.jpg",
-    link: { title: "visit webha.blog", href: "https://webha.blog" },
-  },
+  // {
+  //   company: "Webha",
+  //   position: "Frontend Developer",
+  //   description: "creator-first next-generation persian blogging platform",
+  //   image: "/images/webha.jpg",
+  //   link: { title: "visit webha.blog", href: "https://webha.blog" },
+  // },
 ];
 
 export const PROJECTS_ITEMS = [
@@ -123,6 +100,42 @@ export const PROJECTS_ITEMS = [
       href: "/projects/vlonefarsi",
     },
     stack: ["nextjs", "ecommerce"],
+  },
+];
+
+export const DEMOES_ITEMS = [
+  {
+    slug: "mwt",
+    title: "Meridian Welltech",
+    description: "engineering-led oilfield services, from spud to production",
+    image: "/demoes/mwt.png",
+    link: {
+      title: "view demo website",
+      href: "https://demo.aminzare.me/mwt",
+    },
+    stack: ["landing", "petroleum industry"],
+  },
+  {
+    slug: "eclate",
+    title: "Eclate Paris",
+    description: "premium skincare manufacturing company after-sales services",
+    image: "/demoes/eclate.png",
+    link: {
+      title: "view demo website",
+      href: "https://demo.aminzare.me/eclate",
+    },
+    stack: ["landing", "beauty industry"],
+  },
+  {
+    slug: "aftabtech",
+    title: "AftabTech Solars",
+    description: "iranian solar systems importer and reseller",
+    image: "/demoes/aftabtech.png",
+    link: {
+      title: "view demo website",
+      href: "https://demo.aminzare.me/aftabtech",
+    },
+    stack: ["landing", "clean energy"],
   },
 ];
 

@@ -35,6 +35,7 @@ export default async function CaseStudyPage({ params }: Props) {
       <header className="space-y-3">
         <Link
           href="/"
+          draggable="false"
           className="inline-flex items-center gap-1 text-sm text-gray-500 transition-colors hover:text-gray-900"
         >
           ← Back to portfolio
@@ -59,6 +60,7 @@ export default async function CaseStudyPage({ params }: Props) {
             src={image.src}
             alt={image.alt}
             fill
+            draggable="false"
             className={
               image.fit === "contain" ? "object-contain" : "object-cover"
             }
@@ -83,11 +85,11 @@ export default async function CaseStudyPage({ params }: Props) {
         <div className="flex flex-wrap gap-2">
           {study.stack.map((tech) => (
             <div
-            key={tech}
-            className="rounded-lg border border-black/10 bg-black/5 px-2.5 py-1 text-sm text-gray-800"
-          >
-            {tech}
-          </div>
+              key={tech}
+              className="rounded-lg border border-black/10 bg-black/5 px-2.5 py-1 text-sm text-gray-800"
+            >
+              {tech}
+            </div>
           ))}
         </div>
       </div>
@@ -101,12 +103,13 @@ export default async function CaseStudyPage({ params }: Props) {
         </ul>
       </div>
 
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+      <div className="flex flex-col justify-center gap-3 max-w-xl mx-auto">
         {study.links.map((link) => (
           <Link
             key={link.href}
             href={link.href}
             target="_blank"
+            draggable="false"
             rel="noopener noreferrer"
             className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-black/10 bg-black/5 px-4 py-3 text-sm font-bold text-gray-900 transition-colors duration-200 hover:bg-black/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
           >

@@ -18,6 +18,7 @@ export default function DesignGallery() {
       <div className="mb-8">
         <Link
           href="/"
+          draggable="false"
           className="inline-flex items-center gap-1 text-sm text-gray-500 transition-colors hover:text-gray-900"
         >
           ← Back to portfolio

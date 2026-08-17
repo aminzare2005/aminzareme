@@ -55,6 +55,7 @@ function WorkCard({ item }: { item: (typeof WORK_ITEMS)[number] }) {
       href={item.link.href}
       target="_blank"
       rel="noopener noreferrer"
+      draggable="false"
       className={className}
     >
       {content}
