@@ -1,15 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 import Section from "../section";
 import { WORK_ITEMS } from "@/constants/items";
-import { Link2Icon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 function WorkCard({ item }: { item: (typeof WORK_ITEMS)[number] }) {
   const className = cn(
     "bg-white p-4 border border-black/10 rounded-xl hover:translate-y-px duration-300 block",
-    item.link &&
-      "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900",
   );
 
   const content = (
@@ -35,32 +31,11 @@ function WorkCard({ item }: { item: (typeof WORK_ITEMS)[number] }) {
         </div>
         <div className="w-full">
           <p className="opacity-85">{item.description}</p>
-          {item.link && (
-            <span className="flex mt-1 gap-1 text-blue-500 text-sm w-fit">
-              <Link2Icon size={18} />
-              {item.link.title}
-            </span>
-          )}
         </div>
       </div>
     </div>
   );
-
-  if (!item.link) {
-    return <div className={className}>{content}</div>;
-  }
-
-  return (
-    <Link
-      href={item.link.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      draggable="false"
-      className={className}
-    >
-      {content}
-    </Link>
-  );
+  return <div className={className}>{content}</div>;
 }
 
 function Work() {
