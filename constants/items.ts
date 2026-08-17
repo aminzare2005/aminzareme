@@ -68,20 +68,13 @@ export const WORK_ITEMS = [
     description: "digital creative studio with focus on building cool web apps",
     image: "/images/yxn.png",
   },
-  // {
-  //   company: "Webha",
-  //   position: "Frontend Developer",
-  //   description: "creator-first next-generation persian blogging platform",
-  //   image: "/images/webha.jpg",
-  // },
 ];
 
 export const PROJECTS_ITEMS = [
   {
     slug: "selka",
-    title: "selka",
-    description:
-      "persian storefront builder for cool shops and gen z brands — themes, products, payments, share /@username",
+    title: "Selka",
+    description: "iranian shop builder for genz brands",
     image: "/images/selka.png",
     link: {
       title: "view case study",
@@ -92,13 +85,35 @@ export const PROJECTS_ITEMS = [
   {
     slug: "vlonefarsi",
     title: "vlonefarsi",
-    description: "e-commerce website of vlonefarsi instagram brand",
+    description: "ecommerce website of vlonefarsi",
     image: "/images/vlonefarsi.jpg",
     link: {
       title: "view case study",
       href: "/projects/vlonefarsi",
     },
     stack: ["nextjs", "ecommerce"],
+  },
+  {
+    slug: "learnpov",
+    title: "LearnPOV",
+    description: "text base social learning network",
+    image: "/images/vlonefarsi.jpg",
+    link: {
+      title: "view telegram channel",
+      href: "https://t.me/learnpov",
+    },
+    stack: ["nextjs", "shadcn"],
+  },
+  {
+    slug: "webha",
+    title: "Webha",
+    description: "next-generation of persian blogging",
+    image: "/images/vlonefarsi.jpg",
+    link: {
+      title: "view webha.blog",
+      href: "https://webha.blog/",
+    },
+    stack: ["nextjs"],
   },
 ];
 
