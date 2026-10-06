@@ -1,63 +1,14 @@
+export const GALLERY_ITEMS = [
+  {
+    url: "",
+    title: "",
+  },
+];
 export const DESIGNS_ITEMS = [
   {
-    title: "Phonecase design",
-    url: "/designs/1.png",
-    brand: "VLONEFARSI",
-  },
-  {
-    title: "Banner Design for Github Project",
-    url: "/designs/3.jpg",
-    brand: "Personal",
-  },
-  {
-    title: "Printable Sticker Design",
-    url: "/designs/4.png",
-    brand: "VLONEFARSI",
-  },
-  {
-    title: "Character Design",
-    url: "/designs/5.jpg",
-    brand: "Personal",
-  },
-  {
-    title: "Hiring Banner",
-    url: "/designs/6.png",
-    brand: "YXN Studio",
-  },
-  {
-    title: "CodeNest Gathering Banner",
-    url: "/designs/7.jpg",
-    brand: "Finger Coder",
-  },
-  {
-    title: "Logo Design",
-    url: "/designs/8.png",
-    brand: "YXN Studio",
-  },
-  {
-    title: "Prompt Engineering Gathering Banner",
-    url: "/designs/10.png",
-    brand: "Finger Coder",
-  },
-  {
-    title: "#ILOVEFREESOFTWARE Banner",
-    url: "/designs/11.png",
-    brand: "ShirazLinux",
-  },
-  {
-    title: "Logo Design",
-    url: "/designs/12.png",
-    brand: "Personal",
-  },
-  {
-    title: "Claude Code Gathering Banner",
-    url: "/designs/13.png",
-    brand: "Finger Coder",
-  },
-  {
-    title: "Reel Banner",
-    url: "/designs/14.png",
-    brand: "Finger Coder",
+    title: "",
+    url: "",
+    brand: "",
   },
 ];
 
