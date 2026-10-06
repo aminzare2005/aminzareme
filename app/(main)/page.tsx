@@ -6,7 +6,6 @@ import Education from "@/Components/sections/education";
 import Timeline from "@/Components/sections/timeline";
 import Communities from "@/Components/sections/communities";
 import Connect from "@/Components/sections/connect";
-import Gallery from "@/Components/sections/gallery";
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
       <Education />
       <Communities />
       <Projects />
-      <Gallery />
       <Timeline />
       <Connect />
     </>

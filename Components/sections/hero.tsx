@@ -95,7 +95,7 @@ async function Hero() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col gap-1 rounded-xl bg-accent/10 border border-accent/10 px-4 py-3 transition-[transform,opacity] duration-150 hover:opacity-90 active:scale-[0.985] motion-reduce:active:scale-100"
+              className="group flex flex-col gap-1 rounded-xl bg-accent/10 hover:bg-accent/15 border border-accent/10 px-4 py-3 card-interactive"
             >
               <p className="text-sm font-semibold">Open to Collaboration</p>
               <p className="text-xs inline-flex gap-0.5">
@@ -106,7 +106,7 @@ async function Hero() {
           )}
           <Link
             href="#projects"
-            className="group flex min-h-12 items-center justify-between gap-2 rounded-xl border border-line px-4 py-3 text-sm font-medium text-ink transition-colors duration-150 hover:bg-ink/5 active:scale-[0.985] motion-reduce:active:scale-100"
+            className="group hover:bg-zinc-100 flex min-h-12 items-center justify-between gap-2 rounded-xl border border-line px-4 py-3 text-sm font-medium text-ink card-interactive"
           >
             See my projects
             <ArrowDown className="size-4 text-ink-faint" />

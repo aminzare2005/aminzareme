@@ -21,7 +21,7 @@ function ProjectCard({ item }: { item: ProjectItem }) {
       <div>
         <div className="flex items-start justify-between gap-2">
           <b className="text-[15px] tracking-tight">{item.title}</b>
-          <Arrow className="size-4 shrink-0 text-ink-faint transition-all duration-200 group-hover:text-accent group-hover:translate-x-0.5 motion-reduce:transition-none" />
+          <Arrow className="size-4 shrink-0 text-ink-faint" />
         </div>
         <p className="mt-1 text-sm leading-relaxed text-ink-muted">
           {item.description}

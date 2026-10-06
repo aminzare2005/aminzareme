@@ -15,14 +15,14 @@ export default function Communities() {
               rel="noopener noreferrer"
               className="group relative flex h-full items-center gap-2 overflow-hidden px-5 py-4 transition-[transform] duration-150 active:scale-[0.99] motion-reduce:active:scale-100"
               style={{
-                background: `linear-gradient(to right, #${item.color}14, #${item.color}05)`,
+                background: `linear-gradient(to right, #${item.color}10, #${item.color}05)`,
               }}
             >
               <span
                 aria-hidden
                 className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 motion-reduce:transition-none"
                 style={{
-                  background: `linear-gradient(to right, #${item.color}2e, #${item.color}12)`,
+                  background: `linear-gradient(to right, #${item.color}05, #${item.color}12)`,
                 }}
               />
               <Image
@@ -41,7 +41,7 @@ export default function Communities() {
                   {item.role}
                 </span>
               </div>
-              <ArrowUpRight className="relative size-4 shrink-0 text-ink-faint transition-colors duration-200 group-hover:text-accent" />
+              <ArrowUpRight className="relative size-4 shrink-0 text-ink-faint transition-colors duration-200" />
             </a>
           </li>
         ))}

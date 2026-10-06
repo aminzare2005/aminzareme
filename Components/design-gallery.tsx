@@ -68,7 +68,7 @@ export default function DesignGallery() {
               draggable={false}
               loading="lazy"
             />
-            <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <div className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black/80 via-black/20 to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               <p className="text-sm font-semibold text-white">{item.title}</p>
               <p className="font-mono text-[11px] text-white/70">
                 {item.brand}

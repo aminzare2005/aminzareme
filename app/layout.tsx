@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Footer from "@/Components/footer";
 
-const font = localFont({
-  src: "../public/assets/fonts/Inter.woff2",
+const font = Inter({
   display: "swap",
 });
 
