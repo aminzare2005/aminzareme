@@ -13,12 +13,12 @@ export default function Home() {
     <>
       <Hero />
       <Work />
-      <Timeline />
-      <Communities />
       <Status />
       <Education />
+      <Communities />
       <Projects />
       <Gallery />
+      <Timeline />
       <Connect />
     </>
   );

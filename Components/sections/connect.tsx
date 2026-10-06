@@ -17,7 +17,7 @@ function Connect() {
             reach me at{" "}
             <a
               title="Email me for projects & connection"
-              className="font-medium text-ink transition-colors hover:text-accent"
+              className="link-styling"
               href="mailto:hi@aminzare.me"
             >
               hi@aminzare.me
@@ -25,8 +25,6 @@ function Connect() {
             or on x
           </p>
         </div>
-
-        <ResumeDownload />
 
         <div
           dir="ltr"

@@ -5,16 +5,16 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 function ProjectCard({ item }: { item: ProjectItem }) {
-  const isInternal = item.link.href.startsWith("/");
+  const isInternal = item.link.startsWith("/");
   const Arrow = isInternal ? ArrowRight : ArrowUpRight;
 
   return (
     <Link
-      href={item.link.href}
+      href={item.link}
       target={isInternal ? undefined : "_blank"}
       rel={isInternal ? undefined : "noopener noreferrer"}
       className={cn(
-        "group flex flex-col justify-between gap-5 rounded-xl border border-line bg-surface p-4 transition-[border-color,transform] duration-150 hover:border-ink/25 active:scale-[0.985] motion-reduce:active:scale-100",
+        "group flex flex-col justify-between gap-1 rounded-xl border border-line bg-surface p-4 card-interactive",
         item.featured && "md:col-span-2",
       )}
     >
@@ -35,11 +35,13 @@ function ProjectCard({ item }: { item: ProjectItem }) {
           </span>
         )}
         {item.stack.map((tag) => (
-          <span key={tag} className="rounded-sm border border-line px-1.5 py-0.5">
+          <span
+            key={tag}
+            className="rounded-sm border border-line px-1.5 py-0.5"
+          >
             {tag}
           </span>
         ))}
-        <span className="ms-auto hidden sm:block">{item.link.title}</span>
       </div>
     </Link>
   );

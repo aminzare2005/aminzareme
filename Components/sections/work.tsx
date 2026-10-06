@@ -27,17 +27,6 @@ function Work() {
               <p className="mt-1 text-sm leading-relaxed text-ink-muted">
                 {item.description}
               </p>
-              {item.link && (
-                <a
-                  className="mt-1.5 inline-flex items-center gap-1 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-accent"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={item.link.href}
-                >
-                  {item.link.title}
-                  <ArrowUpRight className="size-3.5 text-ink-faint" />
-                </a>
-              )}
             </div>
           </li>
         ))}

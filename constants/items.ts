@@ -91,27 +91,13 @@ export const WORK_ITEMS = [
     description: "digital creative studio with focus on building cool web apps",
     image: "/images/yxn.png",
   },
-  {
-    company: "@vlonefarsi",
-    position: "Frontend Developer",
-    description: "e-commerce website of vlonefarsi instagram brand",
-    image: "/images/vlonefarsi.jpg",
-    link: { title: "visit vlonefarsi.ir", href: "https://vlonefarsi.ir" },
-  },
-  {
-    company: "Webha",
-    position: "Frontend Developer",
-    description: "creator-first next-generation persian blogging platform",
-    image: "/images/webha.jpg",
-    link: { title: "visit webha.blog", href: "https://webha.blog" },
-  },
 ];
 
 export type ProjectItem = {
   slug: string;
   title: string;
   description: string;
-  link: { title: string; href: string };
+  link: string;
   stack: string[];
   featured?: boolean;
 };
@@ -120,36 +106,30 @@ export const PROJECTS_ITEMS: ProjectItem[] = [
   {
     slug: "vlonefarsi",
     title: "vlonefarsi.ir",
-    description:
-      "full e-commerce experience for a streetwear instagram brand, from design to production.",
-    link: {
-      title: "read case study",
-      href: "/projects/vlonefarsi",
-    },
+    description: "e-commerce website for vlonefarsi",
+    link: "/projects/vlonefarsi",
     stack: ["nextjs", "e-commerce"],
-    featured: true,
   },
   {
-    slug: "hand-detector",
-    title: "hand detector",
-    description:
-      "self-hosted ai teachable machine that detects your hand in your webcam",
-    link: {
-      title: "view github source",
-      href: "https://github.com/aminzare2005/hand-detector",
-    },
-    stack: ["ai", "vite"],
+    slug: "selka",
+    title: "Selka",
+    description: "persian shop-builder for cool brands",
+    link: "/projects/selka",
+    stack: ["nextjs", "saas"],
   },
   {
-    slug: "to-farsi",
-    title: "to-farsi",
-    description:
-      "simple npm package to convert english digits to farsi digits.",
-    link: {
-      title: "visit npmjs.com/to-farsi",
-      href: "https://www.npmjs.com/package/to-farsi",
-    },
-    stack: ["npm", "open-source"],
+    slug: "webha",
+    title: "Webha",
+    description: "next generation of persian blogging",
+    link: "/projects/webha",
+    stack: ["nextjs"],
+  },
+  {
+    slug: "learnpov",
+    title: "LearnPov",
+    description: "text base soical learning network",
+    link: "/projects/learnpov",
+    stack: ["nextjs", "shadcn"],
   },
 ];
 

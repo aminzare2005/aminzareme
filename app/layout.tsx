@@ -12,7 +12,7 @@ const font = localFont({
 
 export const metadata: Metadata = {
   title: "Amin Zare (@cwpslxck)",
-  description: "Digital Creator & Frontend Developer",
+  description: "Digital Creator & Technical Product Manager",
   authors: [{ name: "Amin Zare" }],
   creator: "Amin Zare",
   publisher: "Amin Zare",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   // og:image & twitter:image come from app/opengraph-image.tsx + app/twitter-image.tsx
   openGraph: {
     title: "Amin Zare (@cwpslxck)",
-    description: "Digital Creator & Frontend Developer",
+    description: "Digital Creator & Technical Product Manager",
     url: "https://aminzare.me",
     siteName: "Amin Zare Portfolio",
     locale: "en_US",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "aminzare.me",
-    description: "Digital Creator & Frontend Developer",
+    description: "Digital Creator & Technical Product Manager",
   },
   robots: {
     index: true,
@@ -71,13 +71,13 @@ const personSchema = {
       name: "Amin Zare",
       url: "https://aminzare.me",
       image: "https://github.com/aminzare2005.png",
-      jobTitle: "Frontend Developer",
+      jobTitle: "Technical Product Manager",
       sameAs: [
         "https://github.com/aminzare2005",
         "https://linkedin.com/in/aminzare2005",
-        "https://x.com/cwpslxck",
-        "https://instagram.com/cwpslxck",
-        "https://youtube.com/@cwpslxck",
+        "https://x.com/aminzarex",
+        "https://instagram.com/aminzarex",
+        "https://youtube.com/@aminzarex",
       ],
     },
   ],
@@ -104,8 +104,8 @@ export default function RootLayout({
           data-site-id="15068e13-2aee-46d3-8788-499dc2ddd9ce"
           strategy="afterInteractive"
         />
-        <main className="px-2 pt-2 pb-24 md:pb-28 md:pt-14">
-          <div className="w-full border border-line bg-surface md:mx-auto md:max-w-2xl">
+        <main className="sm:px-2 sm:pt-2 md:pb-28 md:pt-14">
+          <div className="w-full pb-18 md:pb-0 border border-line bg-surface md:mx-auto md:max-w-2xl">
             {children}
           </div>
         </main>

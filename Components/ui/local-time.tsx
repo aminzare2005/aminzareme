@@ -23,7 +23,7 @@ export function LocalTime() {
 
   return (
     <span className="tabular-nums" suppressHydrationWarning>
-      IRAN, shiraz&nbsp;{time ?? "--:--"}
+      IRAN, shiraz{time ? ` ${time}` : ""}
     </span>
   );
 }

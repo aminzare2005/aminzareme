@@ -1,20 +1,22 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
+
 export const alt = "Amin Zare - Digital Creator & Frontend Developer";
-export const size = { width: 1200, height: 630 };
+export const size = {
+  width: 1200,
+  height: 630,
+};
 export const contentType = "image/png";
 
-// "Technical sheet" tokens — keep in sync with app/globals.css (dark theme)
-const paper = "#121110";
-const surface = "#1b1a18";
-const ink = "#f0eee9";
-const inkMuted = "#b0aaa0";
-const inkFaint = "#6f6a61";
-const line = "rgba(240, 238, 233, 0.12)";
-const accent = "#dac448";
+const paper = "#f1eef4";
+const surface = "#fcfcfd";
+const ink = "#1c1a17";
+const inkMuted = "#5f5a52";
+const inkFaint = "#9c92a3";
+const line = "rgba(25, 23, 28, 0.12)";
+const accent = "#7c3ec8";
 
-// Six-pointed star as SVG
 function Star({ size, color }: { size: number; color: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 48 48">
@@ -26,10 +28,9 @@ function Star({ size, color }: { size: number; color: string }) {
   );
 }
 
-const TAGS = ["digital creator", "frontend developer"];
+const TAGS = ["digital creator", "technical pm"];
 
 export default async function Image() {
-  // Bundled locally so the render never depends on github.com being reachable
   const avatar = await fetch(new URL("./og-avatar.png", import.meta.url)).then(
     (res) => res.arrayBuffer(),
   );
@@ -42,10 +43,8 @@ export default async function Image() {
         display: "flex",
         background: paper,
         color: ink,
-        fontFamily: "system-ui, sans-serif",
       }}
     >
-      {/* The sheet */}
       <div
         style={{
           display: "flex",
@@ -55,9 +54,9 @@ export default async function Image() {
           background: surface,
           position: "relative",
           overflow: "hidden",
+          fontFamily: '"Segoe UI", Arial, sans-serif',
         }}
       >
-        {/* Watermark star */}
         <div
           style={{
             display: "flex",
@@ -66,23 +65,28 @@ export default async function Image() {
             top: 130,
           }}
         >
-          <Star size={380} color="rgba(240, 238, 233, 0.05)" />
+          <Star size={380} color="rgba(25, 23, 28, 0.04)" />
         </div>
 
-        {/* Ticker row */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between",
             padding: "20px 36px",
             borderBottom: `1px solid ${line}`,
             fontSize: 21,
             letterSpacing: 5,
             color: accent,
+            fontWeight: 700,
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 14,
+            }}
+          >
             <div
               style={{
                 display: "flex",
@@ -94,12 +98,8 @@ export default async function Image() {
             />
             OPEN TO WORK
           </div>
-          <div style={{ display: "flex", color: inkFaint, fontSize: 26 }}>
-            +
-          </div>
         </div>
 
-        {/* Identity */}
         <div
           style={{
             display: "flex",
@@ -119,12 +119,16 @@ export default async function Image() {
               border: `1px solid ${line}`,
             }}
           />
-          <div style={{ display: "flex", flexDirection: "column" }}>
+
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
             <div
               style={{
                 display: "flex",
-                alignItems: "center",
-                gap: 20,
                 fontSize: 88,
                 fontWeight: 900,
                 letterSpacing: -4,
@@ -133,16 +137,19 @@ export default async function Image() {
             >
               Amin Zare
             </div>
+
             <div
               style={{
                 display: "flex",
                 fontSize: 32,
+                fontWeight: 500,
                 color: inkMuted,
                 marginTop: 18,
               }}
             >
               digital creator & frontend developer
             </div>
+
             <div
               style={{
                 display: "flex",
@@ -159,7 +166,8 @@ export default async function Image() {
                     border: `1px solid ${line}`,
                     borderRadius: 10,
                     fontSize: 22,
-                    letterSpacing: 2,
+                    fontWeight: 600,
+                    letterSpacing: 1.5,
                     color: inkMuted,
                   }}
                 >
@@ -170,7 +178,6 @@ export default async function Image() {
           </div>
         </div>
 
-        {/* Footer row */}
         <div
           style={{
             display: "flex",
@@ -179,11 +186,13 @@ export default async function Image() {
             padding: "20px 36px",
             borderTop: `1px solid ${line}`,
             fontSize: 21,
+            fontWeight: 600,
             letterSpacing: 5,
             color: inkFaint,
           }}
         >
           <div style={{ display: "flex" }}>AMINZARE.ME</div>
+
           <div style={{ display: "flex" }}>SHIRAZ, IRAN</div>
         </div>
       </div>

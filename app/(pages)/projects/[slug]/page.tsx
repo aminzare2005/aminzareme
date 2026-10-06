@@ -16,10 +16,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const study = getCaseStudy(slug);
-  if (!study) return { title: "Case Study Not Found" };
+  if (!study) return { title: "Page Not Found" };
 
   return {
-    title: `${study.title} Case Study | Amin Zare`,
+    title: `${study.title} | Amin Zare`,
     description: study.subtitle,
     alternates: { canonical: `/projects/${slug}` },
   };
@@ -34,7 +34,7 @@ function CaseSection({
 }) {
   return (
     <div className="space-y-2">
-      <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-ink-faint">
+      <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-ink-muted">
         {label}
       </h2>
       {children}
@@ -48,7 +48,7 @@ export default async function CaseStudyPage({ params }: Props) {
   if (!study) notFound();
 
   return (
-    <article className="space-y-8 px-5 pb-16 pt-5">
+    <article className="space-y-6 px-5 py-5">
       <header className="space-y-3">
         <Link
           href="/#projects"
@@ -65,9 +65,7 @@ export default async function CaseStudyPage({ params }: Props) {
         </p>
         <div className="flex flex-wrap items-center gap-2.5 font-mono text-xs text-ink-faint">
           <span>{study.role}</span>
-          <span aria-hidden className="text-accent">
-            ✶
-          </span>
+          <span aria-hidden>✶</span>
           <span>{study.timeline}</span>
         </div>
       </header>
@@ -88,12 +86,27 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
       ))}
 
+      <div className="flex flex-col items-center gap-2">
+        {study.links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex min-h-12 items-center justify-between gap-2 rounded-xl border border-line px-4 py-3 text-sm font-medium text-ink transition-colors duration-150 hover:bg-ink/5 active:scale-[0.985] motion-reduce:active:scale-100 w-full"
+          >
+            {link.title}
+            <ArrowUpRight className="size-3.5 text-ink-faint" />
+          </Link>
+        ))}
+      </div>  
+
       <CaseSection label="Problem">
-        <p className="leading-relaxed text-ink-muted">{study.problem}</p>
+        <p className="leading-relaxed">{study.problem}</p>
       </CaseSection>
 
       <CaseSection label="Solution">
-        <p className="leading-relaxed text-ink-muted">{study.solution}</p>
+        <p className="leading-relaxed">{study.solution}</p>
       </CaseSection>
 
       <CaseSection label="Tech stack">
@@ -112,8 +125,11 @@ export default async function CaseStudyPage({ params }: Props) {
       <CaseSection label="Outcomes">
         <ul className="space-y-1.5">
           {study.outcomes.map((outcome) => (
-            <li key={outcome} className="flex gap-2 leading-relaxed text-ink-muted">
-              <span aria-hidden className="mt-0.5 text-accent">
+            <li
+              key={outcome}
+              className="flex gap-2 leading-relaxed"
+            >
+              <span aria-hidden className="text-ink-muted">
                 ✶
               </span>
               {outcome}
@@ -121,21 +137,6 @@ export default async function CaseStudyPage({ params }: Props) {
           ))}
         </ul>
       </CaseSection>
-
-      <div className="flex flex-wrap gap-4 border-t border-line pt-6">
-        {study.links.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm font-medium text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-accent"
-          >
-            {link.title}
-            <ArrowUpRight className="size-3.5 text-ink-faint" />
-          </Link>
-        ))}
-      </div>
     </article>
   );
 }

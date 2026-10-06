@@ -2,34 +2,22 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { GithubIcon, HouseIcon, ImagesIcon, LinkedinIcon } from "lucide-react";
+import {
+  GithubIcon,
+  HouseIcon,
+  ImagesIcon,
+  InstagramIcon,
+  LinkedinIcon,
+} from "lucide-react";
 import { BsInstagram, BsTwitterX } from "react-icons/bs";
 import ReactLenis from "lenis/react";
 import { cn } from "@/lib/utils";
 
 const menuItems = [
   {
-    href: "/",
-    icon: <HouseIcon />,
-    label: "Home",
-    external: false,
-  },
-  {
-    href: "/design",
-    icon: <ImagesIcon />,
-    label: "Design gallery",
-    external: false,
-  },
-  {
     href: "/github",
     icon: <GithubIcon />,
     label: "GitHub",
-    external: true,
-  },
-  {
-    href: "/instagram",
-    icon: <BsInstagram />,
-    label: "Instagram",
     external: true,
   },
   {
@@ -44,6 +32,12 @@ const menuItems = [
     label: "X (Twitter)",
     external: true,
   },
+  {
+    href: "/ig",
+    icon: <InstagramIcon />,
+    label: "Instagram",
+    external: true,
+  },
 ];
 
 function Footer() {
@@ -56,7 +50,7 @@ function Footer() {
         <nav
           aria-label="Primary"
           dir="ltr"
-          className="flex h-14 w-full max-w-xl items-center justify-between rounded-full border border-line bg-surface/70 px-4 shadow-ink/5 backdrop-blur-xl backdrop-saturate-150"
+          className="flex max-w-none h-14 md:w-full md:max-w-xs items-center justify-between rounded-full border border-line bg-surface/70 px-4 shadow-ink/5 backdrop-blur-xl backdrop-saturate-150"
         >
           {menuItems.map((item) => {
             const isActive = !item.external && pathname === item.href;
@@ -70,8 +64,8 @@ function Footer() {
                 aria-current={isActive ? "page" : undefined}
                 title={item.label}
                 className={cn(
-                  "relative flex h-full w-full items-center justify-center transition-[color,transform] duration-150 active:scale-90 motion-reduce:active:scale-100 [&_svg]:size-5",
-                  isActive ? "text-ink" : "text-ink-faint hover:text-ink",
+                  "relative flex h-full p-4 w-full items-center justify-center transition-[color,transform] duration-150 active:scale-90 motion-reduce:active:scale-100 [&_svg]:size-5",
+                  isActive ? "text-ink" : "text-ink hover:text-accent",
                 )}
               >
                 {item.icon}

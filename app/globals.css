@@ -7,23 +7,13 @@
 :root {
   color-scheme: light dark;
 
-  --paper: #f4f2ee;
-  --surface: #fdfdfc;
+  --paper: #f1eef4;
+  --surface: #fcfcfd;
   --ink: #1c1a17;
   --ink-muted: #5f5a52;
-  --ink-faint: #a39d92;
-  --line: rgba(28, 26, 23, 0.12);
-  --accent: #e8c70a;
-
-  @media (prefers-color-scheme: dark) {
-    --paper: #121110;
-    --surface: #1b1a18;
-    --ink: #f0eee9;
-    --ink-muted: #b0aaa0;
-    --ink-faint: #6f6a61;
-    --line: rgba(240, 238, 233, 0.12);
-    --accent: #dac448;
-  }
+  --ink-faint: #9c92a3;
+  --line: rgba(25, 23, 28, 0.12);
+  --accent: #7c3ec8;
 }
 
 @theme inline {
@@ -70,12 +60,16 @@ body {
   direction: rtl;
 }
 
-a.external-links {
-  @apply text-ink hover:underline;
-}
-
 .load {
   @apply bg-ink/20 animate-pulse rounded-md text-transparent;
+}
+
+.carda_interactive {
+  @apply transition-transform duration-150 hover:scale-[1.01] active:scale-[0.99];
+}
+
+.link-styling {
+  @apply hover:text-accent font-medium;
 }
 
 @media (prefers-reduced-motion: reduce) {

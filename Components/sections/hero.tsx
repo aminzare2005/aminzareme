@@ -6,7 +6,11 @@ import { BOOKING_URL, OPEN_TO_WORK } from "@/constants/site";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { LocalTime } from "../ui/local-time";
 
-const TAGS = ["digital creator", "frontend developer", "product manager"] as const;
+const TAGS = [
+  "digital creator",
+  "frontend developer",
+  "product manager",
+] as const;
 
 async function Hero() {
   return (
@@ -20,7 +24,7 @@ async function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60 motion-reduce:hidden" />
                 <span className="relative inline-flex size-1.5 rounded-full bg-accent" />
               </span>
-              <span className="truncate">open to work</span>
+              <span className="truncate">open to collab</span>
             </span>
           ) : (
             <span className="flex min-w-0 items-center gap-2 text-ink-faint">
@@ -63,13 +67,14 @@ async function Hero() {
               </span>
             </h1>
             <p className="mt-2.5 text-sm leading-relaxed text-ink-muted md:text-base">
-              digital creator & frontend developer building cool products with
-              ai
+              building cool products with ai
+              <br />
+              trying to connect tech to creative industry
             </p>
           </div>
 
           <ul
-            className="flex flex-wrap justify-center gap-1.5 font-mono text-xs text-ink-muted"
+            className="flex flex-wrap justify-center -mt-2 gap-1.5 font-mono text-xs text-ink-muted"
             aria-label="Roles"
           >
             <li className="rounded-md border border-line px-2 py-1">
@@ -90,10 +95,13 @@ async function Hero() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex min-h-12 items-center justify-between gap-2 rounded-xl bg-ink px-4 py-3 text-sm font-semibold text-surface transition-[transform,opacity] duration-150 hover:opacity-90 active:scale-[0.985] motion-reduce:active:scale-100"
+              className="group flex flex-col gap-1 rounded-xl bg-accent/10 border border-accent/10 px-4 py-3 transition-[transform,opacity] duration-150 hover:opacity-90 active:scale-[0.985] motion-reduce:active:scale-100"
             >
-              Book a meeting
-              <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none" />
+              <p className="text-sm font-semibold">Open to Collaboration</p>
+              <p className="text-xs inline-flex gap-0.5">
+                Book a Meeting
+                <ArrowUpRight className="size-3 mt-0.5" />
+              </p>
             </a>
           )}
           <Link
@@ -101,17 +109,17 @@ async function Hero() {
             className="group flex min-h-12 items-center justify-between gap-2 rounded-xl border border-line px-4 py-3 text-sm font-medium text-ink transition-colors duration-150 hover:bg-ink/5 active:scale-[0.985] motion-reduce:active:scale-100"
           >
             See my projects
-            <ArrowDown className="size-4 text-ink-faint transition-transform duration-200 group-hover:translate-y-0.5 motion-reduce:transition-none" />
+            <ArrowDown className="size-4 text-ink-faint" />
           </Link>
 
-          <a
+          {/* <a
             href="https://github.com/aminzare2005"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-1 flex w-fit items-center gap-1.5 px-1 font-mono text-[11px] text-ink-faint transition-colors hover:text-accent"
           >
-            <span aria-hidden>▸</span> now building: payload-blog
-          </a>
+            <span aria-hidden>▸</span> now building: selka
+          </a> */}
         </div>
       </div>
     </Section>
