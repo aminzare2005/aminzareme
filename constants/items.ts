@@ -1,63 +1,14 @@
+export const GALLERY_ITEMS = [
+  {
+    url: "",
+    title: "",
+  },
+];
 export const DESIGNS_ITEMS = [
   {
-    title: "Phonecase design",
-    url: "/designs/1.png",
-    brand: "VLONEFARSI",
-  },
-  {
-    title: "Banner Design for Github Project",
-    url: "/designs/3.jpg",
-    brand: "Personal",
-  },
-  {
-    title: "Printable Sticker Design",
-    url: "/designs/4.png",
-    brand: "VLONEFARSI",
-  },
-  {
-    title: "Character Design",
-    url: "/designs/5.jpg",
-    brand: "Personal",
-  },
-  {
-    title: "Hiring Banner",
-    url: "/designs/6.png",
-    brand: "YXN Studio",
-  },
-  {
-    title: "CodeNest Gathering Banner",
-    url: "/designs/7.jpg",
-    brand: "Finger Coder",
-  },
-  {
-    title: "Logo Design",
-    url: "/designs/8.png",
-    brand: "YXN Studio",
-  },
-  {
-    title: "Prompt Engineering Gathering Banner",
-    url: "/designs/10.png",
-    brand: "Finger Coder",
-  },
-  {
-    title: "#ILOVEFREESOFTWARE Banner",
-    url: "/designs/11.png",
-    brand: "ShirazLinux",
-  },
-  {
-    title: "Logo Design",
-    url: "/designs/12.png",
-    brand: "Personal",
-  },
-  {
-    title: "Claude Code Gathering Banner",
-    url: "/designs/13.png",
-    brand: "Finger Coder",
-  },
-  {
-    title: "Reel Banner",
-    url: "/designs/14.png",
-    brand: "Finger Coder",
+    title: "",
+    url: "",
+    brand: "",
   },
 ];
 
@@ -70,86 +21,43 @@ export const WORK_ITEMS = [
   },
 ];
 
-export const PROJECTS_ITEMS = [
+export type ProjectItem = {
+  slug: string;
+  title: string;
+  description: string;
+  link: string;
+  stack: string[];
+  featured?: boolean;
+};
+
+export const PROJECTS_ITEMS: ProjectItem[] = [
+  {
+    slug: "vlonefarsi",
+    title: "vlonefarsi.ir",
+    description: "e-commerce website for vlonefarsi",
+    link: "/projects/vlonefarsi",
+    stack: ["nextjs", "e-commerce"],
+  },
   {
     slug: "selka",
     title: "Selka",
-    description: "iranian shop builder for genz brands",
-    image: "/images/selka.png",
-    link: {
-      title: "view case study",
-      href: "/projects/selka",
-    },
+    description: "persian shop-builder for cool brands",
+    link: "/projects/selka",
     stack: ["nextjs", "saas"],
-  },
-  {
-    slug: "vlonefarsi",
-    title: "vlonefarsi",
-    description: "ecommerce website of vlonefarsi",
-    image: "/images/vlonefarsi.jpg",
-    link: {
-      title: "view case study",
-      href: "/projects/vlonefarsi",
-    },
-    stack: ["nextjs", "ecommerce"],
-  },
-  {
-    slug: "learnpov",
-    title: "LearnPOV",
-    description: "text base social learning network",
-    image: "/images/vlonefarsi.jpg",
-    link: {
-      title: "view telegram channel",
-      href: "https://t.me/learnpov",
-    },
-    stack: ["nextjs", "shadcn"],
   },
   {
     slug: "webha",
     title: "Webha",
-    description: "next-generation of persian blogging",
-    image: "/images/vlonefarsi.jpg",
-    link: {
-      title: "view webha.blog",
-      href: "https://webha.blog/",
-    },
+    description: "next generation of persian blogging",
+    link: "/projects/webha",
     stack: ["nextjs"],
   },
-];
-
-export const DEMOES_ITEMS = [
   {
-    slug: "mwt",
-    title: "Meridian Welltech",
-    description: "engineering-led oilfield services, from spud to production",
-    image: "/demoes/mwt.png",
-    link: {
-      title: "view demo website",
-      href: "https://demo.aminzare.me/mwt",
-    },
-    stack: ["landing", "petroleum industry"],
-  },
-  {
-    slug: "eclate",
-    title: "Eclate Paris",
-    description: "premium skincare manufacturing company after-sales services",
-    image: "/demoes/eclate.png",
-    link: {
-      title: "view demo website",
-      href: "https://demo.aminzare.me/eclate",
-    },
-    stack: ["landing", "beauty industry"],
-  },
-  {
-    slug: "aftabtech",
-    title: "AftabTech Solars",
-    description: "iranian solar systems importer and reseller",
-    image: "/demoes/aftabtech.png",
-    link: {
-      title: "view demo website",
-      href: "https://demo.aminzare.me/aftabtech",
-    },
-    stack: ["landing", "clean energy"],
+    slug: "learnpov",
+    title: "LearnPov",
+    description: "text base soical learning network",
+    link: "/projects/learnpov",
+    stack: ["nextjs", "shadcn"],
   },
 ];
 

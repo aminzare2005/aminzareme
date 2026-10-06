@@ -1,75 +1,80 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
-@plugin "daisyui" {
-  themes: light --default;
-  exclude: scrollbar, rootscrollgutter;
-}
+/*
+  Design tokens — "technical sheet" system.
+  Paper (page) / Surface (the sheet) / Ink (text) / Line (hairlines) / Accent (signal orange).
+*/
+:root {
+  color-scheme: light dark;
 
-::-webkit-scrollbar {
-  width: 0px;
+  --paper: #f1eef4;
+  --surface: #fcfcfd;
+  --ink: #1c1a17;
+  --ink-muted: #5f5a52;
+  --ink-faint: #9c92a3;
+  --line: rgba(25, 23, 28, 0.12);
+  --accent: #7c3ec8;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
 }
 
 html,
 body {
-  @apply select-none scroll-smooth;
-  background: var(--background);
-  color: var(--foreground);
+  @apply scroll-smooth;
+  background: var(--paper);
+  color: var(--ink);
+  user-select: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--surface);
+}
+
+/* Slim, token-aware scrollbar instead of a hidden one */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .rtl {
   direction: rtl;
 }
 
-section {
-  @apply border-b border-black/10;
-}
-
-a.external-links {
-  @apply text-stone-900 hover:underline;
-}
-
 .load {
-  @apply bg-foreground/20 animate-pulse rounded-md text-transparent;
+  @apply bg-ink/20 animate-pulse rounded-md text-transparent;
 }
 
-.timeline-vertical li {
-  @apply my-1 py-0;
+.card-interactive {
+  @apply transition-all duration-150 motion-reduce:active:scale-100 active:scale-[0.99];
 }
 
-/* Snap stars to the year line instead of sitting below it */
-.timeline-vertical.timeline-snap-icon > li {
-  --timeline-row-start: 0;
+.link-styling {
+  @apply hover:text-accent font-medium;
 }
 
-.timeline-vertical.timeline-snap-icon .timeline-start,
-.timeline-vertical.timeline-snap-icon .timeline-end {
-  margin-block: 0;
-  align-self: start;
-}
-
-/* Desktop alternating sides: start sits left of the line */
-@media (min-width: 768px) {
-  .timeline-vertical.timeline-snap-icon .timeline-start {
-    justify-self: flex-end;
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    scroll-behavior: auto;
   }
-
-  .timeline-vertical.timeline-snap-icon .timeline-end {
-    justify-self: flex-start;
-  }
-}
-
-/* Mobile compact: everything sits to the right of the line */
-.timeline-vertical.timeline-snap-icon.timeline-compact .timeline-start,
-.timeline-vertical.timeline-snap-icon.timeline-compact .timeline-end {
-  justify-self: flex-start;
-}
-
-.timeline-vertical.timeline-snap-icon .timeline-middle {
-  @apply flex h-[1.25rem] items-center justify-center leading-none;
 }

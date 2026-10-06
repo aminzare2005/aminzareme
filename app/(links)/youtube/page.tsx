@@ -1,4 +1,4 @@
 import { permanentRedirect } from "next/navigation";
 export default function page() {
-  permanentRedirect("https://youtube.com/@cwpslxck");
+  permanentRedirect("https://youtube.com/@aminzarex");
 }

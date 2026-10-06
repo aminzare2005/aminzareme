@@ -1,51 +1,44 @@
-import React from "react";
 import Section from "../section";
 import Image from "next/image";
-import Link from "next/link";
-import { Link2Icon } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const CERT_URL =
   "https://be5t.ir/validation/cert?id=aa54c49a-86ea-4863-a500-98998cb23912";
 
 function Education() {
   return (
-    <Section id="education" className="grid grid-cols-1" title="Certificates">
-      <Link
-        href={CERT_URL}
-        target="_blank"
-        draggable="false"
-        rel="noopener noreferrer"
-        className="flex flex-col w-full group justify-center items-center gap-2 bg-white p-6 border border-black/10 rounded-xl hover:translate-y-px duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
-      >
-        <div className="flex w-full justify-between">
-          <div className="flex items-center gap-2">
-            <Image
-              src="/images/be5t.jpg"
-              alt="AIPM Touring Bootcamp certificate from be5t.ir"
-              width={60}
-              height={60}
-              draggable="false"
-              className="size-12 rounded-lg"
-            />
-            <div className="flex flex-col">
-              <b>AIPM</b>
-              <span className="tracking-wider text-sm font-light opacity-85">
-                Touring Bootcamp (be5t.ir)
-              </span>
-            </div>
+    <Section id="education" index="05" label="Certificates" className="p-0">
+      <div className="flex gap-3.5 px-5 py-4">
+        <Image
+          src="/images/be5t.jpg"
+          alt="AIPM Touring Bootcamp certificate from be5t.ir"
+          width={60}
+          height={60}
+          draggable="false"
+          className="mt-0.5 size-10 shrink-0 rounded-lg ring-1 ring-line"
+        />
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center gap-x-3">
+            <b className="text-[15px] tracking-tight">AIPM</b>
+            <span className="font-mono text-xs text-ink-faint">
+              touring bootcamp — be5t.ir
+            </span>
           </div>
-        </div>
-        <div className="w-full">
-          <p className="opacity-85">
+          <p className="mt-1 text-sm leading-relaxed text-ink-muted">
             learned the basics of PM and AIPM with guidance from top industry
             mentors
           </p>
-          <span className="flex py-1 gap-1 text-blue-500 text-sm w-fit">
-            <Link2Icon size={18} />
+          <a
+            className="mt-1.5 inline-flex items-center gap-1 text-sm link-styling"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://be5t.ir/validation/cert?id=aa54c49a-86ea-4863-a500-98998cb23912"
+          >
             visit certificate
-          </span>
+            <ArrowUpRight className="size-3.5" />
+          </a>
         </div>
-      </Link>
+      </div>
     </Section>
   );
 }

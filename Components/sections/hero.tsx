@@ -3,29 +3,45 @@ import CalculateAge from "../calculateAge";
 import Image from "next/image";
 import Link from "next/link";
 import { BOOKING_URL, OPEN_TO_WORK } from "@/constants/site";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { LocalTime } from "../ui/local-time";
 
-const TAGS = ["product manager", "creative", "frontend dev"] as const;
+const TAGS = [
+  "digital creator",
+  "product manager",
+  "frontend developer",
+] as const;
 
 async function Hero() {
   return (
     <Section id="hero" className="p-0">
       <div className="overflow-hidden">
-        {/* Status — secondary context, not competing with identity */}
-        <Link
-          href={"#connect"}
-          draggable="false"
-          className="flex items-center gap-2 border-b border-black/10 px-4 py-2.5 font-mono text-xs text-emerald-700 md:px-6"
-        >
-          <span
-            className="size-1.5 shrink-0 animate-pulse rounded-full bg-emerald-500"
-            aria-hidden
-          />
-          <span className="truncate">OPEN TO WORK & COLLABORATE</span>
-        </Link>
+        {/* Status ticker — signal that this page is alive */}
+        <div className="flex items-center justify-between gap-3 border-b border-line px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.14em]">
+          {OPEN_TO_WORK ? (
+            <span className="flex min-w-0 items-center gap-2 text-accent">
+              <span className="relative flex size-1.5 shrink-0">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60 motion-reduce:hidden" />
+                <span className="relative inline-flex size-1.5 rounded-full bg-accent" />
+              </span>
+              <span className="truncate">open to collab</span>
+            </span>
+          ) : (
+            <span className="flex min-w-0 items-center gap-2 text-ink-faint">
+              <span
+                aria-hidden
+                className="inline-flex size-1.5 shrink-0 rounded-full bg-ink-faint"
+              />
+              <span className="truncate">fully booked — busy shipping</span>
+            </span>
+          )}
+          <span className="shrink-0 text-ink-faint">
+            <LocalTime />
+          </span>
+        </div>
 
-        {/* Identity — one composition: face, name, role */}
-        <div className="flex flex-col items-center gap-5 px-4 py-6 text-center md:px-6">
+        {/* Identity */}
+        <div className="flex flex-col items-center gap-5 px-5 py-8 text-center">
           <div className="relative size-28 shrink-0 md:size-32">
             <Image
               draggable="false"
@@ -37,67 +53,73 @@ async function Hero() {
               loading="eager"
               priority
             />
+            <div
+              aria-hidden
+              className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-line"
+            />
           </div>
 
           <div className="mx-auto max-w-sm">
-            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">
-              Hey, I&apos;m Amin 👋🏻
+            <h1 className="text-3xl font-extrabold tracking-tighter text-ink md:text-4xl">
+              Hey, I&apos;m Amin
+              <span aria-hidden className="ml-2 text-accent">
+                ✶
+              </span>
             </h1>
-            <p className="mt-2 text-sm leading-relaxed text-gray-600 md:text-base">
+            <p className="mt-2.5 text-sm leading-relaxed text-ink-muted md:text-base">
               building cool products with ai
               <br />
-              trying to connect tech industry to creative industry
+              trying to connect tech to creative industry
             </p>
           </div>
 
           <ul
-            className="mx-auto flex max-w-[17rem] flex-wrap justify-center gap-2 sm:max-w-none"
+            className="flex flex-wrap justify-center -mt-2 gap-1.5 font-mono text-xs text-ink-muted"
             aria-label="Roles"
           >
-            <li className="rounded-lg border border-black/10 bg-black/5 px-2.5 py-1 text-sm text-gray-800">
+            <li className="rounded-md border border-line px-2 py-1">
               <CalculateAge />
             </li>
             {TAGS.map((tag) => (
-              <li
-                key={tag}
-                className="rounded-lg border border-black/10 bg-black/5 px-2.5 py-1 text-sm text-gray-800"
-              >
+              <li key={tag} className="rounded-md border border-line px-2 py-1">
                 {tag}
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Actions — clear primary vs secondary hierarchy */}
-        <div className="flex flex-col gap-2 px-4 md:px-6 pb-5">
+        {/* Actions — one primary, one secondary */}
+        <div className="flex flex-col gap-2 px-5 pb-5">
           {OPEN_TO_WORK && (
             <Link
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              draggable="false"
-              className="group block min-h-11 cursor-pointer rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3.5 text-left transition-all duration-200 hover:scale-[1.008] active:scale-[0.99] hover:border-emerald-300 hover:bg-emerald-100/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
+              className="group flex flex-col gap-1 rounded-xl bg-accent/10 hover:bg-accent/15 border border-accent/10 px-4 py-3 card-interactive"
             >
-              <span className="block font-mono text-[10px] font-medium uppercase tracking-widest text-emerald-700">
-                available
-              </span>
-              <span className="mt-1 block text-base font-bold text-gray-900">
-                Open to Collaboration
-              </span>
-              <span className="mt-1 inline-flex items-center gap-1 text-sm font-medium text-emerald-800">
+              <p className="text-sm font-semibold">Open to Collaboration</p>
+              <p className="text-xs inline-flex gap-0.5">
                 Book a Meeting
-                <ArrowUpRight className="size-3.5" />
-              </span>
+                <ArrowUpRight className="size-3 mt-0.5" />
+              </p>
             </Link>
           )}
           <Link
             href="#projects"
-            draggable="false"
-            className="flex min-h-11 cursor-pointer items-center justify-between gap-2 rounded-xl px-4 py-3 text-sm font-medium text-gray-800 transition-all duration-200 hover:bg-black/5 hover:scale-[1.008] active:scale-[0.99]"
+            className="group hover:bg-zinc-100 flex min-h-12 items-center justify-between gap-2 rounded-xl border border-line px-4 py-3 text-sm font-medium text-ink card-interactive"
           >
             See my projects
-            <ArrowUpRight className="size-4 opacity-40" />
+            <ArrowDown className="size-4 text-ink-faint" />
           </Link>
+
+          {/* <a
+            href="https://github.com/aminzare2005"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 flex w-fit items-center gap-1.5 px-1 font-mono text-[11px] text-ink-faint transition-colors hover:text-accent"
+          >
+            <span aria-hidden>▸</span> now building: selka
+          </a> */}
         </div>
       </div>
     </Section>

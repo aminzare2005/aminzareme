@@ -1,49 +1,36 @@
 import Image from "next/image";
 import Section from "../section";
 import { WORK_ITEMS } from "@/constants/items";
-import { cn } from "@/lib/utils";
+import { ArrowUpRight } from "lucide-react";
 
-function WorkCard({ item }: { item: (typeof WORK_ITEMS)[number] }) {
-  const className = cn(
-    "bg-white p-4 border border-black/10 rounded-xl hover:translate-y-px duration-300 block",
-  );
-
-  const content = (
-    <div className="w-full">
-      <div className="w-full flex flex-col justify-center items-center gap-2">
-        <div className="flex w-full justify-between">
-          <div className="flex items-center gap-2">
+function Work() {
+  return (
+    <Section id="work" index="01" label="Work" className="p-0">
+      <ul className="divide-y divide-line">
+        {WORK_ITEMS.map((item) => (
+          <li key={item.company} className="flex gap-3.5 px-5 py-4">
             <Image
               src={item.image}
               alt={item.company}
               width={60}
               height={60}
               draggable="false"
-              className="size-10 rounded-lg"
+              className="size-10 shrink-0 rounded-lg ring-1 ring-line"
             />
-            <div className="flex flex-col">
-              <b>{item.position}</b>
-              <span className="tracking-wider text-sm font-light opacity-85">
-                {item.company}
-              </span>
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-col">
+                <b className="text-[15px] tracking-tight">{item.position}</b>
+                <span className="font-mono text-sm text-ink-faint">
+                  {item.company}
+                </span>
+              </div>
+              <p className="mt-1 text-sm leading-relaxed text-ink-muted">
+                {item.description}
+              </p>
             </div>
-          </div>
-        </div>
-        <div className="w-full">
-          <p className="opacity-85">{item.description}</p>
-        </div>
-      </div>
-    </div>
-  );
-  return <div className={className}>{content}</div>;
-}
-
-function Work() {
-  return (
-    <Section id="work" classNameWrapper="flex flex-col gap-4">
-      {WORK_ITEMS.map((item) => (
-        <WorkCard key={item.company} item={item} />
-      ))}
+          </li>
+        ))}
+      </ul>
     </Section>
   );
 }

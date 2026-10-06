@@ -1,50 +1,50 @@
 "use client";
 import { cn } from "@/lib/utils";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 function Section({
   children,
-  title,
+  index,
+  label,
   id,
   className,
   classNameWrapper,
 }: {
   children: React.ReactNode;
-  title?: string;
+  /** Sheet index, e.g. "01" — rendered in the mono label row */
+  index?: string;
+  /** Mono uppercase label, e.g. "Work" */
+  label?: string;
   id?: string;
   className?: string;
   classNameWrapper?: string;
 }) {
+  const reduceMotion = useReducedMotion();
+
   return (
     <motion.section
       id={id}
-      className={cn("p-5", className)}
-      initial={{ opacity: 0, y: 0 }}
+      className="border-b border-line last:border-b-0 scroll-mt-6"
+      initial={{ opacity: 0, y: reduceMotion ? 0 : 12 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: false, margin: "-60px 0px" }}
+      transition={
+        reduceMotion
+          ? { duration: 0.2 }
+          : { type: "spring", bounce: 0, duration: 0.55 }
+      }
     >
-      {title && (
-        <motion.h2
-          className="font-bold text-2xl pb-1.5"
-          initial={{ opacity: 0, x: -10 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          {title}
-        </motion.h2>
+      {label && (
+        <div className="flex items-baseline justify-between border-b border-line px-5 py-2">
+          <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-ink-muted">
+            {label}
+          </h2>
+        </div>
       )}
-      <motion.div
-        className={cn(classNameWrapper)}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
-        {children}
-      </motion.div>
+      <div className={cn("p-5", className)}>
+        <div className={cn(classNameWrapper)}>{children}</div>
+      </div>
     </motion.section>
   );
 }

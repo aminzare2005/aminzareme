@@ -55,21 +55,18 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: "vlonefarsi",
-    title: "Vlonefarsi",
-    subtitle:
-      "Streetwear storefront that turns Instagram hype into real orders",
+    title: "vlonefarsi.ir",
+    subtitle: "E-commerce for a high-traffic streetwear brand",
     role: "Founder & Developer",
     timeline: "2024 – Present",
     problem:
-      "Millions of Instagram views weren't turning into sales without a real shop. Generic templates didn't match the streetwear vibe — @vlonefarsi needed a fast, on-brand storefront built for mobile traffic from the feed, not a bolted-on theme.",
+      "brand needed a fast, reliable online store to convert millions of social views into sales. The brand required a polished shopping experience with performance that could handle traffic spikes during drops.",
     solution:
-      "I built the store on Next.js, TypeScript, Supabase, and Vercel. Product pages, cart, and checkout — designed for phones, since almost everyone hits the shop from Instagram.",
+      "I built the storefront with Next.js and Tailwind CSS, focusing on fast page loads, mobile-first layouts, and a checkout flow optimized for Iranian users. Product pages, cart logic, and brand visuals were tailored to match the streetwear aesthetic while keeping the codebase maintainable.",
     stack: ["Next.js", "TypeScript", "Supabase", "Vercel"],
     outcomes: [
-      "Production storefront serving real customers daily",
-      "Mobile-first experience tuned for Instagram traffic",
-      "On-brand UI that matches the streetwear identity",
-      "Maintainable codebase for ongoing drops and features",
+      "Production e-commerce site serving real customers daily",
+      "Maintainable frontend architecture for ongoing feature work",
     ],
     images: [
       {
@@ -79,7 +76,33 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
     links: [
-      { title: "Website", href: "https://vlonefarsi.ir" },
+      { title: "Live Website", href: "https://vlonefarsi.ir" },
+      { title: "Instagram", href: "https://instagram.com/vlonefarsi" },
+    ],
+  },
+  {
+    slug: "selka",
+    title: "Selka",
+    subtitle: "E-commerce for a high-traffic streetwear brand",
+    role: "Founder & Developer",
+    timeline: "2024 – Present",
+    problem:
+      "brand needed a fast, reliable online store to convert millions of social views into sales. The brand required a polished shopping experience with performance that could handle traffic spikes during drops.",
+    solution:
+      "I built the storefront with Next.js and Tailwind CSS, focusing on fast page loads, mobile-first layouts, and a checkout flow optimized for Iranian users. Product pages, cart logic, and brand visuals were tailored to match the streetwear aesthetic while keeping the codebase maintainable.",
+    stack: ["Next.js", "TypeScript", "Supabase", "Vercel"],
+    outcomes: [
+      "Production e-commerce site serving real customers daily",
+      "Maintainable frontend architecture for ongoing feature work",
+    ],
+    images: [
+      {
+        src: "/images/vlonefarsi.jpg",
+        alt: "vlonefarsi.ir storefront preview",
+      },
+    ],
+    links: [
+      { title: "Live Website", href: "https://vlonefarsi.ir" },
       { title: "Instagram", href: "https://instagram.com/vlonefarsi" },
     ],
   },
