@@ -2,6 +2,9 @@ import Section from "../section";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
+const CERT_URL =
+  "https://be5t.ir/validation/cert?id=aa54c49a-86ea-4863-a500-98998cb23912";
+
 function Education() {
   return (
     <Section id="education" index="05" label="Certificates" className="p-0">

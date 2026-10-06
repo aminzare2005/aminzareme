@@ -8,11 +8,51 @@ export type CaseStudy = {
   solution: string;
   stack: string[];
   outcomes: string[];
-  images: { src: string; alt: string }[];
+  images: { src: string; alt: string; fit?: "cover" | "contain" }[];
   links: { title: string; href: string }[];
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
+  {
+    slug: "selka",
+    title: "Selka",
+    subtitle:
+      "Persian multi-tenant storefront builder — launch an online shop in minutes",
+    role: "Founder",
+    timeline: "August 2026 – Present",
+    problem:
+      "Cool Iranian shops and Gen Z brands still lack a storefront that matches their vibe. Shopify is not available in Iran, while setting up WordPress/WooCommerce requires dealing with hosting, plugins, security, and payment. Existing shop-builders like Sazito and Digify can be expensive and often lack COOL themes. Merchants want to log in, choose a theme, add products, and share a simple /@username link without having to deal with infrastructure.",
+    solution:
+      "I'm building Selka as a multi-tenant SaaS: phone-auth, merchant dashboard, themeable storefronts, product/inventory/media management, guest checkout, and payment processing. Merchants own their store and data; Selka handles hosting, security, and updates.",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Better Auth",
+      "Tailwind CSS",
+      "TanStack Query",
+      "Zibal",
+      "MinIO",
+    ],
+    outcomes: [
+      "Persian storefronts with professional theme system",
+      "Merchant flow: register → create store → theme → products → payments → TADAA🎉",
+      "Guest checkout, live dashboard stats, and secure payment",
+      "Multi-tenant architecture aimed at Iranian SMBs",
+    ],
+    images: [
+      {
+        src: "/images/selka.png",
+        alt: "Selka — Persian storefront builder mascot",
+        fit: "contain",
+      },
+    ],
+    links: [
+      // { title: "Telegram", href: "https://t.me/SelkaPro" },
+    ],
+  },
   {
     slug: "vlonefarsi",
     title: "vlonefarsi.ir",
@@ -31,7 +71,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     images: [
       {
         src: "/images/vlonefarsi.jpg",
-        alt: "vlonefarsi.ir storefront preview",
+        alt: "Vlonefarsi — streetwear brand mark",
+        fit: "contain",
       },
     ],
     links: [

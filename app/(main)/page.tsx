@@ -1,12 +1,12 @@
 import Hero from "@/Components/sections/hero";
 import Work from "@/Components/sections/work";
-import Timeline from "@/Components/sections/timeline";
 import Status from "@/Components/sections/status";
-import Connect from "@/Components/sections/connect";
 import Projects from "@/Components/sections/projects";
 import Education from "@/Components/sections/education";
-import Gallery from "@/Components/sections/gallery";
+import Timeline from "@/Components/sections/timeline";
 import Communities from "@/Components/sections/communities";
+import Connect from "@/Components/sections/connect";
+import Gallery from "@/Components/sections/gallery";
 
 export default function Home() {
   return (

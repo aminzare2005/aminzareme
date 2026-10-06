@@ -61,33 +61,10 @@ export const DESIGNS_ITEMS = [
   },
 ];
 
-export const GALLERY_ITEMS = [
-  {
-    title: "ShirazLinux & ShirazTux Gathering",
-    url: "/gallery/1.jpg",
-  },
-  {
-    title: "Last ShirazLinux Gathering in 1404",
-    url: "/gallery/5.jpg",
-  },
-  {
-    title: "Touring bootcamp (AIPM) Day 1",
-    url: "/gallery/2.jpg",
-  },
-  {
-    title: "Long Meeting Sessions in War Holidays",
-    url: "/gallery/6.jpg",
-  },
-  {
-    title: "Mins Before vlonefarsi.ir Production Release",
-    url: "/gallery/3.jpg",
-  },
-];
-
 export const WORK_ITEMS = [
   {
     company: "YXN Studio",
-    position: "Co-Founder",
+    position: "Founder",
     description: "digital creative studio with focus on building cool web apps",
     image: "/images/yxn.png",
   },

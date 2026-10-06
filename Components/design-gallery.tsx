@@ -44,10 +44,9 @@ export default function DesignGallery() {
             ✶
           </span>
         </h1>
-        <p className="mt-2 max-w-prose text-sm leading-relaxed text-ink-muted md:text-base">
-          a collection of things I&apos;ve designed as a part-time graphic
-          designer. banners, logos, stickers & more, made for brands,
-          communities and personal projects.
+        <p className="mt-2 max-w-prose text-sm leading-relaxed text-gray-600 md:text-base">
+          banners, logos & designs i built for streetwear brands, tech
+          communities, and whatever I'm cooking next.
         </p>
       </div>
 

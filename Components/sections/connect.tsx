@@ -1,6 +1,5 @@
 import Section from "../section";
 import { DisplayVersion } from "../displayVersion";
-import { ResumeDownload } from "../ui/resume-download";
 
 function Connect() {
   return (

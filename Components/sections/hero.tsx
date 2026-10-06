@@ -8,8 +8,8 @@ import { LocalTime } from "../ui/local-time";
 
 const TAGS = [
   "digital creator",
-  "frontend developer",
   "product manager",
+  "frontend developer",
 ] as const;
 
 async function Hero() {
@@ -91,7 +91,7 @@ async function Hero() {
         {/* Actions — one primary, one secondary */}
         <div className="flex flex-col gap-2 px-5 pb-5">
           {OPEN_TO_WORK && (
-            <a
+            <Link
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -102,7 +102,7 @@ async function Hero() {
                 Book a Meeting
                 <ArrowUpRight className="size-3 mt-0.5" />
               </p>
-            </a>
+            </Link>
           )}
           <Link
             href="#projects"

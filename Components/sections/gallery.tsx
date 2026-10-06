@@ -1,12 +1,11 @@
 import Section from "../section";
-import Image from "next/image";
-import { GALLERY_ITEMS } from "@/constants/items";
+// import { GALLERY_ITEMS } from "@/constants/items";
 
 function Gallery() {
   return (
     <Section id="moments" index="07" label="Moments">
       <div className="md:columns-2 columns-1 gap-2 space-y-2">
-        {GALLERY_ITEMS.map((item) => (
+        {/* {GALLERY_ITEMS.map((item) => (
           <figure key={item.url} className="break-inside-avoid">
             <Image
               draggable={false}
@@ -22,7 +21,7 @@ function Gallery() {
               {item.title}
             </figcaption>
           </figure>
-        ))}
+        ))} */}
       </div>
     </Section>
   );
