@@ -7,6 +7,7 @@ import Footer from "@/Components/footer";
 
 const font = Inter({
   display: "swap",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
