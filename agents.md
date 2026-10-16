@@ -1,380 +1,218 @@
-# Claude Code Agent Configuration for aminzare.me
+# Agent Configuration & Development Guide for aminzare.me
 
 ## Overview
 
-This document outlines the specialized agent configurations and workflows for maintaining and developing Amin Zare's personal portfolio website (aminzare.me). It provides guidance on selecting the appropriate agent for different tasks and describes the available tools and patterns for optimal development workflows.
+This document outlines the architecture, conventions, agent workflows, and codebase reference for maintaining and developing Amin Zare's personal portfolio website ([aminzare.me](https://aminzare.me)). It provides guidance for AI agents and human developers on repository layout, component patterns, styling system, data flow, and verification workflows.
 
 ---
 
-## Available Agents
+## Technical Stack & Architecture
 
-### claude-code-guide
-
-**Primary Use**: Technical guidance and setup questions
-**When to Use**:
-
-- Questions about Claude Code features, hooks, slash commands
-- Anthropic SDK usage (Messages API, Tool Runner)
-- Claude Tag setup for Slack workspaces
-- General Claude-powered development workflows
-
-**Available Tools**: Glob, Grep, Read, WebFetch, WebSearch
-
-**Capabilities**:
-
-- Configuration guidance for Claude Code harness
-- MCP server setup and troubleshooting
-- IDE integration documentation
-- Security and permissions configuration
-
-### Explore
-
-**Primary Use**: Code discovery and quick lookups
-**When to Use**:
-
-- Finding files by pattern (e.g., "Components/sections/hero.tsx")
-- Searching for specific keywords, symbols, or references
-- Answering "where is X defined?" or "which files reference Y?"
-- Initial codebase exploration and navigation
-
-**Limitations**: Reads file excerpts rather than entire files — may miss content past read window
-
-**Best Practices**:
-
-- Use for targeted, specific searches
-- Combine with Grep for precise filtering
-- Avoid for complex analysis or code review
-
-### general-purpose
-
-**Primary Use**: Complex research and multi-step tasks
-**When to Use**:
-
-- Researching complex technical questions
-- Multi-step implementation planning
-- Analyzing large codebases
-- Extended verification processes
-
-**Available Tools**: Full tool access
-
-**Workflows**:
-
-- Deep codebase analysis
-- Cross-file consistency checks
-- Open-ended problem solving
-- Multi-stage implementation planning
-
-### Plan
-
-**Primary Use**: Software architecture and implementation design
-**When to Use**:
-
-- Designing new feature implementations
-- Planning architectural changes
-- Identifying critical files and dependencies
-- Creating step-by-step implementation strategies
-
-**Available Tools**: All tools except Agent, Artifact, ExitPlanMode, Edit, Write, NotebookEdit
-
-**Output**: Step-by-step plans with architectural trade-offs
-
-### statusline-setup
-
-**Primary Use**: Claude Code status line configuration
-**When to Use**:
-
-- Setting up status line configurations
-- Managing agent-specific status displays
-- Customizing status line appearances
+- **Framework**: Next.js 15 (React 19, Turbopack)
+- **Styling**: Tailwind CSS v4 (`@tailwindcss/postcss`) with custom CSS variables / design tokens
+- **Animations**: Framer Motion (`framer-motion`) & Lenis (`lenis/react`) smooth scrolling
+- **Type Safety**: TypeScript 5 in strict mode
+- **Edge OG / Twitter Cards**: Dynamic social banners using `@vercel/og` (`app/opengraph-image.tsx` & `app/twitter-image.tsx`)
+- **Data & Content Architecture**: Static/strongly-typed content in `constants/` with dynamic case study detail routing (`/projects/[slug]`)
+- **API Endpoints**: Cached GitHub statistics route at `app/api/github/route.ts` (ISR revalidation: 10 hours)
+- **Analytics**: Vercel Analytics (`@vercel/analytics/next`) & Bazeh telemetry script
 
 ---
 
-## Agent Selection Guidelines
-
-### Quick vs. Deep Work
-
-| Task Type               | Recommended Agent | Reason                     |
-| ----------------------- | ----------------- | -------------------------- |
-| File lookup             | Explore           | Fast, targeted searches    |
-| Pattern search          | Grep              | Direct file content search |
-| Research questions      | general-purpose   | Complex analysis           |
-| Implementation planning | Plan              | Architectural design       |
-| Technical setup         | claude-code-guide | Claude-specific guidance   |
-
-### Workflow Patterns
-
-#### Research & Discovery
-
-1. **Initial Exploration**: Use `Explore` for quick pattern matching
-2. **Deep Research**: Use `general-purpose` for complex queries
-3. **Architecture Planning**: Use `Plan` for implementation strategies
-
-#### Development Workflows
-
-1. **Code Changes**: Direct file editing with Read/Edit/Write tools
-2. **Multi-Agent Collaboration**: Launch parallel agents for independent work
-3. **Verification**: Use `claude-code-guide` for technical accuracy
-
-#### Maintenance Tasks
-
-1. **Component Updates**: Use `general-purpose` for complex refactoring
-2. **Bug Fixes**: Direct file editing with targeted tests
-3. **Documentation**: Use `claude-code-guide` for setup questions
-
----
-
-## Performance Optimization
-
-### For Large Codebases
-
-#### Incremental Reading
-
-```javascript
-// Use Explore for initial discovery
-await agent("Find all components in Components/sections", {
-  schema: COMPONENTS_SCHEMA,
-});
-```
-
-#### Targeted Searches
-
-```javascript
-// Use Grep for precise filtering
-await agent("Find all references to animation libraries", {
-  schema: ANIMATION_SCHEMA,
-});
-```
-
-#### Parallel Processing
-
-```javascript
-// Launch multiple agents for independent tasks
-await parallel([
-  () => agent("Review component architecture", { phase: "architecture" }),
-  () => agent("Check performance patterns", { phase: "performance" }),
-  () => agent("Verify accessibility compliance", { phase: "accessibility" }),
-]);
-```
-
-### For CI/CD Integration
-
-#### Testing Strategy
-
-- Leverage Next.js test runner
-- Use TypeScript for type safety
-- Implement comprehensive coverage
-
-#### Build Optimization
-
-- Use TypeScript for early error detection
-- Implement linting and formatting
-- Optimize bundle sizes
-
----
-
-## Special Notes
-
-### Next.js App Router Conventions
-
-The project uses standard Next.js conventions:
-
-- `(main)` for main section routes
-- `(links)` for redirect pages
-- Standardized component import paths
-
-### Component Architecture
-
-#### Modular Design
-
-- Self-contained, reusable components
-- Props-based composition
-- Tailwind CSS utility styling
-- Accessibility-first approach
-
-#### Performance Considerations
-
-- Code splitting with Next.js
-- Optimized image loading
-- Efficient bundle sizes
-- Smooth scrolling with Lenis
-
-### File Structure Patterns
+## Accurate File & Directory Structure
 
 ```
-app/
-├── layout.tsx              # Root layout (SEO, schema, global styles)
-├── page.tsx                # Main page component
-├── (main)/                 # Main section routes
-│   └── page.tsx           # Home page
-├── (links)/                # Redirect pages
-│   ├── github/page.tsx    # External redirects
-│   └── ...               # Other social redirects
-├── design/                 # Design gallery
-└── Components/             # Reusable UI components
-    ├── sections/          # Portfolio sections
-    │   ├── hero.tsx       # Hero section
-    │   ├── work.tsx       # Projects section
-    │   └── ...           # Other sections
-    ├── footer.tsx         # Navigation
-    └── ui/                # UI component library
+aminzareme/
+├── app/
+│   ├── (links)/                      # External profile redirect routes (308 permanentRedirect)
+│   │   ├── bale/page.tsx             # https://ble.ir/@aminzarex
+│   │   ├── be5t/page.tsx             # Certificate verification link
+│   │   ├── chat/page.tsx             # https://www.goftino.com/c/sRTCca
+│   │   ├── github/page.tsx           # https://github.com/aminzare2005
+│   │   ├── ig/page.tsx               # https://instagram.com/aminzarex
+│   │   ├── kick/page.tsx             # https://kick.com/aminzarex
+│   │   ├── linkedin/page.tsx         # https://linkedin.com/in/aminzare2005
+│   │   ├── x/page.tsx                # https://x.com/aminzarex
+│   │   └── youtube/page.tsx          # https://youtube.com/@aminzarex
+│   ├── (main)/
+│   │   └── page.tsx                  # Home page assembling all portfolio sections
+│   ├── (pages)/
+│   │   ├── og/page.tsx               # Interactive preview sandbox for dynamic OG card
+│   │   └── projects/[slug]/page.tsx  # Dynamic case study route (SSG via generateStaticParams)
+│   ├── api/
+│   │   └── github/route.ts           # Cached GitHub statistics route (GET)
+│   ├── favicon.ico
+│   ├── globals.css                   # Technical sheet design tokens & utility styles
+│   ├── layout.tsx                    # Root layout (Metadata, JSON-LD Schema, Bazeh script, Dock)
+│   ├── not-found.tsx                 # 404 handler
+│   ├── og-avatar.png                 # Avatar bitmap for Edge OG image generation
+│   ├── opengraph-image.tsx           # Dynamic Edge-rendered Open Graph card
+│   ├── robots.ts                     # Dynamic robots.txt
+│   ├── sitemap.ts                    # Dynamic sitemap.xml indexing pages & case studies
+│   └── twitter-image.tsx             # Dynamic Edge-rendered Twitter card
+├── Components/                       # UI components (root-level folder, NOT inside app/)
+│   ├── sections/                     # Section components composed on the main page
+│   │   ├── communities.tsx           # Community & creative roles
+│   │   ├── connect.tsx               # Footer CTA with version info & contact
+│   │   ├── education.tsx             # AIPM certification showcase
+│   │   ├── gallery.tsx               # Gallery grid component
+│   │   ├── hero.tsx                  # Hero section (clock, open-to-work ticker, booking link)
+│   │   ├── projects.tsx              # Grid of project cards
+│   │   ├── status.tsx                # Server component fetching GitHub stats
+│   │   ├── status-client.tsx         # Client spring-animated counters
+│   │   ├── timeline.tsx              # Career & milestone timeline
+│   │   └── work.tsx                  # Experience & ventures
+│   ├── ui/                           # Reusable micro-components
+│   │   ├── local-time.tsx            # Live Tehran/Shiraz local time clock (Asia/Tehran)
+│   │   └── resume-download.tsx       # Resume download CTA component
+│   ├── calculateAge.tsx              # Client-side dynamic age calculation
+│   ├── design-gallery.tsx            # Standalone design gallery with lightbox modal
+│   ├── displayVersion.tsx            # Reads version dynamically from package.json
+│   ├── footer.tsx                    # Floating bottom dock navigation & Lenis root
+│   ├── og-preview.tsx                # Visual workbench for testing OG image generation
+│   └── section.tsx                   # Motion section container with whileInView triggers
+├── constants/
+│   ├── case-studies.ts               # Case study data model & items (Selka, Vlonefarsi)
+│   ├── items.ts                      # Projects, work, communities, skills, gallery items
+│   └── site.ts                       # Global constants (BOOKING_URL, OPEN_TO_WORK, SHOW_RESUME_DOWNLOAD)
+├── lib/
+│   ├── github.ts                     # GitHub API fetcher with fallbacks and Next.js revalidation
+│   └── utils.ts                      # `cn()` utility combining `clsx` and `twMerge`
+├── public/
+│   ├── assets/fonts/                 # Custom local fonts (Inter.woff2)
+│   ├── dl/                           # Static downloadable files (aminzare-resume.pdf)
+│   └── images/                       # Project logos and previews
+├── .env.example                      # Environment variables template
+├── next.config.ts                    # Next.js image domain configuration
+├── package.json                      # Dependencies and scripts
+└── tsconfig.json                     # TypeScript strict configuration
 ```
 
 ---
 
-## Workflow Examples
+## Design System & Styling Conventions
 
-### Example 1: Code Discovery
+### 1. "Technical Sheet" Design Tokens
 
-```javascript
-// Find all section components
-await agent("Find all files in Components/sections directory", {
-  schema: SECTION_SCHEMA,
-  phase: "discovery",
-});
-```
+Defined in `app/globals.css` with `@theme inline`:
 
-### Example 2: Implementation Planning
+- `--paper`: Base page background (`#f1eef4`)
+- `--surface`: Sheet container background (`#fcfcfd`)
+- `--ink`: Primary text (`#1c1a17`)
+- `--ink-muted`: Subdued text (`#5f5a52`)
+- `--ink-faint`: Border text / tertiary annotations (`#9c92a3`)
+- `--line`: Structural hairlines (`rgba(25, 23, 28, 0.12)`)
+- `--accent`: Brand highlight color (`#7c3ec8`)
 
-```javascript
-// Plan new feature implementation
-await agent("Design new animation system for hero section", {
-  schema: IMPLEMENTATION_PLAN_SCHEMA,
-  phase: "planning",
-});
-```
+### 2. Motion & Accessibility Standards
 
-### Example 3: Technical Verification
+- All animated components (`Section`, `StatusClient`, `DesignGallery`, `ResumeDownload`) **must** respect `prefers-reduced-motion` using Framer Motion's `useReducedMotion()`.
+- Interactive elements use the `.card-interactive` utility for tactile feedback:
+  ```css
+  .card-interactive {
+    @apply transition-all duration-150 motion-reduce:active:scale-100 active:scale-[0.99];
+  }
+  ```
+- Focus states must remain accessible with explicit `focus-visible` styling matching `--accent`.
 
-```javascript
-// Verify technical compliance
-await agent("Check if all components follow accessibility standards", {
-  schema: ACCESSIBILITY_SCHEMA,
-  phase: "verification",
-});
-```
+### 3. Responsive Container Model
 
----
-
-## Configuration Management
-
-### Claude Code Settings
-
-Use the `update-config` skill for:
-
-- Permissions configuration
-- Environment variables
-- Hook setup
-- Tool allowlists
-
-### Agent-Specific Configuration
-
-- **claude-code-guide**: Full tool access for comprehensive guidance
-- **Explore**: Read-only access for safe exploration
-- **general-purpose**: Full tool access for complex tasks
-- **Plan**: Design-focused tools for architecture planning
-- **statusline-setup**: Configuration-specific tools
+- The main layout centers content in a constrained column:
+  `md:mx-auto md:max-w-2xl border border-line bg-surface`
+- Bottom padding accommodates the persistent floating navigation dock (`Components/footer.tsx`).
 
 ---
 
-## Troubleshooting
+## Key Content & Data Models
 
-### Common Issues
+### 1. Project Items (`constants/items.ts`)
 
-#### Agent Performance
+```typescript
+export type ProjectItem = {
+  slug: string;
+  title: string;
+  description: string;
+  link: string;
+  stack: string[];
+  featured?: boolean;
+};
+```
 
-**Problem**: Slow response times
-**Solution**: Use `Explore` for initial discovery, then `general-purpose` for deep analysis
+### 2. Case Studies (`constants/case-studies.ts`)
 
-#### File Access
+```typescript
+export type CaseStudy = {
+  slug: string;
+  title: string;
+  subtitle: string;
+  role: string;
+  timeline: string;
+  problem: string;
+  solution: string;
+  stack: string[];
+  outcomes: string[];
+  images: { src: string; alt: string; fit?: "cover" | "contain" }[];
+  links: { title: string; href: string }[];
+};
+```
 
-**Problem**: Permission errors
-**Solution**: Ensure proper configuration in `.claude/settings.json`
+Whenever adding or modifying a project case study, ensure `getCaseStudySlugs()` generates corresponding static paths for `/projects/[slug]` during `next build`.
 
-#### Tool Limitations
+### 3. Feature Flags & Site Config (`constants/site.ts`)
 
-**Problem**: Certain tools not available
-**Solution**: Use appropriate agent based on task requirements
+- `BOOKING_URL`: Google Calendar booking appointment link.
+- `OPEN_TO_WORK`: Toggle hero status badge between `"open to collab"` (with pulsing ping animation) and `"fully booked — busy shipping"`.
+- `SHOW_RESUME_DOWNLOAD`: Controlled by `process.env.SHOW_RESUME_DOWNLOAD === "true"`.
 
-### Debugging Commands
+---
+
+## Workflow Patterns for Agents
+
+### 1. Code Discovery & Navigation
+
+- **Components**: Check `Components/sections/` for page sections and `Components/ui/` for micro-elements. Note that `Components/` is at the project root, not inside `app/`.
+- **Routes & Pages**: Check `app/(main)/` for the home page, `app/(pages)/` for subpages, and `app/(links)/` for external redirect routes.
+- **Data & Text**: Content strings, projects, career items, and case studies are maintained in `constants/`, avoiding hardcoded copy inside markup.
+
+### 2. Adding or Modifying Content
+
+1. **New Project**:
+   - Add item to `PROJECTS_ITEMS` in `constants/items.ts`.
+   - If writing a full case study, add entry to `CASE_STUDIES` in `constants/case-studies.ts`.
+   - Ensure referenced images exist in `public/images/`.
+2. **New Social / External Link**:
+   - Add redirect page under `app/(links)/[slug]/page.tsx` using `permanentRedirect(destinationUrl)`.
+   - If appearing in the dock, update `menuItems` in `Components/footer.tsx`.
+   - If appearing in SEO graph, update `personSchema.sameAs` in `app/layout.tsx`.
+3. **Updating Experience / Timeline**:
+   - Update `WORK_ITEMS` or `COMMUNITY_ITEMS` in `constants/items.ts`.
+   - Update `MILESTONES` in `Components/sections/timeline.tsx`.
+
+### 3. Verification & Type Checking
+
+Before completing changes, always verify:
 
 ```bash
-# Check agent status
-/claude status
+# Verify TypeScript strict type-checking
+npx tsc --noEmit
 
-# View configuration
-/config
-
-# Test tool access
-/tools
+# Test production build
+npm run build
 ```
 
 ---
 
-## Getting Help
+## Agent Task Routing
 
-### Agent Selection
-
-- **Confused about which agent to use?** Ask for guidance
-- **Need specific capabilities?** Request agent with required tools
-- **Complex tasks?** Start with `general-purpose` or `Plan`
-
-### Technical Support
-
-- **Claude Code issues?** Use `claude-code-guide` agent
-- **Code review needed?** Use `general-purpose` agent
-- **Architecture questions?** Use `Plan` agent
+| Task Type | Focus Areas | Key Files |
+| :--- | :--- | :--- |
+| **Content Updates** | Update projects, skills, links | `constants/items.ts`, `constants/case-studies.ts`, `constants/site.ts` |
+| **UI & Styling** | Layout, tokens, responsive fixes | `app/globals.css`, `Components/section.tsx`, `app/layout.tsx` |
+| **New Section** | Create modular section | `Components/sections/[name].tsx`, import in `app/(main)/page.tsx` |
+| **SEO & OpenGraph** | Metadata, OG banners, sitemap | `app/layout.tsx`, `app/opengraph-image.tsx`, `app/sitemap.ts` |
+| **External Redirects**| URL redirects | `app/(links)/[name]/page.tsx` |
 
 ---
 
-## Memory & Context
-
-### Project Context
-
-- Keep track of current development priorities
-- Document architectural decisions
-- Maintain list of active tasks and blockers
-
-### User Preferences
-
-- Record preferred development workflows
-- Document coding standards and conventions
-- Track testing and deployment preferences
-
----
-
-## Updates & Maintenance
-
-### Agent Configuration Updates
-
-- Regularly review agent effectiveness
-- Update based on new project requirements
-- Maintain compatibility with project evolution
-
-### Performance Monitoring
-
-- Monitor agent response times
-- Track tool usage patterns
-- Optimize workflows based on experience
-
----
-
-## Conclusion
-
-This agent configuration ensures optimal development workflows for Amin Zare's portfolio website. By selecting the appropriate agent for each task type, developers can maximize efficiency, maintain code quality, and ensure consistent project standards.
-
-The key to success is understanding the strengths and limitations of each agent and using them strategically based on the specific requirements of each task.
-
----
-
-**Last Updated**: August 2026
-**Version**: 1.0
-
-_This configuration is designed to support the maintenance and development of aminzare.me while following modern software engineering best practices._
-
----
-
-_For questions about this configuration, contact Amin directly or refer to the project documentation._
-
----
-
-**Note**: This document is actively maintained and will be updated as the project evolves and new agent configurations become available.
+**Last Updated**: October 2026  
+**Codebase Version**: 2.0.0
