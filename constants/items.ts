@@ -14,10 +14,10 @@ export const DESIGNS_ITEMS = [
 
 export const WORK_ITEMS = [
   {
-    company: "YXN Studio",
-    position: "Founder",
-    description: "digital creative studio with focus on building cool web apps",
-    image: "/images/yxn.png",
+    company: "HQ4",
+    position: "Co-Founder",
+    description: "digital creative studio that builds cool web apps",
+    image: "/images/HQ4.png",
   },
 ];
 
