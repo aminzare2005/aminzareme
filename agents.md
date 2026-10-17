@@ -64,6 +64,7 @@ aminzareme/
 │   │   └── work.tsx                  # Experience & ventures
 │   ├── ui/                           # Reusable micro-components
 │   │   ├── local-time.tsx            # Live Tehran/Shiraz local time clock (Asia/Tehran)
+│   │   ├── markdown.tsx              # Server-rendered Markdown parser with technical sheet typography
 │   │   └── resume-download.tsx       # Resume download CTA component
 │   ├── calculateAge.tsx              # Client-side dynamic age calculation
 │   ├── design-gallery.tsx            # Standalone design gallery with lightbox modal
