@@ -13,7 +13,7 @@
   --ink-muted: #5f5a52;
   --ink-faint: #9c92a3;
   --line: rgba(25, 23, 28, 0.12);
-  --accent: #7c3ec8;
+  --accent: #003adb;
 }
 
 @theme inline {
@@ -70,6 +70,83 @@ body {
 
 .link-styling {
   @apply hover:text-accent font-medium;
+}
+
+/* Markdown typography for case studies */
+.markdown-body {
+  @apply text-sm md:text-[15px] leading-relaxed text-ink/90;
+}
+
+.markdown-body > * + * {
+  @apply mt-3;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4 {
+  @apply font-bold tracking-tight text-ink mt-4 mb-2 first:mt-0;
+}
+
+.markdown-body h3 {
+  @apply text-base md:text-[17px];
+}
+
+.markdown-body h4 {
+  @apply text-sm md:text-base font-semibold;
+}
+
+.markdown-body p {
+  @apply leading-relaxed;
+}
+
+.markdown-body strong {
+  @apply font-semibold text-ink;
+}
+
+.markdown-body em {
+  @apply italic text-ink-muted;
+}
+
+.markdown-body ul {
+  @apply list-none space-y-2 my-2 ps-1;
+}
+
+.markdown-body ul > li {
+  @apply relative ps-5 leading-relaxed;
+}
+
+.markdown-body ul > li::before {
+  content: "✶";
+  @apply absolute left-0 text-accent text-xs top-1 select-none;
+}
+
+.markdown-body ol {
+  @apply list-decimal space-y-2 my-2 ps-5 font-sans leading-relaxed marker:font-mono marker:text-xs marker:text-ink-faint;
+}
+
+.markdown-body blockquote {
+  @apply border-l-2 border-accent/70 bg-accent/5 rounded-r-lg px-3.5 py-2 text-ink-muted italic my-3 text-sm;
+}
+
+.markdown-body code:not(pre code) {
+  @apply font-mono text-[12px] bg-ink/5 border border-line px-1.5 py-0.5 rounded text-accent font-medium;
+}
+
+.markdown-body pre {
+  @apply font-mono text-xs bg-ink/5 border border-line rounded-xl p-3.5 overflow-x-auto my-3 text-ink;
+}
+
+.markdown-body pre code {
+  @apply bg-transparent border-0 p-0 text-inherit;
+}
+
+.markdown-body a {
+  @apply font-medium text-accent underline underline-offset-4 decoration-accent/40 hover:decoration-accent transition-colors;
+}
+
+.markdown-body hr {
+  @apply border-t border-line my-4;
 }
 
 @media (prefers-reduced-motion: reduce) {
