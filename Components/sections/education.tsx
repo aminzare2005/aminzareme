@@ -9,14 +9,6 @@ function Education() {
   return (
     <Section id="education" index="05" label="Certificates" className="p-0">
       <div className="flex gap-3.5 px-5 py-4">
-        <Image
-          src="/images/be5t.jpg"
-          alt="AIPM Touring Bootcamp certificate from be5t.ir"
-          width={60}
-          height={60}
-          draggable="false"
-          className="mt-0.5 size-10 shrink-0 rounded-lg ring-1 ring-line"
-        />
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-x-3">
             <b className="text-[15px] tracking-tight">AIPM</b>

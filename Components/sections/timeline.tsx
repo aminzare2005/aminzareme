@@ -5,19 +5,19 @@ const MILESTONES = [
     year: "2023",
     title: "Good but not for me!",
     description:
-      "My first income was from Instagram brands that got millions of views.",
+      "My first income was from video editing on my Instagram brand with millions of views.",
   },
   {
     year: "2024",
     title: "Time to earn",
     description:
-      "I started learning modern frontend tech like Next.js, Tailwind & Expo.",
+      "I started learning modern frontend tech like NextJS and Expo.",
   },
   {
     year: "2025",
     title: "Real career starts",
     description:
-      "I joined different startups, made connections, bootcamps, and learned PM basics.",
+      "I joined startups, made connections, bootcamps, and learned PM basics.",
   },
   {
     year: "2026",

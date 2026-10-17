@@ -16,7 +16,7 @@ export const WORK_ITEMS = [
   {
     company: "HQ4",
     position: "Co-Founder",
-    description: "digital creative studio that builds cool web apps",
+    description: "digital creative web design & development studio",
     image: "/images/HQ4.png",
   },
 ];
