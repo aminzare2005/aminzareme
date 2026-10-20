@@ -70,7 +70,6 @@ export default async function CaseStudyPage({ params }: Props) {
 
   const primaryImage = study.images?.[0];
   const remainingImages = study.images?.slice(1) ?? [];
-  const otherStudies = CASE_STUDIES.filter((s) => s.slug !== slug);
 
   return (
     <article className="space-y-8 px-5 py-6 md:px-7 md:py-8">
@@ -80,12 +79,10 @@ export default async function CaseStudyPage({ params }: Props) {
           href="/#projects"
           className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint transition-colors hover:text-ink"
         >
-          <ArrowLeft className="size-3.5 transition-transform duration-150 group-hover:-translate-x-0.5" />
+          <ArrowLeft className="size-3.5" />
           <span>projects</span>
-          <span aria-hidden className="text-line">
-            /
-          </span>
-          <span className="text-ink-muted">{study.slug}</span>
+          <span aria-hidden>/</span>
+          <span>{study.slug}</span>
         </Link>
       </nav>
 
@@ -223,55 +220,6 @@ export default async function CaseStudyPage({ params }: Props) {
         </CaseSection>
       )}
 
-      {/* More Projects Section */}
-      {otherStudies.length > 0 && (
-        <section className="space-y-4 border-t border-line pt-8">
-          <div className="flex items-center justify-between">
-            <h2 className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-muted">
-              Other Projects
-            </h2>
-            <Link
-              href="/#projects"
-              className="font-mono text-[11px] uppercase tracking-wider text-accent transition-colors hover:underline"
-            >
-              view all
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {otherStudies.slice(0, 2).map((other) => (
-              <Link
-                key={other.slug}
-                href={`/projects/${other.slug}`}
-                className="group flex flex-col justify-between gap-2 rounded-xl border border-line bg-surface p-4 card-interactive hover:border-ink/20"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-1">
-                    <b className="text-sm font-semibold tracking-tight text-ink">
-                      {other.title}
-                    </b>
-                    <ArrowRight className="size-3.5 text-ink-faint transition-transform duration-150 group-hover:translate-x-0.5" />
-                  </div>
-                  <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-ink-muted">
-                    {other.subtitle}
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-1 font-mono text-[10px] text-ink-faint">
-                  {other.stack.slice(0, 3).map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded border border-line px-1.5 py-0.5"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
-
       {/* Bottom Back Button */}
       <div className="pt-2">
         <Link
@@ -279,7 +227,7 @@ export default async function CaseStudyPage({ params }: Props) {
           className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-line bg-surface px-4 py-2.5 text-sm font-medium text-ink card-interactive hover:bg-ink/5"
         >
           <ArrowLeft className="size-4" />
-          Back to all projects
+          Back to Projects
         </Link>
       </div>
     </article>
