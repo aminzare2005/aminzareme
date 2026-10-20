@@ -35,7 +35,7 @@ function CountUpStat({ value, label }: { value: number; label: string }) {
         </span>
         {text}
       </motion.div>
-      <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint">
+      <p className="text-[11px] uppercase tracking-[0.14em] text-ink-faint">
         {label}
       </p>
     </div>
@@ -49,7 +49,7 @@ export default function StatusClient({ stats }: { stats: GitHubStats }) {
   ];
 
   return (
-    <Section id="status" index="04" label="Numbers" className="p-0">
+    <Section id="status" index="04" className="p-0">
       <div className="grid grid-cols-1 divide-y divide-line md:grid-cols-2 md:divide-y-0 md:divide-x">
         {items.map((item) => (
           <CountUpStat key={item.label} value={item.value} label={item.label} />
