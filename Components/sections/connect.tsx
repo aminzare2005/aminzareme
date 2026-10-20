@@ -3,7 +3,7 @@ import { DisplayVersion } from "../displayVersion";
 
 function Connect() {
   return (
-    <Section id="connect" index="08" label="Connect">
+    <Section id="connect" index="08">
       <div className="flex flex-col items-center gap-5 py-8 text-center">
         <div className="space-y-2.5">
           <h2 className="text-3xl font-extrabold tracking-tighter md:text-4xl">

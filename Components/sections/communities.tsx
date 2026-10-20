@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function Communities() {
   return (
-    <Section id="communities" index="03" label="Communities" className="p-0">
+    <Section id="communities" index="03" className="p-0">
       <ul className="grid grid-cols-1 divide-y divide-line sm:grid-cols-2 sm:divide-x sm:divide-y-0">
         {COMMUNITY_ITEMS.map((item) => (
           <li key={item.name}>

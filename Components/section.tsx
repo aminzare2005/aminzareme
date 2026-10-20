@@ -37,7 +37,7 @@ function Section({
     >
       {label && (
         <div className="flex items-baseline justify-between border-b border-line px-5 py-2">
-          <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-ink-muted">
+          <h2 className="font-mono text-[11px] font-medium tracking-[0.18em] text-ink-muted/70">
             {label}
           </h2>
         </div>

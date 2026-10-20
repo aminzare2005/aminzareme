@@ -29,7 +29,7 @@ const MILESTONES = [
 
 function Timeline() {
   return (
-    <Section id="path" index="02" label="Path">
+    <Section id="path" index="02">
       <ol className="relative ms-2 space-y-2 border-s border-line ps-6">
         {MILESTONES.map((milestone, i) => (
           <li key={milestone.year} className="relative">
