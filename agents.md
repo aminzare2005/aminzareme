@@ -216,4 +216,4 @@ npm run build
 ---
 
 **Last Updated**: October 2026  
-**Codebase Version**: 2.0.0
+**Codebase Version**: 2.1.0
