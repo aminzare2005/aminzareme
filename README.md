@@ -18,7 +18,7 @@ This repository powers [aminzare.me](https://aminzare.me), a high-performance pe
 - **Status / Live GitHub Numbers**: Real-time counter cards displaying GitHub followers and public repositories, powered by server-side fetching with ISR caching and smooth client-side Framer Motion spring physics.
 - **Education & Certifications**: AI Product Management (AIPM) touring bootcamp certification showcase with verification link (`be5t.ir`).
 - **Communities**: Partnerships and creative roles (Finger Coder, Asr Didani) with branded subtle gradient cards.
-- **Projects Grid**: Interactive project cards (Vlonefarsi, Selka, Webha, LearnPov) highlighting tech stacks, live links, and case study routes.
+- **Projects Grid**: Interactive project cards (Vlonefarsi, Selka, Webha) highlighting tech stacks, live links, and case study routes.
 - **Deep Case Studies**: Dedicated case study detail routes (`/projects/[slug]`) featuring problem statements, technical architecture, outcomes, image galleries, and external links.
 - **Career Path & Milestones**: Interactive vertical timeline tracking key milestones from 2023 through 2026+.
 - **Connect & Versioning**: Email contact (`hi@aminzare.me`), dynamic portfolio version reading directly from `package.json`, and optional PDF resume download CTA.
