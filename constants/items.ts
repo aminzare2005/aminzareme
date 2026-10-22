@@ -50,14 +50,7 @@ export const PROJECTS_ITEMS: ProjectItem[] = [
     title: "Webha",
     description: "next generation of persian blogging",
     link: "/projects/webha",
-    stack: ["nextjs"],
-  },
-  {
-    slug: "learnpov",
-    title: "LearnPov",
-    description: "text base soical learning network",
-    link: "/projects/learnpov",
-    stack: ["nextjs", "shadcn"],
+    stack: ["nextjs", "shadcn", "tailwind"],
   },
 ];
 

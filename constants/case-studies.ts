@@ -102,61 +102,38 @@ Shop owner wants to **sign up, pick a theme, upload products, and share a \`/@us
   {
     slug: "webha",
     title: "Webha",
-    subtitle:
-      "Next generation Persian blogging and digital publishing platform",
-    role: "Creator & Developer",
-    timeline: "2024 – 2025",
-    problem: `Traditional Persian blogging platforms (legacy Weblogfa or bloated WordPress setups) are outdated and cluttered:
+    subtitle: "Modern Persian blogging platform built to revive weblog culture",
+    role: "Frontend Developer",
+    timeline: "May 2026 – August 2026",
+    problem: `Webha was conceived to breathe new life into Persian blogging culture. Over the years, legacy Iranian blogging giants gradually shut down or degraded, while newer platforms introduced restrictive, arbitrary policies and clunky UI/UX that alienated writers.
 
-- **Distracting reader experience**: Slow load times, intrusive banners, and poor typography without proper Persian font rendering or spacing.
-- **Writer friction**: Cumbersome WYSIWYG editors lacking Markdown support, live preview, or clean media handling.
-- **Poor discoverability**: Inadequate modern SEO standards, OpenGraph previews, and slow content delivery.`,
-    solution: `Created **Webha** as a distraction-free, modern publishing platform built for Persian writers and developers:
+- **Dying blogging ecosystem**: Traditional Iranian platforms faded away, leaving passionate long-form writers with few viable homes.
+- **Platform restrictions**: Newer domestic alternatives imposed strict, frustrating rules alongside outdated user experiences.
+- **Timing and validation**: The product team validated the concept and planned the roadmap during nationwide internet disruptions and war holidays, identifying an urgent need for an open, aesthetic writing platform.`,
+    solution: `Joined the product team as a **Frontend Developer** alongside a multidisciplinary team to build a modern, high-velocity MVP:
 
-- **Refined Typography**: Meticulously tuned RTL typography using modern Persian fonts (*Vazirmatn*) with correct line heights and half-space (*نیم‌فاصله*) support.
-- **Markdown-First Editor**: Intuitive split-screen Markdown authoring with live rendering, syntax highlighting, and instant draft saving.
-- **SEO & Social Optimization**: Next.js App Router with automatic JSON-LD article schema, Edge OG banner generation, and fast CDN delivery.`,
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Vercel"],
+- **Frontend Architecture**: Built the client with **Next.js**, **Tailwind CSS**, custom **Shadcn UI**-based components, and **React Query** for state synchronization.
+- **AI-Assisted Workflow Engineering**: When feature deadlines became critical, independently designed and set up an AI-driven development pipeline configuring guardrails, custom prompt architectures, and strict structural constraints. This allowed shipping core features rapidly and hitting tight milestones single-handedly on the frontend.
+- **Collaborative MVP Iteration**: Worked closely across frontend, backend, and design to rapidly turn product specifications into working interfaces.`,
+    stack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "React Query",
+      "TypeScript",
+      "AI Integration",
+    ],
     outcomes: [
-      "Clean, distraction-free reading experience optimized for Persian script",
-      "Full Markdown support with live preview and code highlighting",
-      "Fast Core Web Vitals and automated search engine metadata",
+      "Architected an AI-assisted frontend workflow with strict guardrails to meet tight feature deadlines",
+      "Delivered core MVP interfaces with modern UI/UX and clean component abstractions",
+      "Gained hands-on experience accelerating product cycles and AI integration in real team settings",
+      "Project successfully reached MVP phase; development currently on hold with potential future reboot",
     ],
     images: [
       {
         src: "/images/webha.jpg",
-        alt: "Webha — next generation Persian blogging platform",
-        fit: "cover",
-      },
-    ],
-    links: [],
-  },
-  {
-    slug: "learnpov",
-    title: "LearnPov",
-    subtitle: "Text-based social learning network for developers & creators",
-    role: "Frontend Engineer & Designer",
-    timeline: "2024",
-    problem: `Online learning in tech communities is often fragmented between long, unread video tutorials and chaotic chat groups:
-
-- Learners struggle to find concise, contextual insights without wading through hours of video.
-- Existing platforms prioritize passive consumption rather than active text discussions and peer perspectives.
-- Lack of modern, lightweight learning networks catering to Persian developers and designers.`,
-    solution: `Designed and built **LearnPov** as a text-first social knowledge-sharing platform:
-
-- **Byte-Sized Technical Insights**: Focused point-of-view (POV) posts highlighting software architecture, design tips, and engineering lessons.
-- **Component System with Shadcn UI**: Built with accessible, customizable UI primitives using Next.js, Tailwind CSS, and Shadcn UI.
-- **Interactive Discussion Threads**: Nested comment threads supporting Markdown and code snippets for constructive peer reviews.`,
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    outcomes: [
-      "Engaging text-first knowledge exchange for developer communities",
-      "Modular, accessible component library built with Shadcn UI and Radix primitives",
-      "Fast, responsive layout engineered for desktop and mobile reading",
-    ],
-    images: [
-      {
-        src: "/images/learnpov.jpg",
-        alt: "LearnPov — text-based social learning network",
+        alt: "Webha — modern Persian blogging platform",
         fit: "cover",
       },
     ],
