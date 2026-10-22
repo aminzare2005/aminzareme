@@ -98,15 +98,11 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
 
         <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs text-ink-muted">
-          <span className="rounded-md border border-line bg-surface px-2.5 py-1">
-            {study.role}
-          </span>
+          {study.role}
           <span aria-hidden className="text-ink-faint">
             ✶
           </span>
-          <span className="rounded-md border border-line bg-surface px-2.5 py-1">
-            {study.timeline}
-          </span>
+          {study.timeline}
         </div>
       </header>
 
