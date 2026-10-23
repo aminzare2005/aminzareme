@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Footer from "@/Components/footer";
@@ -70,7 +69,7 @@ const personSchema = {
       "@type": "Person",
       name: "Amin Zare",
       url: "https://aminzare.me",
-      image: "https://github.com/aminzare2005.png",
+      image: "https://aminzare.me/assets/avatar.jpg",
       jobTitle: "Technical Product Manager",
       sameAs: [
         "https://github.com/aminzare2005",
@@ -99,11 +98,6 @@ export default function RootLayout({
         />
       </head>
       <body className={`${font.className} antialiased w-full`}>
-        <Script
-          src="https://bazeh.vercel.app/script"
-          data-site-id="15068e13-2aee-46d3-8788-499dc2ddd9ce"
-          strategy="afterInteractive"
-        />
         <main className="sm:px-2 sm:pt-2 md:pb-28 md:pt-14">
           <div className="w-full pb-18 md:pb-0 border border-line bg-surface md:mx-auto md:max-w-2xl">
             {children}
