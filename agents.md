@@ -2,20 +2,39 @@
 
 ## Overview
 
-This document outlines the architecture, conventions, agent workflows, and codebase reference for maintaining and developing Amin Zare's personal portfolio website ([aminzare.me](https://aminzare.me)). It provides guidance for AI agents and human developers on repository layout, component patterns, styling system, data flow, and verification workflows.
+This document outlines the architecture, conventions, agent workflows, and codebase reference for developing, maintaining, and extending Amin Zare's personal portfolio website ([aminzare.me](https://aminzare.me)). It serves as the primary operational manual for AI agents and human contributors.
+
+---
+
+## Identity & Background: Who is Amin Zare?
+
+- **Full Name**: Amin Zare
+- **Online Handles**: `@cwpslxck` (personal handle) / `@aminzarex` (socials) / `@aminzare2005` (GitHub/LinkedIn)
+- **Birth Date**: December 21, 2005 (`Components/calculateAge.tsx`)
+- **Location**: Shiraz, Iran (`Asia/Tehran` timezone, tracked live via `Components/ui/local-time.tsx`)
+- **Roles & Profession**: Digital Creator, Technical Product Manager, and Frontend Developer.
+- **Core Ethos**: "Building cool products with AI, trying to connect tech to the creative industry."
+- **Ventures & Active Work**:
+  - **HQ4**: Co-Founder of a digital creative web design & development studio (`Components/sections/work.tsx`).
+  - **Selka**: Founder of a Persian multi-tenant storefront builder for brands and creators (`constants/case-studies.ts`).
+  - **Vlonefarsi.ir**: Founder & Developer of high-demand e-commerce infrastructure for streetwear drops.
+  - **Webha**: Frontend Developer on modern Persian blogging platform MVP with AI-assisted workflow engineering.
+- **Education & Credentials**: Certified in AI Product Management (AIPM) through BE5T.IR Touring Bootcamp (`Components/sections/education.tsx`).
+- **Community Roles**: Graphic Designer for Finger Coder; Video Editor for Asr Didani (Shiraz).
 
 ---
 
 ## Technical Stack & Architecture
 
-- **Framework**: Next.js 15 (React 19, Turbopack)
+- **Framework**: Next.js 15.5.9 (React 19, Turbopack, App Router)
 - **Styling**: Tailwind CSS v4 (`@tailwindcss/postcss`) with custom CSS variables / design tokens
-- **Animations**: Framer Motion (`framer-motion`) & Lenis (`lenis/react`) smooth scrolling
+- **Animations**: Framer Motion 12 (`framer-motion`) & Lenis 1.3 (`lenis/react`) smooth scrolling
 - **Type Safety**: TypeScript 5 in strict mode
-- **Edge OG / Twitter Cards**: Dynamic social banners using `@vercel/og` (`app/opengraph-image.tsx` & `app/twitter-image.tsx`)
+- **Markdown Rendering**: Marked 18 (`marked`) with custom server-side technical sheet typography
+- **Edge OG / Twitter Cards**: Dynamic social banners generated on Edge using `@vercel/og` (`app/opengraph-image.tsx` & `app/twitter-image.tsx`)
 - **Data & Content Architecture**: Static/strongly-typed content in `constants/` with dynamic case study detail routing (`/projects/[slug]`)
 - **API Endpoints**: Cached GitHub statistics route at `app/api/github/route.ts` (ISR revalidation: 10 hours)
-- **Analytics**: Vercel Analytics (`@vercel/analytics/next`) & Bazeh telemetry script
+- **Analytics**: Vercel Analytics (`@vercel/analytics/next`)
 
 ---
 
@@ -40,10 +59,10 @@ aminzareme/
 │   │   ├── og/page.tsx               # Interactive preview sandbox for dynamic OG card
 │   │   └── projects/[slug]/page.tsx  # Dynamic case study route (SSG via generateStaticParams)
 │   ├── api/
-│   │   └── github/route.ts           # Cached GitHub statistics route (GET)
+│   │   └── github/route.ts           # Cached GitHub statistics route (GET, ISR: 10h)
 │   ├── favicon.ico
 │   ├── globals.css                   # Technical sheet design tokens & utility styles
-│   ├── layout.tsx                    # Root layout (Metadata, JSON-LD Schema, Bazeh script, Dock)
+│   ├── layout.tsx                    # Root layout (Metadata, JSON-LD Schema, Dock)
 │   ├── not-found.tsx                 # 404 handler
 │   ├── og-avatar.png                 # Avatar bitmap for Edge OG image generation
 │   ├── opengraph-image.tsx           # Dynamic Edge-rendered Open Graph card
@@ -52,7 +71,7 @@ aminzareme/
 │   └── twitter-image.tsx             # Dynamic Edge-rendered Twitter card
 ├── Components/                       # UI components (root-level folder, NOT inside app/)
 │   ├── sections/                     # Section components composed on the main page
-│   │   ├── communities.tsx           # Community & creative roles
+│   │   ├── communities.tsx           # Community & creative roles (Finger Coder, Asr Didani)
 │   │   ├── connect.tsx               # Footer CTA with version info & contact
 │   │   ├── education.tsx             # AIPM certification showcase
 │   │   ├── gallery.tsx               # Gallery grid component
@@ -61,7 +80,7 @@ aminzareme/
 │   │   ├── status.tsx                # Server component fetching GitHub stats
 │   │   ├── status-client.tsx         # Client spring-animated counters
 │   │   ├── timeline.tsx              # Career & milestone timeline
-│   │   └── work.tsx                  # Experience & ventures
+│   │   └── work.tsx                  # Experience & ventures (HQ4)
 │   ├── ui/                           # Reusable micro-components
 │   │   ├── local-time.tsx            # Live Tehran/Shiraz local time clock (Asia/Tehran)
 │   │   ├── markdown.tsx              # Server-rendered Markdown parser with technical sheet typography
@@ -73,7 +92,7 @@ aminzareme/
 │   ├── og-preview.tsx                # Visual workbench for testing OG image generation
 │   └── section.tsx                   # Motion section container with whileInView triggers
 ├── constants/
-│   ├── case-studies.ts               # Case study data model & items (Selka, Vlonefarsi)
+│   ├── case-studies.ts               # Case study data model & items (Selka, Vlonefarsi, Webha)
 │   ├── items.ts                      # Projects, work, communities, skills, gallery items
 │   └── site.ts                       # Global constants (BOOKING_URL, OPEN_TO_WORK, SHOW_RESUME_DOWNLOAD)
 ├── lib/
@@ -82,10 +101,12 @@ aminzareme/
 ├── public/
 │   ├── assets/fonts/                 # Custom local fonts (Inter.woff2)
 │   ├── dl/                           # Static downloadable files (aminzare-resume.pdf)
-│   └── images/                       # Project logos and previews
+│   └── images/                       # Project logos, previews, and assets
 ├── .env.example                      # Environment variables template
+├── AGENTS.md                         # This file
 ├── next.config.ts                    # Next.js image domain configuration
-├── package.json                      # Dependencies and scripts
+├── package.json                      # Dependencies and scripts (v2.1.1)
+├── README.md                         # Public repository README
 └── tsconfig.json                     # TypeScript strict configuration
 ```
 
@@ -99,11 +120,11 @@ Defined in `app/globals.css` with `@theme inline`:
 
 - `--paper`: Base page background (`#f1eef4`)
 - `--surface`: Sheet container background (`#fcfcfd`)
-- `--ink`: Primary text (`#1c1a17`)
+- `--ink`: Primary high-contrast text (`#1c1a17`)
 - `--ink-muted`: Subdued text (`#5f5a52`)
 - `--ink-faint`: Border text / tertiary annotations (`#9c92a3`)
 - `--line`: Structural hairlines (`rgba(25, 23, 28, 0.12)`)
-- `--accent`: Brand highlight color (`#7c3ec8`)
+- `--accent`: Signature brand violet (`#7c3ec8`)
 
 ### 2. Motion & Accessibility Standards
 
@@ -118,7 +139,7 @@ Defined in `app/globals.css` with `@theme inline`:
 
 ### 3. Responsive Container Model
 
-- The main layout centers content in a constrained column:
+- The main layout centers content in a constrained column simulating a physical document:
   `md:mx-auto md:max-w-2xl border border-line bg-surface`
 - Bottom padding accommodates the persistent floating navigation dock (`Components/footer.tsx`).
 
@@ -157,7 +178,8 @@ export type CaseStudy = {
 };
 ```
 
-Whenever adding or modifying a project case study, ensure `getCaseStudySlugs()` generates corresponding static paths for `/projects/[slug]` during `next build`.
+> [!IMPORTANT]
+> Whenever adding or modifying a case study, ensure `getCaseStudySlugs()` generates corresponding static paths for `/projects/[slug]` during `next build`.
 
 ### 3. Feature Flags & Site Config (`constants/site.ts`)
 
@@ -171,7 +193,7 @@ Whenever adding or modifying a project case study, ensure `getCaseStudySlugs()` 
 
 ### 1. Code Discovery & Navigation
 
-- **Components**: Check `Components/sections/` for page sections and `Components/ui/` for micro-elements. Note that `Components/` is at the project root, not inside `app/`.
+- **Components**: Check `Components/sections/` for page sections and `Components/ui/` for micro-elements. **Note:** `Components/` is at the project root, NOT inside `app/`.
 - **Routes & Pages**: Check `app/(main)/` for the home page, `app/(pages)/` for subpages, and `app/(links)/` for external redirect routes.
 - **Data & Text**: Content strings, projects, career items, and case studies are maintained in `constants/`, avoiding hardcoded copy inside markup.
 
@@ -179,7 +201,7 @@ Whenever adding or modifying a project case study, ensure `getCaseStudySlugs()` 
 
 1. **New Project**:
    - Add item to `PROJECTS_ITEMS` in `constants/items.ts`.
-   - If writing a full case study, add entry to `CASE_STUDIES` in `constants/case-studies.ts`.
+   - If writing a full case study, add an entry to `CASE_STUDIES` in `constants/case-studies.ts`.
    - Ensure referenced images exist in `public/images/`.
 2. **New Social / External Link**:
    - Add redirect page under `app/(links)/[slug]/page.tsx` using `permanentRedirect(destinationUrl)`.
@@ -191,7 +213,7 @@ Whenever adding or modifying a project case study, ensure `getCaseStudySlugs()` 
 
 ### 3. Verification & Type Checking
 
-Before completing changes, always verify:
+Before completing any changes, always verify:
 
 ```bash
 # Verify TypeScript strict type-checking
@@ -216,4 +238,4 @@ npm run build
 ---
 
 **Last Updated**: October 2026  
-**Codebase Version**: 2.1.0
+**Codebase Version**: 2.1.1
