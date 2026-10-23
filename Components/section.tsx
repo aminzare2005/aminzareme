@@ -10,6 +10,7 @@ function Section({
   id,
   className,
   classNameWrapper,
+  animate = true,
 }: {
   children: React.ReactNode;
   /** Sheet index, e.g. "01" — rendered in the mono label row */
@@ -19,25 +20,15 @@ function Section({
   id?: string;
   className?: string;
   classNameWrapper?: string;
+  animate?: boolean;
 }) {
   const reduceMotion = useReducedMotion();
 
-  return (
-    <motion.section
-      id={id}
-      className="border-b border-line last:border-b-0 scroll-mt-6"
-      initial={{ opacity: 0, y: reduceMotion ? 0 : 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, margin: "-60px 0px" }}
-      transition={
-        reduceMotion
-          ? { duration: 0.2 }
-          : { type: "spring", bounce: 0, duration: 0.55 }
-      }
-    >
+  const content = (
+    <>
       {label && (
         <div className="flex items-baseline justify-between border-b border-line px-5 py-2">
-          <h2 className="font-mono text-[11px] font-medium tracking-[0.18em] text-ink-muted/70">
+          <h2 className="font-mono text-[11px] font-medium tracking-[0.18em] text-ink-muted">
             {label}
           </h2>
         </div>
@@ -45,6 +36,34 @@ function Section({
       <div className={cn("p-5", className)}>
         <div className={cn(classNameWrapper)}>{children}</div>
       </div>
+    </>
+  );
+
+  if (!animate) {
+    return (
+      <section
+        id={id}
+        className="border-b border-line last:border-b-0 scroll-mt-6"
+      >
+        {content}
+      </section>
+    );
+  }
+
+  return (
+    <motion.section
+      id={id}
+      className="border-b border-line last:border-b-0 scroll-mt-6"
+      initial={{ opacity: 0, y: reduceMotion ? 0 : 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px 0px" }}
+      transition={
+        reduceMotion
+          ? { duration: 0.2 }
+          : { type: "spring", bounce: 0, duration: 0.55 }
+      }
+    >
+      {content}
     </motion.section>
   );
 }

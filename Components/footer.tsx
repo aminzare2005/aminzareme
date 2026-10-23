@@ -58,6 +58,7 @@ function Footer() {
               <Link
                 key={item.label}
                 href={item.href}
+                prefetch={false}
                 target={item.external ? "_blank" : "_self"}
                 rel={item.external ? "noopener noreferrer" : undefined}
                 aria-label={item.label}

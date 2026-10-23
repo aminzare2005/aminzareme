@@ -14,7 +14,7 @@ const TAGS = [
 
 async function Hero() {
   return (
-    <Section id="hero" className="p-0">
+    <Section id="hero" animate={false} className="p-0">
       <div className="overflow-hidden">
         {/* Status ticker — signal that this page is alive */}
         <div className="flex items-center justify-between gap-3 border-b border-line px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.14em]">
@@ -47,11 +47,11 @@ async function Hero() {
               draggable="false"
               className="rounded-2xl object-cover"
               alt="Portrait of Amin Zare"
-              src="https://github.com/aminzare2005.png"
+              src="/assets/avatar.jpg"
               fill
               sizes="128px"
-              loading="eager"
               priority
+              fetchPriority="high"
             />
             <div
               aria-hidden
