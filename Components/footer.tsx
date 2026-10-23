@@ -2,16 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  GithubIcon,
-  HouseIcon,
-  ImagesIcon,
-  InstagramIcon,
-  LinkedinIcon,
-} from "lucide-react";
-import { BsInstagram, BsTwitterX } from "react-icons/bs";
-import ReactLenis from "lenis/react";
+import dynamic from "next/dynamic";
+import { GithubIcon, InstagramIcon, LinkedinIcon } from "lucide-react";
+import { BsTwitterX } from "react-icons/bs";
 import { cn } from "@/lib/utils";
+
+const ReactLenis = dynamic(
+  () => import("lenis/react").then((mod) => mod.ReactLenis),
+  { ssr: false }
+);
 
 const menuItems = [
   {

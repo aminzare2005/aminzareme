@@ -1,4 +1,3 @@
-import Section from "../section";
 import CalculateAge from "../calculateAge";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,7 +13,7 @@ const TAGS = [
 
 async function Hero() {
   return (
-    <Section id="hero" animate={false} className="p-0">
+    <section id="hero" className="border-b border-line last:border-b-0 scroll-mt-6 p-0">
       <div className="overflow-hidden">
         {/* Status ticker — signal that this page is alive */}
         <div className="flex items-center justify-between gap-3 border-b border-line px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.14em]">
@@ -111,18 +110,9 @@ async function Hero() {
             See my projects
             <ArrowDown className="size-4 text-ink-faint" />
           </Link>
-
-          {/* <a
-            href="https://github.com/aminzare2005"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-1 flex w-fit items-center gap-1.5 px-1 font-mono text-[11px] text-ink-faint transition-colors hover:text-accent"
-          >
-            <span aria-hidden>▸</span> now building: selka
-          </a> */}
         </div>
       </div>
-    </Section>
+    </section>
   );
 }
 

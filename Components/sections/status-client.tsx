@@ -7,7 +7,7 @@ import type { GitHubStats } from "@/lib/github";
 
 function CountUpStat({ value, label }: { value: number; label: string }) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: false, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
   const spring = useSpring(0, { stiffness: 60, damping: 20 });
   const display = useTransform(spring, (v) => `${Math.round(v)}`);
   const [text, setText] = useState("0");
